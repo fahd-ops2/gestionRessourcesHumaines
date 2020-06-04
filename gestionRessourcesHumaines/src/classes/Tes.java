@@ -1,6 +1,6 @@
 package classes;
 
 public class Tes {
- private double age;
+ private double ege;
  
 }
