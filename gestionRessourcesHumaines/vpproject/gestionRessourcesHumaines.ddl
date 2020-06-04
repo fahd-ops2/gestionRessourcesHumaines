@@ -1,0 +1,18 @@
+ALTER TABLE Etablisment DROP FOREIGN KEY FKEtablismen357027;
+ALTER TABLE Etablisment DROP FOREIGN KEY FKEtablismen199333;
+ALTER TABLE Specialite DROP FOREIGN KEY FKSpecialite87630;
+ALTER TABLE DiplomeSu DROP FOREIGN KEY FKDiplomeSu452162;
+DROP TABLE IF EXISTS Personnel;
+DROP TABLE IF EXISTS ListeMission;
+DROP TABLE IF EXISTS Etablisment;
+DROP TABLE IF EXISTS DiplomeSu;
+DROP TABLE IF EXISTS Specialite;
+CREATE TABLE Personnel (ID int(10) NOT NULL AUTO_INCREMENT, Num_p varchar(255), Cin varchar(255), Pren_n_arabe varchar(255), Pren_n varchar(255), Datenaissance date, Nationalite varchar(255), Sexe varchar(255), Dateembauche varchar(255), Echelle varchar(255), Echelon varchar(255), Situationfamiliale varchar(255), NbreEnfant int(10) NOT NULL, Marieemploye varchar(255), Num_tE varchar(255), Adresse varchar(255), Tel varchar(255), DateDésignation varchar(255), PRIMARY KEY (ID)) ENGINE=InnoDB;
+CREATE TABLE ListeMission (ID int(10) NOT NULL AUTO_INCREMENT, Mission varchar(255), PRIMARY KEY (ID)) ENGINE=InnoDB;
+CREATE TABLE Etablisment (ID int(10) NOT NULL AUTO_INCREMENT, ListeMissionID int(10) NOT NULL, PersonnelID int(10) NOT NULL, Etablissement_ville varchar(255), Date_debut date, Date_fin date, PRIMARY KEY (ID)) ENGINE=InnoDB;
+CREATE TABLE DiplomeSu (ID int(11) NOT NULL AUTO_INCREMENT, PersonnelID int(10) NOT NULL, DiplomeSU varchar(255), DateobtentionSu date, PRIMARY KEY (ID)) ENGINE=InnoDB;
+CREATE TABLE Specialite (ID int(11) NOT NULL AUTO_INCREMENT, DiplomeSuID int(11) NOT NULL, Specialitee varchar(255), PRIMARY KEY (ID)) ENGINE=InnoDB;
+ALTER TABLE Etablisment ADD INDEX FKEtablismen357027 (PersonnelID), ADD CONSTRAINT FKEtablismen357027 FOREIGN KEY (PersonnelID) REFERENCES Personnel (ID);
+ALTER TABLE Etablisment ADD INDEX FKEtablismen199333 (ListeMissionID), ADD CONSTRAINT FKEtablismen199333 FOREIGN KEY (ListeMissionID) REFERENCES ListeMission (ID);
+ALTER TABLE Specialite ADD INDEX FKSpecialite87630 (DiplomeSuID), ADD CONSTRAINT FKSpecialite87630 FOREIGN KEY (DiplomeSuID) REFERENCES DiplomeSu (ID);
+ALTER TABLE DiplomeSu ADD INDEX FKDiplomeSu452162 (PersonnelID), ADD CONSTRAINT FKDiplomeSu452162 FOREIGN KEY (PersonnelID) REFERENCES Personnel (ID);
