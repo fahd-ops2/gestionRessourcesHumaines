@@ -15,6 +15,13 @@ public class Admin {
  * @param nomA
  * @param prenomA
  */
+public Admin( int id,String login, String password , String nomA, String prenomA) {
+	ID=id;
+	Password = password;
+	Login = login;
+	this.nomA = nomA;
+	this.prenomA = prenomA;
+}
 public Admin( String login, String password , String nomA, String prenomA) {
 	
 	Password = password;

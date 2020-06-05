@@ -23,6 +23,15 @@ public DiplomeSu(int iD, int personnelID, int specialiteID, String diplomeSU,
 	Faculte = faculte;
 	DateobtentionSu = dateobtentionSu;
 }
+public DiplomeSu( int personnelID, int specialiteID, String diplomeSU,
+		String faculte, Date dateobtentionSu) {
+	
+	PersonnelID = personnelID;
+	SpecialiteID = specialiteID;
+	DiplomeSU = diplomeSU;
+	Faculte = faculte;
+	DateobtentionSu = dateobtentionSu;
+}
 /**
  * @return the iD
  */
