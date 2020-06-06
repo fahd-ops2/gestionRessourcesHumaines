@@ -124,6 +124,34 @@ public class Personnel {
 		DateDesignation = dateDesignation;
 		Datenaissance = datenaissance;
 	}
+	
+	
+	/**
+	 * @param iD
+	 * @param nbreEnfant
+	 * @param echelle
+	 * @param echelon
+	 * @param situationfamiliale
+	 * @param marieemploye
+	 * @param num_tE
+	 * @param dateembauche
+	 * @param dateDesignation
+	 */
+	public Personnel(int iD, int nbreEnfant, String echelle, String echelon,
+			String situationfamiliale, String marieemploye, String num_tE,
+			Date dateembauche, Date dateDesignation) {
+		super();
+		ID = iD;
+		NbreEnfant = nbreEnfant;
+		Echelle = echelle;
+		Echelon = echelon;
+		Situationfamiliale = situationfamiliale;
+		Marieemploye = marieemploye;
+		Num_tE = num_tE;
+		Dateembauche = dateembauche;
+		DateDesignation = dateDesignation;
+	}
+
 	/**
 	 * @return the iD
 	 */
