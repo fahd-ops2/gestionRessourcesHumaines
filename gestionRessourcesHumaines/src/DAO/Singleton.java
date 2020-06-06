@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import javax.swing.JOptionPane;
+
 
 
 
@@ -17,7 +17,7 @@ public class Singleton {
     	   Class.forName("com.mysql.jdbc.Driver"); 
     	   String unicode= "?useUnicode=yes&characterEncoding=UTF-8";
             this.cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/presonneldb"+unicode,"root","");
-       }catch(SQLException e ){JOptionPane.showMessageDialog(null,e.getMessage());} catch (ClassNotFoundException e) {
+       }catch(SQLException e ){System.out.println("connection succes");} catch (ClassNotFoundException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}

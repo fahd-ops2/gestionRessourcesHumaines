@@ -12,6 +12,18 @@ public NoteAdmin(int iD, int personnelID, float noteAdministratif) {
 	NoteAdministratif = noteAdministratif;
 }
 
+
+/**
+ * @param personnelID
+ * @param noteAdministratif
+ */
+public NoteAdmin(int personnelID, float noteAdministratif) {
+	super();
+	PersonnelID = personnelID;
+	NoteAdministratif = noteAdministratif;
+}
+
+
 public int getID() {
 	return ID;
 }
@@ -35,6 +47,16 @@ public float getNoteAdministratif() {
 public void setNoteAdministratif(float noteAdministratif) {
 	NoteAdministratif = noteAdministratif;
 }
+
+
+/* (non-Javadoc)
+ * @see java.lang.Object#toString()
+ */
+public String toString() {
+	return "NoteAdmin [ID=" + ID + ", PersonnelID=" + PersonnelID
+			+ ", NoteAdministratif=" + NoteAdministratif + "]";
+}
+
 
 
 }

@@ -44,7 +44,7 @@ public class AdminDao {
 
 	 public static void main(String[]args){
 		 try{
-		 Admin ad=new Admin( "fahd@gmail.com", "fahd122", "bouacherine", "fahd");
+		 Admin ad=new Admin( "fahda@gmail.com", "fahda122", "bouacherine", "fahd");
 		 AdminDao ado=new AdminDao();
 		 ado.insertAdmin(ad);
 		 System.out.println(ad.toString());
