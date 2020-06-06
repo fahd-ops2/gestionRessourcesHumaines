@@ -2,6 +2,7 @@ package DAO;
 
 import java.sql.*;
 
+import classes.Admin;
 import classes.DiplomeSu;
 public class DiplomeSuDao {
      private Connection cna=null;
@@ -31,4 +32,24 @@ public int insertDiplomeSu(DiplomeSu dsu){
 		return -1; 
 
 }
+public int deleteDiplomeSu(int i){
+	try{
+		String req ="DELETE FROM `diplomesu` WHERE`ID`=? ";
+        PreparedStatement pst= cna.prepareStatement(req);
+        pst.setInt(1,i);
+        return pst.executeUpdate(); 
+	}catch(Exception e ){
+		System.out.println("Admin");
+	}
+	return 0;
+}
+public static void main(String[]args){
+	 try{
+		 Date d= new Date(0);
+	 DiplomeSu ad=new DiplomeSu( 1, 1, "aaaa", "aaa",d);
+	 DiplomeSuDao ado=new DiplomeSuDao();
+	 ado.deleteDiplomeSu(2);
+	 System.out.println(ad.toString());
+     }catch(Exception e ){System.out.println("non");}
+	 }
 }

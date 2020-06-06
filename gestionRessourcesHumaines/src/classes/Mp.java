@@ -1,7 +1,7 @@
 package classes;
 
 public class Mp {
- private int PersonnelID,MatiereID;
+ private int ID,PersonnelID,MatiereID;
 
 /**
  * @param personnelID
@@ -11,6 +11,20 @@ public Mp(int personnelID, int matiereID) {
 	super();
 	PersonnelID = personnelID;
 	MatiereID = matiereID;
+}
+
+/**
+ * @return the iD
+ */
+public int getID() {
+	return ID;
+}
+
+/**
+ * @param iD the iD to set
+ */
+public void setID(int iD) {
+	ID = iD;
 }
 
 /**

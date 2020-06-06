@@ -15,6 +15,19 @@ public class Absence {
 		Duree = duree;
 		Justification = justification;
 	}
+	
+	/**
+	 * @param personnelID
+	 * @param duree
+	 * @param justification
+	 */
+	public Absence(int personnelID, String duree, String justification) {
+		super();
+		PersonnelID = personnelID;
+		Duree = duree;
+		Justification = justification;
+	}
+
 	/**
 	 * @return the iD
 	 */

@@ -40,13 +40,24 @@ public class AdminDao {
 		return -1; 
 
 }
+	public int deleteAdmin(int i){
+		try{
+			String req ="DELETE FROM `Admin` WHERE `ID`=? ";
+	        PreparedStatement pst= cna.prepareStatement(req);
+	        pst.setInt(1,i);
+	        return pst.executeUpdate(); 
+		}catch(Exception e ){
+			System.out.println("Admin");
+		}
+		return 0;
+	}
 	
 
 	 public static void main(String[]args){
 		 try{
 		 Admin ad=new Admin( "fahda@gmail.com", "fahda122", "bouacherine", "fahd");
 		 AdminDao ado=new AdminDao();
-		 ado.insertAdmin(ad);
+		 ado.deleteAdmin(3);
 		 System.out.println(ad.toString());
 	      }catch(Exception e ){System.out.println("non");}
 		 }
