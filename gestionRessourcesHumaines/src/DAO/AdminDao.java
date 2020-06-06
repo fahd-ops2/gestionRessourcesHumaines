@@ -66,12 +66,26 @@ public class AdminDao {
 		return 0;
 	}
 	
+	public ResultSet selectAll(){
+		try {
+			String req ="SELECT * FROM `admin` ";
+			PreparedStatement pst= cna.prepareStatement(req);
+			return pst.executeQuery();
 
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
 	 public static void main(String[]args){
 		 try{
 		 Admin ad=new Admin( 1,"fahda@gmail.com", "fahda122");
 		 AdminDao ado=new AdminDao();
-		 ado.updateAdmin(ad);
+		  ResultSet res=ado.selectAll();
+		  while (res.next()){
+				System.out.println(res.getObject(1)+" "+res.getObject(2)+" "+res.getObject(3)+" "+res.getObject(4));
+			}
 		 System.out.println(ad.toString());
 	      }catch(Exception e ){System.out.println("non");}
 		 }

@@ -44,6 +44,7 @@ public int deleteMp(int i){
 	}
 	return 0;
 }
+
 public static void main(String[] args){
 	
 	try{
