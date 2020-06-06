@@ -61,6 +61,7 @@ public class PersonnelDao {
 		}
 	
 	}
+	
 	public int deletePersonnel(int i){
 		try{
 		String req="DELETE FROM `personnel` WHERE  ID =?";
