@@ -1,5 +1,6 @@
 package DAO;
 import java.sql.*;
+import java.util.ArrayList;
 
 import classes.Absence;
 public class AbsenceDao {
@@ -52,18 +53,46 @@ public int updateAbsence(int i ,String jus ){
 	}
 	return 0;
 }	
+public ResultSet selectAll(){
+	try {
+		String req ="SELECT Pren_n,Pren_n_arabe , `Duree`, `Justification` FROM absence a inner join Personnel p on p.ID=a.PersonnelID  ";
+		PreparedStatement pst= cna.prepareStatement(req);
+		return pst.executeQuery();
 
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	return null;
+}
+
+public ResultSet selectby(int id){
+	try {
+		String req ="SELECT Pren_n,Pren_n_arabe , `Duree`, `Justification` FROM absence a inner join Personnel p on p.ID=a.PersonnelID where a.PersonnelID=? ";
+		PreparedStatement pst= cna.prepareStatement(req);
+		pst.setInt(1, id);
+		return pst.executeQuery();
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	return null;
+}
 	public static void main(String[] args) {
 		
 		try {
-			Absence ab = new Absence(1,"2j"," non justifier");
 			AbsenceDao abd= new AbsenceDao();
-			abd.updateAbsence(2,"non justifier");
+			ResultSet res= abd.selectby(1);
+			while (res.next()){
+				
+				System.out.println(res.getObject(1)+" "+res.getObject(2));
+				
+			}
+			//System.out.println(i);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 
 	}
 
