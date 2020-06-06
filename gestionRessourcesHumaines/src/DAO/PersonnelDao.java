@@ -1,8 +1,6 @@
 package DAO;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
+import java.sql.*;
 import java.text.SimpleDateFormat;
 
 
@@ -11,6 +9,8 @@ import java.text.SimpleDateFormat;
 
 
 
+
+import java.util.ArrayList;
 
 import classes.Personnel;
 
@@ -97,7 +97,27 @@ public class PersonnelDao {
 			 return -1;}
 		
 	}
-	public Personnel SelectAll(){;
+	public ArrayList<Personnel> SelectAll(){
+		ArrayList<Personnel> personnels = null;
+		try{
+			
+		String req=" SELECT * FROM personnel";
+		Personnel pers;
+			personnels=new ArrayList<Personnel>();
+			PreparedStatement pst= cna.prepareStatement(req);
+			ResultSet res =pst.executeQuery();
+		    while (res.next()){
+		    	pers=new Personnel(res.getInt(1),res.getInt(15),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getDate(11),res.getString(7),res.getString(8),res.getString(9),res.getString(10),res.getString(12),res.getString(13),res.getString(14),res.getString(16),res.getString(17),res.getDate(18),res.getDate(6));
+		    	personnels.add(pers);
+		    }
+		}catch(Exception e){
+			System.out.println("selectall of personnel");
+			
+		}
+		return personnels;
+	
+	}
+	public Personnel selectby(){;
 	return null;}
 	public static void main(String[]args){
 		
@@ -118,7 +138,10 @@ public class PersonnelDao {
 		//personne= new Personnel(1, 3, "fahda","fahda", "fahda", "fahd", "fahda","fahda", "fahda", "fahda","fahda", "fahda");
 		//System.out.println(personne.toString());
 		//pdao.updatePersonnel(personne);
-		
+		//select all
+			/*PersonnelDao ss= new PersonnelDao() ;
+			ArrayList<Personnel> pp =ss.SelectAll();
+			System.out.println(pp.toString());*/
 		System.out.println("done");}
 		catch(Exception e){
 			System.out.println("not done");}
