@@ -51,13 +51,27 @@ public class AdminDao {
 		}
 		return 0;
 	}
+	public int updateAdmin(Admin a){
+		try{
+			String req ="UPDATE `admin` SET `Login`=?,`Password`=? WHERE`ID`=?";
+	        PreparedStatement pst= cna.prepareStatement(req);
+	        pst.setString(1,a.getLogin());
+            pst.setString(2,a.getPassword());
+            pst.setInt(3,a.getID());
+            
+	        return pst.executeUpdate(); 
+		}catch(Exception e ){
+			System.out.println("Admin");
+		}
+		return 0;
+	}
 	
 
 	 public static void main(String[]args){
 		 try{
-		 Admin ad=new Admin( "fahda@gmail.com", "fahda122", "bouacherine", "fahd");
+		 Admin ad=new Admin( 1,"fahda@gmail.com", "fahda122");
 		 AdminDao ado=new AdminDao();
-		 ado.deleteAdmin(3);
+		 ado.updateAdmin(ad);
 		 System.out.println(ad.toString());
 	      }catch(Exception e ){System.out.println("non");}
 		 }

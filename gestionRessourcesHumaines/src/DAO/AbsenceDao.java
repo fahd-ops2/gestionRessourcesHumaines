@@ -84,9 +84,7 @@ public ResultSet selectby(int id){
 			AbsenceDao abd= new AbsenceDao();
 			ResultSet res= abd.selectby(1);
 			while (res.next()){
-				
-				System.out.println(res.getObject(1)+" "+res.getObject(2));
-				
+				System.out.println(res.getObject(1)+" "+res.getObject(2)+" "+res.getObject(3)+" "+res.getObject(4));
 			}
 			//System.out.println(i);
 		} catch (Exception e) {
