@@ -29,12 +29,83 @@ public class Personnel {
 	 * @param datenaissance
 	 */
 	public Personnel(int iD, int nbreEnfant, String num_p, String cin,
-			String pren_n_arabe, String pren_n, String adresse, String tel,
+			String pren_n_arabe, String pren_n,Date dateembauche, String adresse, String tel,
 			String nationalite, String sexe, String echelle, String echelon,
 			String situationfamiliale, String marieemploye, String num_tE,
-			Date dateembauche, Date dateDesignation, Date datenaissance) {
+			 Date dateDesignation, Date datenaissance) {
 		super();
 		ID = iD;
+		NbreEnfant = nbreEnfant;
+		Num_p = num_p;
+		Cin = cin;
+		Pren_n_arabe = pren_n_arabe;
+		Pren_n = pren_n;
+		Adresse = adresse;
+		Tel = tel;
+		Nationalite = nationalite;
+		Sexe = sexe;
+		Echelle = echelle;
+		Echelon = echelon;
+		Situationfamiliale = situationfamiliale;
+		Marieemploye = marieemploye;
+		Num_tE = num_tE;
+		Dateembauche = dateembauche;
+		DateDesignation = dateDesignation;
+		Datenaissance = datenaissance;
+	}
+	
+	/**
+	 * @param iD
+	 * @param nbreEnfant
+	 * @param num_p
+	 * @param cin
+	 * @param pren_n_arabe
+	 * @param pren_n
+	 * @param adresse
+	 * @param tel
+	 * @param nationalite
+	 * @param sexe
+	 * @param d
+	 */
+	public Personnel(  String num_p, String cin,
+			String pren_n_arabe, String pren_n, java.util.Date d, String adresse, String tel,
+			String nationalite, String sexe) {
+		Num_p = num_p;
+		Cin = cin;
+		Pren_n_arabe = pren_n_arabe;
+		Pren_n = pren_n;
+		Adresse = adresse;
+		Tel = tel;
+		Nationalite = nationalite;
+		Sexe = sexe;
+		Datenaissance = (Date) d;
+	}
+
+	/**
+	 * @param nbreEnfant
+	 * @param num_p
+	 * @param cin
+	 * @param pren_n_arabe
+	 * @param pren_n
+	 * @param adresse
+	 * @param tel
+	 * @param nationalite
+	 * @param sexe
+	 * @param echelle
+	 * @param echelon
+	 * @param situationfamiliale
+	 * @param marieemploye
+	 * @param num_tE
+	 * @param dateembauche
+	 * @param dateDesignation
+	 * @param datenaissance
+	 */
+	public Personnel( String num_p, String cin,
+			String pren_n_arabe, String pren_n, Date datenaissance, String adresse, String tel,
+			String nationalite, String sexe, String echelle, String echelon,
+			String situationfamiliale,int nbreEnfant, String marieemploye, String num_tE,
+			Date dateembauche, Date dateDesignation) {
+		super();
 		NbreEnfant = nbreEnfant;
 		Num_p = num_p;
 		Cin = cin;
