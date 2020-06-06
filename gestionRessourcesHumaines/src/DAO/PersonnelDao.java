@@ -97,6 +97,8 @@ public class PersonnelDao {
 			 return -1;}
 		
 	}
+	public Personnel SelectAll(){;
+	return null;}
 	public static void main(String[]args){
 		
 	    
