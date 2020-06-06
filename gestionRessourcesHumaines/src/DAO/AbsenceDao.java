@@ -39,14 +39,26 @@ public int deleteAbsence(int i){
 	}
 	return 0;
 }
-	
+public int updateAbsence(int i ,String jus ){
+	try {
+		String req ="UPDATE `absence` SET `Justification`=? WHERE ID=? ";
+		PreparedStatement pst= cna.prepareStatement(req);
+		pst.setString(1,jus);
+		pst.setInt(2,i);
+		return pst.executeUpdate();
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	return 0;
+}	
 
 	public static void main(String[] args) {
 		
 		try {
-			Absence ab = new Absence(1,"2j","justifier");
+			Absence ab = new Absence(1,"2j"," non justifier");
 			AbsenceDao abd= new AbsenceDao();
-			abd.deleteAbsence(1);
+			abd.updateAbsence(2,"non justifier");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
