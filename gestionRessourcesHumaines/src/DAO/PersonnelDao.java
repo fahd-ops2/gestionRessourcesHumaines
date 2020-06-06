@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 
 
 
+
 import classes.Personnel;
 
 public class PersonnelDao {
@@ -61,6 +62,29 @@ public class PersonnelDao {
 		}
 	
 	}
+	public int updatePersonnel(Personnel p ){
+		try{
+			String req="UPDATE `personnel` SET `Pren_n_arabe`=?,`Pren_n`=?,`Adresse`=?,`Tel`=?,`Nationalite`=?,`Echelle`=?,`Echelon`=?,`Situationfamiliale`=?,`NbreEnfant`=?,`Marieemploye`=?,`Num_tE`=? WHERE`ID`=? ";
+			 PreparedStatement pst= cna.prepareStatement(req);
+			 pst.setString(1,p.getPren_n_arabe());
+			 pst.setString(2,p.getPren_n());
+			 pst.setString(3,p.getAdresse());
+			 pst.setString(4,p.getTel());
+			 pst.setString(5,p.getNationalite());
+			 pst.setString(6,p.getEchelle());
+			 pst.setString(7,p.getEchelon());
+		     pst.setString(8,p.getSituationfamiliale());
+			 pst.setInt(9,p.getNbreEnfant());
+			 pst.setString(10,p.getMarieemploye());
+			 pst.setString(11,p.getNum_tE());
+			 pst.setInt(12,p.getID());
+			 return pst.executeUpdate();
+		}catch(Exception e ){
+			System.out.println("PersonnelDao up not done "); 
+			return -1;
+		}
+	
+	}
 	
 	public int deletePersonnel(int i){
 		try{
@@ -87,9 +111,12 @@ public class PersonnelDao {
 		//pdao.insertPersonnel(personne);
 		//pdao.deletePersonnel(1);
 		//suivi insertion 
-		personne=new Personnel(1,2,"aa","aa","aa","aa","aa",d,d);
-		System.out.println(personne.toString());
-		pdao.suiviinsertPersonnel(personne);
+		//personne=new Personnel(1,2,"aa","aa","aa","aa","aa",d,d);
+		//pdao.suiviinsertPersonnel(personne);
+		//personne= new Personnel(1, 3, "fahda","fahda", "fahda", "fahd", "fahda","fahda", "fahda", "fahda","fahda", "fahda");
+		//System.out.println(personne.toString());
+		//pdao.updatePersonnel(personne);
+		
 		System.out.println("done");}
 		catch(Exception e){
 			System.out.println("not done");}

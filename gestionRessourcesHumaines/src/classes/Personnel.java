@@ -82,6 +82,39 @@ public class Personnel {
 	}
 
 	/**
+	 * @param iD
+	 * @param nbreEnfant
+	 * @param pren_n_arabe
+	 * @param pren_n
+	 * @param adresse
+	 * @param tel
+	 * @param nationalite
+	 * @param echelle
+	 * @param echelon
+	 * @param situationfamiliale
+	 * @param marieemploye
+	 * @param num_tE
+	 */
+	public Personnel(int iD, int nbreEnfant, String pren_n_arabe,
+			String pren_n, String adresse, String tel, String nationalite,
+			String echelle, String echelon, String situationfamiliale,
+			String marieemploye, String num_tE) {
+		super();
+		ID = iD;
+		NbreEnfant = nbreEnfant;
+		Pren_n_arabe = pren_n_arabe;
+		Pren_n = pren_n;
+		Adresse = adresse;
+		Tel = tel;
+		Nationalite = nationalite;
+		Echelle = echelle;
+		Echelon = echelon;
+		Situationfamiliale = situationfamiliale;
+		Marieemploye = marieemploye;
+		Num_tE = num_tE;
+	}
+
+	/**
 	 * @param nbreEnfant
 	 * @param num_p
 	 * @param cin
