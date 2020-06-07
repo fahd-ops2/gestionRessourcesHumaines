@@ -40,7 +40,7 @@ public class ServletAdmin extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		if(request.getParameter("enregistrer").equals("ajouter")){
 			String email= request.getParameter("email");
 			String password= request.getParameter("password");
 			String nom= request.getParameter("nom");
@@ -55,6 +55,6 @@ public class ServletAdmin extends HttpServlet {
 			// TODO Auto-generated catch block
 			System.out.println("not");
 		}
-	}
+	}}
 
 }
