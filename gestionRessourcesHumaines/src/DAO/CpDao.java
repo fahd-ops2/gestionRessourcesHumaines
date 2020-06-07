@@ -33,11 +33,39 @@ public class CpDao {
 			return 0;
 		}
 	}
+	public ResultSet selectAll(){
+		try{
+		String req=" SELECT Pren_n,Pren_N_arabe,Cadre  FROM `cp`  ,personnel p ,cadre ca  WHERE cp.CadreID=ca.ID  and cp.PersonnelID = p.ID";
+			PreparedStatement pst= cn.prepareStatement(req);
+			ResultSet res =pst.executeQuery();
+			return res;
+		}catch(Exception e){
+			System.out.println("selectall of Mp");
+			return null;
+		}
+	}
+	public ResultSet selectby(int i){
+		try{
+		String req=" SELECT Pren_n,Pren_N_arabe,Cadre  FROM `cp`  ,personnel p ,cadre ca  WHERE cp.CadreID=ca.ID  and cp.PersonnelID = p.ID and PersonnelID=? ";
+			PreparedStatement pst= cn.prepareStatement(req);
+			pst.setInt(1, i);
+			ResultSet res =pst.executeQuery();
+			return res;
+		}catch(Exception e){
+			System.out.println("selectall of Mp");
+			return null;
+		}
+	}
 	public static void main(String[] args){
 		try{
 		CP a = new CP(1,1,1);
 		CpDao cd= new CpDao();
-		cd.deleteCp(4);
+		//ResultSet res =cd.selectAll();
+		ResultSet res =cd.selectby(1);
+		while(res.next()){
+			System.out.println(res.getObject(1)+" "+res.getObject(2)+" "+res.getObject(3));
+		}
+		
 		
 		}catch(Exception e){
 			System.out.println("err");
