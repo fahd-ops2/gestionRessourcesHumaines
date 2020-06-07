@@ -1,32 +1,34 @@
 package controllers;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import DAO.AbsenceDao;
+
 /**
- * Servlet implementation class ServletDiplomeSu
+ * Servlet implementation class ServletAbsence
  */
-@WebServlet("/ServletDiplomeSu")
-public class ServletDiplomeSu extends HttpServlet {
+@WebServlet("/ServletAbsence")
+public class ServletAbsence extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+       private AbsenceDao absencedao;
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServletDiplomeSu() {
-        super();
-        // TODO Auto-generated constructor stub
+    public ServletAbsence() {
+    	absencedao=new AbsenceDao();
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("diplomesu");
+		System.out.println("doget");
 	}
 
 	/**

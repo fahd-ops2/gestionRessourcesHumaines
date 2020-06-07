@@ -22,8 +22,7 @@ public int insertMp(Mp mp){
 		
 		
 		try {
-			
-			
+
              String req ="INSERT INTO `mp`(`MatiereID`, `PersonnelID`) VALUES (?,?) ";
              PreparedStatement pst= cna.prepareStatement(req);
              pst.setInt(1,mp.getMatiereID());
