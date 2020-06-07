@@ -54,7 +54,7 @@ public ResultSet selectAll(){
 			System.out.println("selectby of personnel");
 			return null;
 		}}
-public ResultSet selectby(int id){
+public ResultSet selectbyId(int id){
 	try{
 		
 		String req=" SELECT * FROM `diplomesu` where PersonnelID = ? ";
@@ -72,7 +72,7 @@ public static void main(String[]args){
 		 //Date d= new Date(0);
 	 //DiplomeSu ad=new DiplomeSu( 1, 1, "aaaa", "aaa",d);
 	 DiplomeSuDao ado=new DiplomeSuDao();
-	 ResultSet res =ado.selectAll();
+	 ResultSet res =ado.selectbyId(1);
 	 while (res.next()){
 			System.out.println(res.getObject(1)+" "+res.getObject(2)+" "+res.getObject(3)+" "+res.getObject(4)+" "+res.getObject(5)+" "+res.getObject(6));
 		}
