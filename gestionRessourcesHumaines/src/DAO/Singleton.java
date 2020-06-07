@@ -1,23 +1,19 @@
 package DAO;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
-
-
+import javax.swing.JOptionPane;
 
 
 public class Singleton {
 	private Connection cn=null;
 	private static Singleton cnx;
-    private  Singleton(){
+    private  Singleton() {
        try{
     	   Class.forName("com.mysql.jdbc.Driver"); 
     	   String unicode= "?useUnicode=yes&characterEncoding=UTF-8";
             this.cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/presonneldb"+unicode,"root","");
-       }catch(SQLException e ){System.out.println("connection succes");} catch (ClassNotFoundException e) {
+       }catch(SQLException e ){JOptionPane.showMessageDialog(null,e.getMessage());} catch (ClassNotFoundException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}

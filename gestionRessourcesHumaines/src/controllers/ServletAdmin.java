@@ -8,7 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import classes.Admin;
+
 import DAO.AdminDao;
+
 
 /**
  * Servlet implementation class ServletAdmin
@@ -16,12 +19,12 @@ import DAO.AdminDao;
 @WebServlet("/ServletAdmin")
 public class ServletAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-     private  AdminDao admindao; 
+     
     /**
      * @see HttpServlet#HttpServlet()
      */
     public ServletAdmin() {
-    	admindao= new AdminDao(); 
+    	
         
         // TODO Auto-generated constructor stub
     }
@@ -38,6 +41,20 @@ public class ServletAdmin extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+			String email= request.getParameter("email");
+			String password= request.getParameter("password");
+			String nom= request.getParameter("nom");
+			String prenom=request.getParameter("prenom");
+			Admin e =new Admin(email,password,nom,prenom);
+			System.out.println(e.toString());
+	       try { 
+	    	AdminDao Admindao= new AdminDao();
+			Admindao.insertAdmin(e);
+			System.out.println("yes");
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			System.out.println("not");
+		}
 	}
 
 }

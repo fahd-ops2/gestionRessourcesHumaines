@@ -78,16 +78,17 @@ public class AdminDao {
 		}
 		return null;
 	}
-	 public static void main(String[]args){
+	 /*public static void main(String[]args){
 		 try{
-		 Admin ad=new Admin( 1,"fahda@gmail.com", "fahda122");
+		 Admin ad=new Admin( "faa@gmail.com", "fahda122","fs","sa");
 		 AdminDao ado=new AdminDao();
-		  ResultSet res=ado.selectAll();
+		 ado.insertAdmin(ad);
+		 // ResultSet res=ado.selectAll();
 		  while (res.next()){
 				System.out.println(res.getObject(1)+" "+res.getObject(2)+" "+res.getObject(3)+" "+res.getObject(4));
 			}
 		 System.out.println(ad.toString());
 	      }catch(Exception e ){System.out.println("non");}
-		 }
+		 }*/
 
 }
