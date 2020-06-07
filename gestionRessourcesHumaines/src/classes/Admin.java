@@ -3,6 +3,7 @@ package classes;
 import java.sql.Connection;
 
 
+
 import DAO.Singleton;
 
 public class Admin {
@@ -15,12 +16,24 @@ public class Admin {
  * @param nomA
  * @param prenomA
  */
+ 
 public Admin( int id,String login, String password , String nomA, String prenomA) {
 	ID=id;
 	Password = password;
 	Login = login;
 	this.nomA = nomA;
 	this.prenomA = prenomA;
+}
+/**
+ * @param iD
+ * @param password
+ * @param login
+ */
+public Admin(int iD, String login, String password) {
+	super();
+	ID = iD;
+	Password = password;
+	Login = login;
 }
 public Admin( String login, String password , String nomA, String prenomA) {
 	

@@ -2,6 +2,7 @@ package DAO;
 
 import java.sql.*;
 
+import classes.Admin;
 import classes.DiplomeSu;
 public class DiplomeSuDao {
      private Connection cna=null;
@@ -31,4 +32,50 @@ public int insertDiplomeSu(DiplomeSu dsu){
 		return -1; 
 
 }
+public int deleteDiplomeSu(int i){
+	try{
+		String req ="DELETE FROM `diplomesu` WHERE`ID`=? ";
+        PreparedStatement pst= cna.prepareStatement(req);
+        pst.setInt(1,i);
+        return pst.executeUpdate(); 
+	}catch(Exception e ){
+		System.out.println("Admin");
+	}
+	return 0;
+}
+public ResultSet selectAll(){
+	try{
+		
+		String req=" SELECT * FROM `diplomesu` ";
+			PreparedStatement pst= cna.prepareStatement(req);
+			ResultSet res =pst.executeQuery();
+			return res;
+		}catch(Exception e){
+			System.out.println("selectby of personnel");
+			return null;
+		}}
+public ResultSet selectby(int id){
+	try{
+		
+		String req=" SELECT * FROM `diplomesu` where PersonnelID = ? ";
+			PreparedStatement pst= cna.prepareStatement(req);
+			pst.setInt(1, id);
+			ResultSet res =pst.executeQuery();
+			return res;
+		}catch(Exception e){
+			System.out.println("selectby of personnel");
+			
+		}
+		return null;}
+public static void main(String[]args){
+	 try{
+		 //Date d= new Date(0);
+	 //DiplomeSu ad=new DiplomeSu( 1, 1, "aaaa", "aaa",d);
+	 DiplomeSuDao ado=new DiplomeSuDao();
+	 ResultSet res =ado.selectAll();
+	 while (res.next()){
+			System.out.println(res.getObject(1)+" "+res.getObject(2)+" "+res.getObject(3)+" "+res.getObject(4)+" "+res.getObject(5)+" "+res.getObject(6));
+		}
+     }catch(Exception e ){System.out.println("non");}
+	 }
 }

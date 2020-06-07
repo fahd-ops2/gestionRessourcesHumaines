@@ -9,13 +9,46 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-    <servlet>
-        <servlet-name>ServletAdmin</servlet-name>
-        <servlet-class>controllers.ServletAdmin</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ServletAdmin</servlet-name>
-        <url-pattern>/Admin</url-pattern>
-    </servlet-mapping>
-    
+  <servlet>
+    <servlet-name>ServletAdmin</servlet-name>
+    <servlet-class>controllers.ServletAdmin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletAdmin</servlet-name>
+    <url-pattern>/Admins</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ServletAbsence</servlet-name>
+    <servlet-class>controllers.ServletAbsence</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletAbsence</servlet-name>
+    <url-pattern>/Absences</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ServletMp</servlet-name>
+    <servlet-class>controllers.ServletMp</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletMp</servlet-name>
+    <url-pattern>/Mps</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ServletDiplomeSu</servlet-name>
+    <servlet-class>controllers.ServletDiplomeSu</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletDiplomeSu</servlet-name>
+    <url-pattern>/Diplomes</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ServletPersonnel</servlet-name>
+    <servlet-class>controllers.ServletPersonnel</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletPersonnel</servlet-name>
+    <url-pattern>/Personnels</url-pattern>
+  </servlet-mapping>
 </web-app>
