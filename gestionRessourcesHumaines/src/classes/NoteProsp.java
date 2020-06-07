@@ -16,6 +16,15 @@ public NoteProsp(int iD, int personnelID, float noteProspection,
 	NoteProspection = noteProspection;
 	DateobtentionPro = dateobtentionPro;
 }
+/* (non-Javadoc)
+ * @see java.lang.Object#toString()
+ */
+@Override
+public String toString() {
+	return "NoteProsp [ID=" + ID + ", PersonnelID=" + PersonnelID
+			+ ", NoteProspection=" + NoteProspection + ", DateobtentionPro="
+			+ DateobtentionPro + "]";
+}
 public int getID() {
 	return ID;
 }
