@@ -15,15 +15,16 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletAdmin</servlet-name>
-    <url-pattern>/Admin</url-pattern>
+    <url-pattern>/Admins</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>ServletAbsence</servlet-name>
     <servlet-class>controllers.ServletAbsence</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletAbsence</servlet-name>
-    <url-pattern>/Absence</url-pattern>
+    <url-pattern>/Absences</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>ServletMp</servlet-name>
@@ -31,7 +32,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletMp</servlet-name>
-    <url-pattern>/Mp</url-pattern>
+    <url-pattern>/Mps</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>ServletDiplomeSu</servlet-name>
@@ -39,14 +40,15 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletDiplomeSu</servlet-name>
-    <url-pattern>/DiplomeSu</url-pattern>
+    <url-pattern>/Diplomes</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>ServletPersonnel</servlet-name>
     <servlet-class>controllers.ServletPersonnel</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletPersonnel</servlet-name>
-    <url-pattern>/Personnel</url-pattern>
+    <url-pattern>/Personnels</url-pattern>
   </servlet-mapping>
 </web-app>
