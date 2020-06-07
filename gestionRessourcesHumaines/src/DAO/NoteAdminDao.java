@@ -1,7 +1,6 @@
 package DAO;
 
 import java.sql.*;
-import java.sql.PreparedStatement;
 
 import classes.NoteAdmin;
 
@@ -25,12 +24,22 @@ catch(Exception ex ){
 	System.out.println("insertNoteAdmin");}
 	return 0;
 }
+public int DeleteNoteAdmin(int i){
+	try{
+		String req="DELETE FROM `noteadmin` WHERE `noteadmin`.`ID` = ?";
+		PreparedStatement st = cna.prepareStatement(req);
+		st.setInt(1, i);
+		return st.executeUpdate();
+	}catch(Exception e){
+		System.out.println("DeleteNoteAdmin");
+		return 0;
+	}
+}
 public static void main(String[]args){
 	try{
 	NoteAdmin note=new NoteAdmin(1,17);
 	NoteAdminDao ntd=new NoteAdminDao();
-	ntd.insertNoteAdmin(note);
-	System.out.println(note.toString());
+		ntd.DeleteNoteAdmin(1);
 	
 	System.out.println(" done ");}
 	catch(Exception e ){
