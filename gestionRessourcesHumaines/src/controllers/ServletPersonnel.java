@@ -19,7 +19,7 @@ public class ServletPersonnel extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public ServletPersonnel() {
-        super();
+       
         // TODO Auto-generated constructor stub
     }
 
