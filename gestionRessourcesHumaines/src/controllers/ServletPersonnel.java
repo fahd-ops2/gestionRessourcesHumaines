@@ -85,15 +85,37 @@ public class ServletPersonnel extends HttpServlet {
 	    	personneldao.insertPersonnel(p);
 			System.out.println("yes");
 		} catch (Exception e1) {
-			// TODO Auto-generated catch block
+
 			System.out.println("not");
 		}
 	       this.getServletContext().getRequestDispatcher("/suivi.jsp").forward(request, response);  
 	}
 	 if  (actionID.equals("suivre")){
+<<<<<<< HEAD
 				
 			        String Echelle= request.getParameter("Echelle");
 			       
+=======
+				    String Dateembauche= request.getParameter("Dateembauche");
+					String Echelle= request.getParameter("Echelle");
+					String Echelon= request.getParameter("Echelon");
+					String Situationfamiliale=request.getParameter("Situationfamiliale");
+					int NbreEnfant= Integer.parseInt(request.getParameter("NbreEnfant"));
+					String Marieemploye=request.getParameter("Marieemploye");
+					String Num_tE= request.getParameter("Num_tE");
+					String DateDesignation= request.getParameter("DateDesignation");
+					Date date1,date2;
+					date1=new Date(Dateembauche);
+					SimpleDateFormat fr = new SimpleDateFormat("dd/MM/yyyy");
+					fr.format(date1);
+					date2=new Date(DateDesignation);
+					fr.format(date2);
+					String cin= request.getParameter("cin");
+					Personnel p=new Personnel( NbreEnfant,cin, Echelle, Echelon, Situationfamiliale, Marieemploye, Num_tE, fr.format(date1),fr.format(date2));
+					System.out.println(p.toString());
+			       
+			        
+>>>>>>> branch 'master' of https://github.com/fahd-ops2/gestionRessourcesHumaines.git
 					System.out.println(Echelle);
 		}
 

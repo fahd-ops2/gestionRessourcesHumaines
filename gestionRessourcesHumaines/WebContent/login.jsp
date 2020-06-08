@@ -16,7 +16,7 @@
 		  <input type="password" class=""   name="password"><br><br>
 		  
 		  <input type="submit" class="" name="submit" value="sign in">
-		  <input type="button" href="inscription.jsp" class="" name="submit" value="sign up">
+		  <input type="button" class="" name="submit" value="sign up"></>
 		</form>  
 </body>
 </html>
