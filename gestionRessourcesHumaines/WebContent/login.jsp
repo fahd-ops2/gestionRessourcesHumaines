@@ -8,7 +8,7 @@
 </head>
 <body>
        <form class="" method="post" action="Admins"  >
-
+          
           <label>Email: </label><br>
 		  <input type="email" class=""   name="email"><br><br>
 		  
