@@ -85,14 +85,14 @@ public class ServletPersonnel extends HttpServlet {
 	    	personneldao.insertPersonnel(p);
 			System.out.println("yes");
 		} catch (Exception e1) {
-			// TODO Auto-generated catch block
+
 			System.out.println("not");
 		}
 	       this.getServletContext().getRequestDispatcher("/suivi.jsp").forward(request, response);  
 	}
 	 if  (actionID.equals("suivre")){
-				/*String Dateembauche= request.getParameter("Dateembauche");
-					
+				    String Dateembauche= request.getParameter("Dateembauche");
+					String Echelle= request.getParameter("Echelle");
 					String Echelon= request.getParameter("Echelon");
 					String Situationfamiliale=request.getParameter("Situationfamiliale");
 					int NbreEnfant= Integer.parseInt(request.getParameter("NbreEnfant"));
@@ -105,10 +105,11 @@ public class ServletPersonnel extends HttpServlet {
 					fr.format(date1);
 					date2=new Date(DateDesignation);
 					fr.format(date2);
-					Personnel p=new Personnel( NbreEnfant, Echelle, Echelon, Situationfamiliale, Marieemploye, Num_tE, fr.format(date1),fr.format(date2));
-					System.out.println(p.toString());*/
-			        String Echelle= request.getParameter("Echelle");
-			        //String cin= request.getParameter("cin");
+					String cin= request.getParameter("cin");
+					Personnel p=new Personnel( NbreEnfant,cin, Echelle, Echelon, Situationfamiliale, Marieemploye, Num_tE, fr.format(date1),fr.format(date2));
+					System.out.println(p.toString());
+			       
+			        
 					System.out.println(Echelle);
 		}
 

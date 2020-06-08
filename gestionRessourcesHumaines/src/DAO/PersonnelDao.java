@@ -44,7 +44,7 @@ public class PersonnelDao {
 	}
 	public int suiviinsertPersonnel(Personnel p ){
 		try{
-			String req="UPDATE `personnel` SET `Dateembauche`=?,`Echelle`=?,`Echelon`=?,`Situationfamiliale`=?,`NbreEnfant`=?,`Marieemploye`=?,`Num_tE`=?,`DateDésignation`=? WHERE ID=?";
+			String req="UPDATE `personnel` SET `Dateembauche`=?,`Echelle`=?,`Echelon`=?,`Situationfamiliale`=?,`NbreEnfant`=?,`Marieemploye`=?,`Num_tE`=?,`DateDésignation`=? WHERE cin=?";
 			 PreparedStatement pst= cna.prepareStatement(req);
 			 pst.setString(1,p.getDateembauche());
 			 pst.setString(2,p.getEchelle());
@@ -54,7 +54,7 @@ public class PersonnelDao {
 			 pst.setString(6,p.getMarieemploye());
 			 pst.setString(7,p.getNum_tE());
 		     pst.setString(8,p.getDateDesignation());
-			 pst.setInt(9,p.getID());
+			 pst.setString(9,p.getCin());
 			 return pst.executeUpdate();
 		}catch(Exception e ){
 			System.out.println("PersonnelDaosuivi not done "); 

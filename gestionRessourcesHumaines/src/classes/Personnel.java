@@ -81,6 +81,33 @@ public class Personnel {
 
 
 	/**
+	 * @param nbreEnfant
+	 * @param cin
+	 * @param echelle
+	 * @param echelon
+	 * @param situationfamiliale
+	 * @param marieemploye
+	 * @param num_tE
+	 * @param dateembauche
+	 * @param dateDesignation
+	 */
+	public Personnel(int nbreEnfant, String cin, String echelle,
+			String echelon, String situationfamiliale, String marieemploye,
+			String num_tE, String dateembauche, String dateDesignation) {
+		super();
+		NbreEnfant = nbreEnfant;
+		Cin = cin;
+		Echelle = echelle;
+		Echelon = echelon;
+		Situationfamiliale = situationfamiliale;
+		Marieemploye = marieemploye;
+		Num_tE = num_tE;
+		Dateembauche = dateembauche;
+		DateDesignation = dateDesignation;
+	}
+
+
+	/**
 	 * @param iD
 	 * @param nbreEnfant
 	 * @param num_p
