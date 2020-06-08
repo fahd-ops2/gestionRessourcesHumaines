@@ -35,10 +35,23 @@ public int DeleteNoteAdmin(int i){
 		return 0;
 	}
 }
-public ResultSet selectAll(){
+public ResultSet selectAllby(){
 	try{
-	String req ="SELECT * FROM `noteadmin`" ;
+	String req =" SELECT Pren_n,Pren_N_arabe,NoteAdministratif FROM `noteadmin` na,personnel p where p.Id=na.personnelID " ;
 	PreparedStatement st = cna.prepareStatement(req);
+	ResultSet rst = st.executeQuery();
+	return rst;
+	}catch(Exception e){
+		System.out.println("Err selectiong");
+	}
+	return null;
+	
+}
+public ResultSet selectAllbycin(String cin ){
+	try{
+	String req =" SELECT Pren_n,Pren_N_arabe,NoteAdministratif FROM `noteadmin` na,personnel p where p.Id=na.personnelID and cin =?" ;
+	PreparedStatement st = cna.prepareStatement(req);
+	st.setString(1,cin);
 	ResultSet rst = st.executeQuery();
 	return rst;
 	}catch(Exception e){
@@ -51,9 +64,9 @@ public static void main(String[]args){
 	try{
 	
 	NoteAdminDao ntd=new NoteAdminDao();
-		ResultSet st=ntd.selectAll();
+		ResultSet st=ntd.selectAllbycin("qq");
 		while(st.next()){
-			System.out.println(st.getObject(1));
+			System.out.println(st.getObject(1)+" "+st.getObject(2)+" "+st.getObject(3));
 		}
 		}catch(Exception e ){
 		System.out.println("not done ");
