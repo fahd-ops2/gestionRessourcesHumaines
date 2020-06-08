@@ -60,9 +60,13 @@ public class ServletPersonnel extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if(request.getParameter("enregistrer").equals("ajouter")){
+		 
+		String actionID = request.getParameter("actionID");
+		
+		if(actionID.equals("ajouter")){
 			String num_p= request.getParameter("num_p");
 			String CIN= request.getParameter("cin");
+			request.setAttribute("cin",CIN );
 			String Pren_n_arabe= new String(request.getParameter("Pren_n_arabe").getBytes(),"UTF-8");
 			String Pren_n=request.getParameter("Pren_n");
 			String Datenaissance= request.getParameter("Datenaissance");
@@ -73,6 +77,7 @@ public class ServletPersonnel extends HttpServlet {
 			String Tel= request.getParameter("Tel");
 			String nationalite=request.getParameter("nationalite");
 			String sexe=request.getParameter("sexe");
+			
 			Personnel p =new Personnel(num_p,CIN,Pren_n_arabe,Pren_n,fr.format(date),Adresse,Tel,nationalite,sexe);
 			System.out.println(p.toString());
 	       try { 
@@ -85,22 +90,26 @@ public class ServletPersonnel extends HttpServlet {
 		}
 	       this.getServletContext().getRequestDispatcher("/suivi.jsp").forward(request, response);  
 	}
-		if(request.getParameter("suivi").equals("suivre")){
-			String Dateembauche= request.getParameter("Dateembauche");
-			String Echelle= request.getParameter("Echelle");
-			String Echelon= request.getParameter("Echelon");
-			String Situationfamiliale=request.getParameter("Situationfamiliale");
-			int NbreEnfant= Integer.parseInt(request.getParameter("NbreEnfant"));
-			String Marieemploye=request.getParameter("Marieemploye");
-			String Num_tE= request.getParameter("Num_tE");
-			String DateDesignation= request.getParameter("DateDesignation");
-			Date date1,date2;
-			date1=new Date(Dateembauche);
-			SimpleDateFormat fr = new SimpleDateFormat("dd/MM/yyyy");
-			fr.format(date1);
-			date2=new Date(DateDesignation);
-			fr.format(date2);
-			Personnel p=new Personnel( NbreEnfant, Echelle, Echelon, Situationfamiliale, Marieemploye, Num_tE, fr.format(date1),fr.format(date2));
+	 if  (actionID.equals("suivre")){
+				/*String Dateembauche= request.getParameter("Dateembauche");
+					
+					String Echelon= request.getParameter("Echelon");
+					String Situationfamiliale=request.getParameter("Situationfamiliale");
+					int NbreEnfant= Integer.parseInt(request.getParameter("NbreEnfant"));
+					String Marieemploye=request.getParameter("Marieemploye");
+					String Num_tE= request.getParameter("Num_tE");
+					String DateDesignation= request.getParameter("DateDesignation");
+					Date date1,date2;
+					date1=new Date(Dateembauche);
+					SimpleDateFormat fr = new SimpleDateFormat("dd/MM/yyyy");
+					fr.format(date1);
+					date2=new Date(DateDesignation);
+					fr.format(date2);
+					Personnel p=new Personnel( NbreEnfant, Echelle, Echelon, Situationfamiliale, Marieemploye, Num_tE, fr.format(date1),fr.format(date2));
+					System.out.println(p.toString());*/
+			        String Echelle= request.getParameter("Echelle");
+			        //String cin= request.getParameter("cin");
+					System.out.println(Echelle);
 		}
 
 	}}

@@ -41,6 +41,31 @@ public class EtablismentDao {
 				return 0;
 			}
 		}
+	public ResultSet selectAllbycin(String cin ){
+		try{
+		String req =" SELECT Pren_n,Pren_N_arabe,ListeMissionID,Etablissement_ville,Etablissement_ville,Date_debut,Date_fin FROM `etablisment` eta,personnel p where p.Id=eta.personnelID and cin =?" ;
+		PreparedStatement st = cn.prepareStatement(req);
+		st.setString(1,cin);
+		ResultSet rst = st.executeQuery();
+		return rst;
+		}catch(Exception e){
+			System.out.println("Err selecting by cin");
+		}
+		return null;
+		
+	}
+	public ResultSet selectAll(){
+		try{
+		String req =" SELECT Pren_n,Pren_N_arabe,ListeMissionID,Etablissement_ville,Etablissement_ville,Date_debut,Date_fin FROM `noteadmin` eta,personnel p where p.Id=eta.personnelID " ;
+		PreparedStatement st = cn.prepareStatement(req);
+		ResultSet rst = st.executeQuery();
+		return rst;
+		}catch(Exception e){
+			System.out.println("Err selecting all");
+		}
+		return null;
+		
+	}
 	public static void main(String[] args){
 		try{
 		

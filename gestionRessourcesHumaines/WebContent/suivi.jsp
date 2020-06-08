@@ -8,7 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-      <form action="Personnels" method="post"></form>
+      
+      <form action="Personnels" method="Post">
+      <% Object o= request.getAttribute("cin"); %>
+      <input type="hidden" class=""   name ="cin" value="<%=o%>"><br><br>
           <label> Dateembauche</label><br>
 		  <input type="date" class=""   name="Dateembauche"><br><br>
 		  
@@ -43,7 +46,7 @@
 		   <label>DateDésignation</label><br>
 		   <input type="date" class=""   name="DateDesignation"><br><br> 
 		   
-		   <input type="submit" value="suivre" name="suivi">
-
+		   <input type="submit" value="suivre" name="actionID">
+       </form>
 </body>
 </html>

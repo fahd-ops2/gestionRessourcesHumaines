@@ -74,6 +74,7 @@ public static void main(String[] args){
 	 while (res.next()){
 			System.out.println(res.getObject(1)+" "+res.getObject(2)+" "+res.getObject(3)+" "+res.getObject(4)+" "+res.getObject(5));
 		}
+	 System.out.println("alo");
      }catch(Exception e ){
     	 System.out.println("non");
      }

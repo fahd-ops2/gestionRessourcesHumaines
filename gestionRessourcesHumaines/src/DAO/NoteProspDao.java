@@ -39,6 +39,32 @@ public class NoteProspDao {
 			return 0;
 		}
 	}
+	public ResultSet selectAllby(){
+		try{
+		String req =" SELECT Pren_n,Pren_N_arabe,NoteAdministratif FROM `noteprosp` na,personnel p where p.Id=na.personnelID " ;
+		PreparedStatement st = cna.prepareStatement(req);
+		ResultSet rst = st.executeQuery();
+		return rst;
+		}catch(Exception e){
+			System.out.println("Err selecting");
+		}
+		return null;
+		
+	}
+	public ResultSet selectAllbycin(String cin ){
+		try{
+		String req =" SELECT Pren_n,Pren_N_arabe,NoteAdministratif FROM `noteprosp` na,personnel p where p.Id=na.personnelID and cin =?" ;
+		PreparedStatement st = cna.prepareStatement(req);
+		st.setString(1,cin);
+		ResultSet rst = st.executeQuery();
+		return rst;
+		}catch(Exception e){
+			System.out.println("Err selecting by cin");
+		}
+		return null;
+		
+	}
+	
 	public static void main(String[] args){
 		try{
 		
