@@ -55,11 +55,9 @@ public static void main(String[]args){
 		while(st.next()){
 			System.out.println(st.getObject(1));
 		}
+		}catch(Exception e ){
+		System.out.println("not done ");
 		}
-	
-	
-	catch(Exception e ){
-		System.out.println("not done ");}
 	
 }
 }
