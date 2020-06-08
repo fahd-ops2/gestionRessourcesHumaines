@@ -35,15 +35,29 @@ public int DeleteNoteAdmin(int i){
 		return 0;
 	}
 }
+public ResultSet selectAll(){
+	try{
+	String req ="SELECT * FROM `noteadmin`" ;
+	PreparedStatement st = cna.prepareStatement(req);
+	ResultSet rst = st.executeQuery();
+	return rst;
+	}catch(Exception e){
+		System.out.println("Err selectiong");
+	}
+	return null;
+	
+}
 public static void main(String[]args){
 	try{
-	NoteAdmin note=new NoteAdmin(1,17);
-	NoteAdminDao ntd=new NoteAdminDao();
-		ntd.DeleteNoteAdmin(1);
 	
-	System.out.println(" done ");}
-	catch(Exception e ){
-		System.out.println("not done ");}
+	NoteAdminDao ntd=new NoteAdminDao();
+		ResultSet st=ntd.selectAll();
+		while(st.next()){
+			System.out.println(st.getObject(1));
+		}
+		}catch(Exception e ){
+		System.out.println("not done ");
+		}
 	
 }
 }
