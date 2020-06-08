@@ -91,24 +91,9 @@ public class ServletPersonnel extends HttpServlet {
 	       this.getServletContext().getRequestDispatcher("/suivi.jsp").forward(request, response);  
 	}
 	 if  (actionID.equals("suivre")){
-				/*String Dateembauche= request.getParameter("Dateembauche");
-					
-					String Echelon= request.getParameter("Echelon");
-					String Situationfamiliale=request.getParameter("Situationfamiliale");
-					int NbreEnfant= Integer.parseInt(request.getParameter("NbreEnfant"));
-					String Marieemploye=request.getParameter("Marieemploye");
-					String Num_tE= request.getParameter("Num_tE");
-					String DateDesignation= request.getParameter("DateDesignation");
-					Date date1,date2;
-					date1=new Date(Dateembauche);
-					SimpleDateFormat fr = new SimpleDateFormat("dd/MM/yyyy");
-					fr.format(date1);
-					date2=new Date(DateDesignation);
-					fr.format(date2);
-					Personnel p=new Personnel( NbreEnfant, Echelle, Echelon, Situationfamiliale, Marieemploye, Num_tE, fr.format(date1),fr.format(date2));
-					System.out.println(p.toString());*/
+				
 			        String Echelle= request.getParameter("Echelle");
-			        //String cin= request.getParameter("cin");
+			       
 					System.out.println(Echelle);
 		}
 
