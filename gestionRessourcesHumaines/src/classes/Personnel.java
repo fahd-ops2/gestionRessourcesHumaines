@@ -6,8 +6,8 @@ import java.sql.*;
 
 public class Personnel {
 	private int ID,NbreEnfant;
-	private String Num_p,Cin,Pren_n_arabe,Pren_n,Adresse,Tel,Nationalite,Sexe,Echelle,Echelon,Situationfamiliale,Marieemploye,Num_tE;
-    private Date Dateembauche,DateDesignation,Datenaissance;
+	private String Num_p,Cin,Pren_n_arabe,Pren_n,Datenaissance,Adresse,Tel,Nationalite,Sexe,Echelle,Echelon,Situationfamiliale,Marieemploye,Num_tE;
+    private String Dateembauche,DateDesignation;
 	/**
 	 * @param iD
 	 * @param nbreEnfant
@@ -29,10 +29,10 @@ public class Personnel {
 	 * @param datenaissance
 	 */
 	public Personnel(int iD, int nbreEnfant, String num_p, String cin,
-			String pren_n_arabe, String pren_n,Date dateembauche, String adresse, String tel,
+			String pren_n_arabe, String pren_n,String dateembauche, String adresse, String tel,
 			String nationalite, String sexe, String echelle, String echelon,
 			String situationfamiliale, String marieemploye, String num_tE,
-			 Date dateDesignation, Date datenaissance) {
+			String dateDesignation, String datenaissance) {
 		super();
 		ID = iD;
 		NbreEnfant = nbreEnfant;
@@ -54,6 +54,32 @@ public class Personnel {
 		Datenaissance = datenaissance;
 	}
 	
+	
+	/**
+	 * @param nbreEnfant
+	 * @param echelle
+	 * @param echelon
+	 * @param situationfamiliale
+	 * @param marieemploye
+	 * @param num_tE
+	 * @param dateembauche
+	 * @param dateDesignation
+	 */
+	public Personnel(int nbreEnfant, String echelle, String echelon,
+			String situationfamiliale, String marieemploye, String num_tE,
+			String dateembauche, String dateDesignation) {
+		super();
+		NbreEnfant = nbreEnfant;
+		Echelle = echelle;
+		Echelon = echelon;
+		Situationfamiliale = situationfamiliale;
+		Marieemploye = marieemploye;
+		Num_tE = num_tE;
+		Dateembauche = dateembauche;
+		DateDesignation = dateDesignation;
+	}
+
+
 	/**
 	 * @param iD
 	 * @param nbreEnfant
@@ -68,7 +94,7 @@ public class Personnel {
 	 * @param d
 	 */
 	public Personnel(  String num_p, String cin,
-			String pren_n_arabe, String pren_n, java.util.Date d, String adresse, String tel,
+			String pren_n_arabe, String pren_n, String d, String adresse, String tel,
 			String nationalite, String sexe) {
 		Num_p = num_p;
 		Cin = cin;
@@ -78,7 +104,7 @@ public class Personnel {
 		Tel = tel;
 		Nationalite = nationalite;
 		Sexe = sexe;
-		Datenaissance = (Date) d;
+		Datenaissance =  d;
 	}
 
 	/**
@@ -134,10 +160,10 @@ public class Personnel {
 	 * @param datenaissance
 	 */
 	public Personnel( String num_p, String cin,
-			String pren_n_arabe, String pren_n, Date datenaissance, String adresse, String tel,
+			String pren_n_arabe, String pren_n, String datenaissance, String adresse, String tel,
 			String nationalite, String sexe, String echelle, String echelon,
 			String situationfamiliale,int nbreEnfant, String marieemploye, String num_tE,
-			Date dateembauche, Date dateDesignation) {
+			String dateembauche, String dateDesignation) {
 		super();
 		NbreEnfant = nbreEnfant;
 		Num_p = num_p;
@@ -172,7 +198,7 @@ public class Personnel {
 	 */
 	public Personnel(int iD, int nbreEnfant, String echelle, String echelon,
 			String situationfamiliale, String marieemploye, String num_tE,
-			Date dateembauche, Date dateDesignation) {
+			String dateembauche, String dateDesignation) {
 		super();
 		ID = iD;
 		NbreEnfant = nbreEnfant;
@@ -368,37 +394,37 @@ public class Personnel {
 	/**
 	 * @return the dateembauche
 	 */
-	public Date getDateembauche() {
+	public String getDateembauche() {
 		return Dateembauche;
 	}
 	/**
 	 * @param dateembauche the dateembauche to set
 	 */
-	public void setDateembauche(Date dateembauche) {
+	public void setDateembauche(String dateembauche) {
 		Dateembauche = dateembauche;
 	}
 	/**
 	 * @return the dateDesignation
 	 */
-	public Date getDateDesignation() {
+	public String getDateDesignation() {
 		return DateDesignation;
 	}
 	/**
 	 * @param dateDesignation the dateDesignation to set
 	 */
-	public void setDateDesignation(Date dateDesignation) {
+	public void setDateDesignation(String dateDesignation) {
 		DateDesignation = dateDesignation;
 	}
 	/**
 	 * @return the datenaissance
 	 */
-	public Date getDatenaissance() {
+	public String getDatenaissance() {
 		return Datenaissance;
 	}
 	/**
 	 * @param datenaissance the datenaissance to set
 	 */
-	public void setDatenaissance(Date datenaissance) {
+	public void setDatenaissance(String datenaissance) {
 		Datenaissance = datenaissance;
 	}
 	/* (non-Javadoc)
