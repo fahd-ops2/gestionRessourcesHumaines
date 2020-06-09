@@ -34,7 +34,7 @@ public class ServletAdmin extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id=Integer.parseInt(request.getParameter("delete"));
+		int id=Integer.parseInt(request.getParameter("id"));
 		AdminDao a=new AdminDao();
 		a.deleteAdmin(id);
 		this.getServletContext().getRequestDispatcher("/AdminView.jsp").forward(request, response);
