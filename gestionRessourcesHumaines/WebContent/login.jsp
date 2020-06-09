@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-       <form class="" method="post" action="Admins"  >
+       <form class="" method="Post" action="Admins"  >
           
           <label>Email: </label><br>
 		  <input type="email" class=""   name="email"><br><br>
@@ -15,9 +15,9 @@
 		  <label>mot de passe </label><br>
 		  <input type="password" class=""   name="password"><br><br>
 		  
-		  <input type="submit" class="" name="submit" value="sign in">
+		  <input type="submit" class="" name="actionID" value="login">
 
 		</form>  
-		<a href="inscription.jsp"><input type="submit" class="" name="actionID" value="login"></></a>
+		<a href="inscription.jsp"><input type="submit" class="" name="actionID" value="inscription"></></a>
 </body>
 </html>

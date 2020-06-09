@@ -61,7 +61,7 @@ public class ServletPersonnel extends HttpServlet {
 		 
 		String actionID = request.getParameter("actionID");
 		
-		if(actionID.equals("ajouter")){
+		if(actionID.equals("save")){
 			String num_p= request.getParameter("num_p");
 			String CIN= request.getParameter("cin");
 			request.setAttribute("cin",CIN );

@@ -1,12 +1,14 @@
 package controllers;
 
 import java.io.IOException;
+import java.sql.ResultSet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import classes.Admin;
 import DAO.AdminDao;
@@ -43,6 +45,8 @@ public class ServletAdmin extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String actionID = request.getParameter("actionID");
+		//ajout Admin
+		
 		if(actionID.equals("ajouter")){
 			String email= request.getParameter("email");
 			String password= request.getParameter("password");
@@ -55,14 +59,34 @@ public class ServletAdmin extends HttpServlet {
 			Admindao.insertAdmin(e);
 			System.out.println("yes");
 		} catch (Exception e1) {
-			// TODO Auto-generated catch block
 			System.out.println("not");
 		}}
-	       
+	      //update 
 	       if(actionID.equals("update")){
 	    	   String email= request.getParameter("email");
 				String password= request.getParameter("password");
 				System.out.println("yes");
+	       }
+	       //login
+	       if(actionID.equals("login")){
+	    	   String email=request.getParameter("email");
+	    	   String password=request.getParameter("password");
+	    			   try { 
+	    			    	AdminDao Admindao= new AdminDao();
+	    					ResultSet res =Admindao.selectAll();
+	    							while(res.next()){
+	    								if (res.getString(2).equals(email) && res.getString(3).equals(password)){
+	    									HttpSession session =request.getSession();
+	    								    session.setAttribute("nom", res.getString(3));
+	    								    session.setAttribute("nom", res.getString(4));
+	    									this.getServletContext().getRequestDispatcher("/Acceuil.jsp").forward(request, response);}
+	    								    
+	    							}
+	    							this.getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
+	    							
+	    				} catch (Exception e1) {
+	    					e1.getMessage();
+	    				}
 	       }
 	}
 

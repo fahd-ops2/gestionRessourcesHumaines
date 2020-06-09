@@ -46,7 +46,7 @@
           <label for="female">Female</label><br>
 		  
 		  
-		  <input type="submit" class="" name="actionID" value="ajouter">
+		  <input type="submit" class="" name="actionID" value="save">
       
       
       
