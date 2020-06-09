@@ -28,11 +28,13 @@
 		      <% 		
 				AdminDao sd = new AdminDao();
 				ResultSet rs = sd.selectAll();
-				String named,type,action,nameU,methodeGet,methodePost,update ;
+				String named,type,hidden,action,nameU,nameid,methodeGet,methodePost,update ;
 				named="delete";
-				//nameU="update";
+				nameid="id";
+				nameU="update";
 				action="Admins";
 				type="submit";
+				hidden="hidden";
 				methodeGet="Get";
 				methodePost="Post";
 				update="UpdateAdmin.jsp";
@@ -44,10 +46,12 @@
 							out.write("<td>"+rs.getObject(4)+"</td>");
 							out.write("<td>"+rs.getObject(5)+"</td>");
 							out.write("<form method="+methodeGet+" action="+action+">");
-							out.write("<td><input  type="+type+"  name="+named+" value="+rs.getObject(1)+"></input></td>");
+							out.write("<td><input  type="+type+"  name="+named+" value="+named+"></input></td>");
+							out.write("<td><input  type="+hidden+"  name="+nameid+" value="+rs.getObject(1)+"></a></td>");
 							out.write(" </form>");
 							out.write("<form method="+methodePost+" action="+action+">");
-							//out.write("<td><a href="+update+"><input  type="+type+"  name="+nameU+" value="+rs.getObject(1)+"></a></td>");
+							out.write("<td><a href="+update+"><input  type="+type+"  name="+nameU+" value="+rs.getObject(1)+"></a></td>");
+							out.write("<td><input  type="+hidden+"  name="+nameid+" value="+rs.getObject(1)+"></a></td>");
 							out.write(" </form>");
 							out.write("</tr>");
 						}
