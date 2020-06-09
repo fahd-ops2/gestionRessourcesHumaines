@@ -50,8 +50,8 @@
 							out.write("<td><input  type="+hidden+"  name="+nameid+" value="+rs.getObject(1)+"></a></td>");
 							out.write(" </form>");
 							out.write("<form method="+methodePost+" action="+action+">");
-							out.write("<td><a href="+update+"><input  type="+type+"  name="+nameU+" value="+rs.getObject(1)+"></a></td>");
-							out.write("<td><input  type="+hidden+"  name="+nameid+" value="+rs.getObject(1)+"></a></td>");
+							out.write("<td><input  type="+type+"  name="+nameU+" value="+rs.getObject(1)+"></td>");
+							out.write("<td><input  type="+hidden+"  name="+nameid+" value="+rs.getObject(1)+"></td>");
 							out.write(" </form>");
 							out.write("</tr>");
 						}
