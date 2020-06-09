@@ -239,6 +239,40 @@ public class Personnel {
 	}
 
 	/**
+	 * @param nbreEnfant
+	 * @param cin
+	 * @param pren_n_arabe
+	 * @param pren_n
+	 * @param adresse
+	 * @param tel
+	 * @param nationalite
+	 * @param echelle
+	 * @param echelon
+	 * @param situationfamiliale
+	 * @param marieemploye
+	 * @param num_tE
+	 */
+	public Personnel(int nbreEnfant, String cin, String pren_n_arabe,
+			String pren_n, String adresse, String tel, String nationalite,
+			String echelle, String echelon, String situationfamiliale,
+			String marieemploye, String num_tE) {
+		super();
+		NbreEnfant = nbreEnfant;
+		Cin = cin;
+		Pren_n_arabe = pren_n_arabe;
+		Pren_n = pren_n;
+		Adresse = adresse;
+		Tel = tel;
+		Nationalite = nationalite;
+		Echelle = echelle;
+		Echelon = echelon;
+		Situationfamiliale = situationfamiliale;
+		Marieemploye = marieemploye;
+		Num_tE = num_tE;
+	}
+
+
+	/**
 	 * @return the iD
 	 */
 	public int getID() {

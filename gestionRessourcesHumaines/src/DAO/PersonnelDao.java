@@ -64,7 +64,7 @@ public class PersonnelDao {
 	}
 	public int updatePersonnel(Personnel p ){
 		try{
-			String req="UPDATE `personnel` SET `Pren_n_arabe`=?,`Pren_n`=?,`Adresse`=?,`Tel`=?,`Nationalite`=?,`Echelle`=?,`Echelon`=?,`Situationfamiliale`=?,`NbreEnfant`=?,`Marieemploye`=?,`Num_tE`=? WHERE`ID`=? ";
+			String req="UPDATE `personnel` SET `Pren_n_arabe`=?,`Pren_n`=?,`Adresse`=?,`Tel`=?,`Nationalite`=?,`Echelle`=?,`Echelon`=?,`Situationfamiliale`=?,`NbreEnfant`=?,`Marieemploye`=?,`Num_tE`=? WHERE`cin`=? ";
 			 PreparedStatement pst= cna.prepareStatement(req);
 			 pst.setString(1,p.getPren_n_arabe());
 			 pst.setString(2,p.getPren_n());
@@ -77,7 +77,7 @@ public class PersonnelDao {
 			 pst.setInt(9,p.getNbreEnfant());
 			 pst.setString(10,p.getMarieemploye());
 			 pst.setString(11,p.getNum_tE());
-			 pst.setInt(12,p.getID());
+			 pst.setString(12,p.getCin());
 			 return pst.executeUpdate();
 		}catch(Exception e ){
 			System.out.println("PersonnelDao up not done "); 
