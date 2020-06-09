@@ -8,7 +8,8 @@
 </head>
 <body>
       <form class="" method="post" action="Admins"  >
-          <input type="text" class=""  name="idA" value<%= request.getParameter("mod") %>><br>
+      <% Object o= request.getParameter("mod"); %>
+          <input type="text" class=""  name="idA" value="<%=o %>"><br>
           <label>Email: </label><br>
 		  <input type="email" class=""   name="email"><br><br>
 		  

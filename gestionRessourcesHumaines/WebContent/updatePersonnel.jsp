@@ -8,8 +8,8 @@
 </head>
 <body>
          <form  class="" method="Post" action="Personnels">
-         
-		  <input type="hidden" class=""   name="cin" value "<%= request.getParameter("cin")  %>"><br><br>
+         <% Object o= request.getParameter("cin"); %>
+		  <input type="text" class=""   name="cin" value="<%=o%>"><br><br>
 		  
 		  <label>Pren_n_arabe: </label><br>
 		  <input type="text" class=""   name="Pren_n_arabe"><br><br>

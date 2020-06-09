@@ -10,7 +10,7 @@
 <body>
       
       <form action="Personnels" method="Post">
-      <% Object o= request.getAttribute("cin"); %>
+      <% Object o= request.getParameter("cin"); %>
       <input type="hidden" class=""   name ="cin" value="<%=o%>"><br><br>
           <label> Dateembauche</label><br>
 		  <input type="date" class=""   name="Dateembauche"><br><br>
