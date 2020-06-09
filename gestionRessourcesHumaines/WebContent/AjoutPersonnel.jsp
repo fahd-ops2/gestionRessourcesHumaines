@@ -8,9 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-      <form  class="" method="Get" action="Personnels">
-      <input  type="submit" class=""   name="delete" value="chico">
-      </form>
+      
       <form  class="" method="Post" action="Personnels">
           <label> num_p</label><br>
 		  <input type="text" class=""   name="num_p"><br><br>

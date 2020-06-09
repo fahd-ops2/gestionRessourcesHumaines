@@ -37,7 +37,7 @@ public class ServletPersonnel extends HttpServlet {
      */
     public ServletPersonnel() {
        
-        // TODO Auto-generated constructor stub
+        
     }
 
 	/**
@@ -116,6 +116,7 @@ public class ServletPersonnel extends HttpServlet {
 
 						System.out.println("not");
 					}
+					this.getServletContext().getRequestDispatcher("/.jsp").forward(request, response);
 
 					
 
