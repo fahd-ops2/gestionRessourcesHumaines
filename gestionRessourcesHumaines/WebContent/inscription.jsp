@@ -21,7 +21,7 @@
 		  <label>Prenom: </label><br>
 		  <input type="text" class=""   name="prenom"><br><br>
 		  
-		  <input type="submit" class="" name="enregistrer" value="ajouter">
+		  <input type="submit" class="" name="actionID" value="ajouter">
 		  
 		</form>  
 </body>

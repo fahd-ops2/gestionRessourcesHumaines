@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import classes.Admin;
-
 import DAO.AdminDao;
 
 
@@ -43,7 +42,8 @@ public class ServletAdmin extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if(request.getParameter("enregistrer").equals("ajouter")){
+		String actionID = request.getParameter("actionID");
+		if(actionID.equals("ajouter")){
 			String email= request.getParameter("email");
 			String password= request.getParameter("password");
 			String nom= request.getParameter("nom");
@@ -57,7 +57,13 @@ public class ServletAdmin extends HttpServlet {
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			System.out.println("not");
-		}
-	}}
+		}}
+	       
+	       if(actionID.equals("update")){
+	    	   String email= request.getParameter("email");
+				String password= request.getParameter("password");
+				System.out.println("yes");
+	       }
+	}
 
 }
