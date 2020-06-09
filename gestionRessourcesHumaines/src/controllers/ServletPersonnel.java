@@ -91,13 +91,13 @@ public class ServletPersonnel extends HttpServlet {
 	       this.getServletContext().getRequestDispatcher("/suivi.jsp").forward(request, response);  
 	}
 	 if  (actionID.equals("suivre")){
-<<<<<<< HEAD
+
 				
 			        String Echelle= request.getParameter("Echelle");
 			       
-=======
+
 				    String Dateembauche= request.getParameter("Dateembauche");
-					String Echelle= request.getParameter("Echelle");
+					
 					String Echelon= request.getParameter("Echelon");
 					String Situationfamiliale=request.getParameter("Situationfamiliale");
 					int NbreEnfant= Integer.parseInt(request.getParameter("NbreEnfant"));
@@ -113,10 +113,22 @@ public class ServletPersonnel extends HttpServlet {
 					String cin= request.getParameter("cin");
 					Personnel p=new Personnel( NbreEnfant,cin, Echelle, Echelon, Situationfamiliale, Marieemploye, Num_tE, fr.format(date1),fr.format(date2));
 					System.out.println(p.toString());
-			       
-			        
->>>>>>> branch 'master' of https://github.com/fahd-ops2/gestionRessourcesHumaines.git
-					System.out.println(Echelle);
+					try { 
+				    	PersonnelDao personneldao= new PersonnelDao();
+				    	personneldao.suiviinsertPersonnel(p);
+						System.out.println("yes");
+					} catch (Exception e1) {
+
+						System.out.println("not");
+					}
+
+					
+
+		}
+	 if  (actionID.equals("update")){
+		 System.out.println("yes");
+		 
+	 }
 		}
 
-	}}
+	}
