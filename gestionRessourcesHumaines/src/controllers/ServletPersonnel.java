@@ -49,6 +49,7 @@ public class ServletPersonnel extends HttpServlet {
 			String cin =request.getParameter("delete");
 			PersonnelDao perso= new PersonnelDao();
 			perso.deletePersonnel(cin);
+			this.getServletContext().getRequestDispatcher("/ShowPersonnel.jsp").forward(request, response);
 			
 
 
@@ -116,7 +117,7 @@ public class ServletPersonnel extends HttpServlet {
 
 						System.out.println("not");
 					}
-					this.getServletContext().getRequestDispatcher("/.jsp").forward(request, response);
+					this.getServletContext().getRequestDispatcher("/ShowPersonnel.jsp").forward(request, response);
 
 					
 
@@ -143,6 +144,7 @@ public class ServletPersonnel extends HttpServlet {
 
 				System.out.println("not");
 			}
+		 this.getServletContext().getRequestDispatcher("/ShowPersonnel.jsp").forward(request, response);
 	 }
 		}
 

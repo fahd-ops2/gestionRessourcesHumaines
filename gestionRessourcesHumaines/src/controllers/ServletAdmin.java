@@ -26,7 +26,7 @@ public class ServletAdmin extends HttpServlet {
      */
     public ServletAdmin() {
     	
-        
+    	AdminDao Admindao= new AdminDao();
         // TODO Auto-generated constructor stub
     }
 
@@ -34,9 +34,11 @@ public class ServletAdmin extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id=Integer.parseInt(request.getParameter("id"));
-		AdminDao a=new AdminDao();
-		a.deleteAdmin(id);
+		
+			int id=Integer.parseInt(request.getParameter("delete"));
+			AdminDao a=new AdminDao();
+			a.deleteAdmin(id);
+		
 		this.getServletContext().getRequestDispatcher("/AdminView.jsp").forward(request, response);
 	}
 
@@ -60,12 +62,25 @@ public class ServletAdmin extends HttpServlet {
 			System.out.println("yes");
 		} catch (Exception e1) {
 			System.out.println("not");
-		}}
+		}
+	       this.getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
+		}
 	      //update 
 	       if(actionID.equals("update")){
+	    	   int iD= Integer.parseInt(request.getParameter("idA"));
 	    	   String email= request.getParameter("email");
 				String password= request.getParameter("password");
-				System.out.println("yes");
+				Admin admin = new Admin(iD, email, password);
+				System.out.println(admin.toString());
+				 try { 
+				    	AdminDao Admindao= new AdminDao();
+						Admindao.updateAdmin(admin);
+						System.out.println("yes");
+					} catch (Exception e1) {
+						System.out.println("not");
+					}
+				 this.getServletContext().getRequestDispatcher("/AdminView.jsp").forward(request, response);
+				
 	       }
 	       //login
 	       if(actionID.equals("login")){

@@ -4,6 +4,7 @@ import java.sql.Connection;
 
 
 
+
 import DAO.Singleton;
 
 public class Admin {
@@ -42,6 +43,8 @@ public Admin( String login, String password , String nomA, String prenomA) {
 	this.nomA = nomA;
 	this.prenomA = prenomA;
 }
+
+
 /**
  * @return the iD
  */

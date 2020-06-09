@@ -19,23 +19,15 @@
 <%
 	PersonnelDao p= new PersonnelDao();
 	ResultSet rs = p.SelectAll();
-	String named,type,action,nameU,methodeGet,methodePost,update,Delete ;
-	named="delete";
-	//nameU="update";
-	action="Personnels";
-	type="submit";
-	methodeGet="Get";
-	methodePost="Post";
-	update="UpdatePersonnel.jsp";
-	Delete ="Delete";
+
 	while(rs.next()){
 		out.write("<tr>");
 		out.write("<td>"+rs.getString(2)+"</td>");
 		out.write("<td>"+rs.getString(4)+"</td>");
 		out.write("<td>"+rs.getString(3)+"</td>");
-		out.write("<td><form action='UpdatePersonnel' method='POST'><input type='text' value='"+rs.getString(3)+"' Style=' visibility: hidden;'> <input type='button' class='' value='Update'></form></td");
-		out.write("<td><form action='DeletePersonnel' method='POST'><input type='text' value='"+rs.getString(3)+"' Style=' visibility: hidden;'> <input type='button' class='' value='Delete'></form></td");
-		out.write("<td><form action='' method='POST'><input type='text' value='"+rs.getString(3)+"' Style=' visibility: hidden;'> <input type='button' class='' value=''></form></td");
+		out.write("<td><form action='updatePersonnel.jsp' method='POST'><input type='hidden'name ='cin' value='"+rs.getString(3)+"' Style=' visibility: hidden;'> <input type='submit' class='' value='modifier'></form></td");
+		out.write("<td><form action='Personnels' method='Get'><input type='hidden' name ='delete'value='"+rs.getString(3)+"' Style=' visibility: hidden;'> <input type='submit' class='' value='supprimer'></form></td");
+		out.write("<td><form action='showmore.jsp' method='POST'><input type='hidden' value='"+rs.getString(3)+"' Style=' visibility: hidden;'> <input type='submit' class='' value='showmore'></form></td");
 		out.write("</tr>");
 		
 	}

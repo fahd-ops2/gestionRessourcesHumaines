@@ -8,7 +8,8 @@
 </head>
 <body>
          <form  class="" method="Post" action="Personnels">
-		  <input type="hidden" class=""   name="cin" value ""><br><br>
+         
+		  <input type="hidden" class=""   name="cin" value "<%= request.getParameter("cin")  %>"><br><br>
 		  
 		  <label>Pren_n_arabe: </label><br>
 		  <input type="text" class=""   name="Pren_n_arabe"><br><br>
@@ -52,6 +53,9 @@
           <label for="male">oui</label><br>
           <input type="radio" id="" name="Marieemploye" value="non">
           <label for="female">non</label><br><br>
+          
+           <label> Num_tE</label><br>
+		  <input type="text" class=""   name="Num_tE"><br><br>
           
           <input type="submit" class="" name="actionID" value="update">
      </form>  

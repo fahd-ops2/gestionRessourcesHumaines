@@ -28,31 +28,14 @@
 		      <% 		
 				AdminDao sd = new AdminDao();
 				ResultSet rs = sd.selectAll();
-				String named,type,hidden,action,nameU,nameid,methodeGet,methodePost,update ;
-				named="delete";
-				nameid="id";
-				nameU="update";
-				action="Admins";
-				type="submit";
-				hidden="hidden";
-				methodeGet="Get";
-				methodePost="Post";
-				update="UpdateAdmin.jsp";
-
 					while (rs.next()){
 						out.write("<tr>");
 							out.write("<td>"+rs.getObject(2)+"</td>");
 							out.write("<td>"+rs.getObject(3)+"</td>");
 							out.write("<td>"+rs.getObject(4)+"</td>");
 							out.write("<td>"+rs.getObject(5)+"</td>");
-							out.write("<form method="+methodeGet+" action="+action+">");
-							out.write("<td><input  type="+type+"  name="+named+" value="+named+"></input></td>");
-							out.write("<td><input  type="+hidden+"  name="+nameid+" value="+rs.getObject(1)+"></a></td>");
-							out.write(" </form>");
-							out.write("<form method="+methodePost+" action="+action+">");
-							out.write("<td><input  type="+type+"  name="+nameU+" value="+rs.getObject(1)+"></td>");
-							out.write("<td><input  type="+hidden+"  name="+nameid+" value="+rs.getObject(1)+"></td>");
-							out.write(" </form>");
+							out.write("<td><form action='UpdateAdmin.jsp' method='Post'><input type='hidden' name ='mod' value='"+rs.getObject(1)+"' > <input type='submit' class='' value='modifier'></form></td>");
+							out.write("<td><form action='Admins' method='Get'><input type='hidden' name ='delete'value='"+rs.getObject(1)+"' > <input type='submit' class='' value='supprimer'></form></td>");
 							out.write("</tr>");
 						}
 							%>					      
