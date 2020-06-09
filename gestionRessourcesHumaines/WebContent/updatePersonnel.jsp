@@ -8,7 +8,7 @@
 </head>
 <body>
          <form  class="" method="Post" action="Personnels">
-		  <input type="hidden" class=""   name="cin"><br><br>
+		  <input type="hidden" class=""   name="cin" value ""><br><br>
 		  
 		  <label>Pren_n_arabe: </label><br>
 		  <input type="text" class=""   name="Pren_n_arabe"><br><br>

@@ -86,11 +86,11 @@ public class PersonnelDao {
 	
 	}
 	
-	public int deletePersonnel(int i){
+	public int deletePersonnel(String cin){
 		try{
-		String req="DELETE FROM `personnel` WHERE  ID =?";
+		String req="DELETE FROM `personnel` WHERE  Cin =?";
 		 PreparedStatement pst= cna.prepareStatement(req);
-		 pst.setInt(1,i);
+		 pst.setString(1,cin);
 		 return pst.executeUpdate();
 		 }catch(Exception e){
 			 System.out.println("deletePersonnel erreur");

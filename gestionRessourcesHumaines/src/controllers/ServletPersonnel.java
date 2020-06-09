@@ -46,11 +46,9 @@ public class ServletPersonnel extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 
-			String str_date = "2007/11/12";
-			Date date=new Date(str_date);
-			System.out.println(date);
-			SimpleDateFormat fr = new SimpleDateFormat("dd/MM/yyyy");
-			System.out.println(fr.format(date));
+			String cin =request.getParameter("delete");
+			PersonnelDao perso= new PersonnelDao();
+			perso.deletePersonnel(cin);
 			
 
 
@@ -94,10 +92,7 @@ public class ServletPersonnel extends HttpServlet {
 
 				
 			        String Echelle= request.getParameter("Echelle");
-			       
-
 				    String Dateembauche= request.getParameter("Dateembauche");
-					
 					String Echelon= request.getParameter("Echelon");
 					String Situationfamiliale=request.getParameter("Situationfamiliale");
 					int NbreEnfant= Integer.parseInt(request.getParameter("NbreEnfant"));
@@ -126,8 +121,27 @@ public class ServletPersonnel extends HttpServlet {
 
 		}
 	 if  (actionID.equals("update")){
-		 System.out.println("yes");
-		 
+		 String Pren_n_arabe= new String(request.getParameter("Pren_n_arabe").getBytes(),"UTF-8");
+		 String Pren_n=request.getParameter("Pren_n");
+		 String Adresse= request.getParameter("adresse");
+		 String Tel= request.getParameter("Tel");
+		 String nationalite=request.getParameter("nationalite");
+		 String Echelon= request.getParameter("Echelon");
+		 String Situationfamiliale=request.getParameter("Situationfamiliale");
+		 int NbreEnfant= Integer.parseInt(request.getParameter("NbreEnfant"));
+		 String Marieemploye=request.getParameter("Marieemploye");
+		 String Num_tE= request.getParameter("Num_tE");
+		 String Echelle= request.getParameter("Echelle");
+		 String cin= request.getParameter("cin");
+		 Personnel pers=new Personnel(NbreEnfant, cin, Pren_n_arabe, Pren_n, Adresse, Tel, nationalite, Echelle, Echelon, Situationfamiliale, Marieemploye, Num_tE); 
+		 try { 
+		    	PersonnelDao personneldao= new PersonnelDao();
+		    	personneldao.updatePersonnel(pers);
+				System.out.println("yes");
+			} catch (Exception e1) {
+
+				System.out.println("not");
+			}
 	 }
 		}
 
