@@ -11,7 +11,7 @@
 <title>plus d'info</title>
 </head>
 <body>
-       
+       <%@ include file="Index.html" %>
 <h1>plus d'information</h1>
 <%   String o= request.getParameter("cin");
 	PersonnelDao p= new PersonnelDao();

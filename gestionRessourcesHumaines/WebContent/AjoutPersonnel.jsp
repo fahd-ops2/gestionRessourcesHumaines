@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-      
+      <%@ include file="Index.html" %>
       <form  class="" method="Post" action="Personnels">
           <label> num_p</label><br>
 		  <input type="text" class=""   name="num_p"><br><br>

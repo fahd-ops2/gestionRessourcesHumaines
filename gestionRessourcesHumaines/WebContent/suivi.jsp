@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-      
+      <%@ include file="Index.html" %>
       <form action="Personnels" method="Post">
       <% Object o= request.getParameter("cin"); %>
       <input type="hidden" class=""   name ="cin" value="<%=o%>"><br><br>

@@ -13,6 +13,7 @@
 <title>Insert title here</title>
 </head>
 <body>      
+           <%@ include file="Index.html" %>
             <table  class="">
 				<thead style="background-color: #005b91;color: white;">
 					<tr>
