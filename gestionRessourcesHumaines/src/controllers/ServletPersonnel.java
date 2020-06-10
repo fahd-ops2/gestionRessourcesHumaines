@@ -135,7 +135,8 @@ public class ServletPersonnel extends HttpServlet {
 		 String Num_tE= request.getParameter("Num_tE");
 		 String Echelle= request.getParameter("Echelle");
 		 String cin= request.getParameter("cin");
-		 Personnel pers=new Personnel(NbreEnfant, cin, Pren_n_arabe, Pren_n, Adresse, Tel, nationalite, Echelle, Echelon, Situationfamiliale, Marieemploye, Num_tE); 
+		 Personnel pers=new Personnel(NbreEnfant, cin, Pren_n_arabe, Pren_n, Adresse, Tel, nationalite, Echelle, Echelon, Situationfamiliale, Marieemploye, Num_tE);
+		 System.out.println(pers.toString());
 		 try { 
 		    	PersonnelDao personneldao= new PersonnelDao();
 		    	personneldao.updatePersonnel(pers);

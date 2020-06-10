@@ -34,7 +34,7 @@
 							out.write("<td>"+rs.getObject(3)+"</td>");
 							out.write("<td>"+rs.getObject(4)+"</td>");
 							out.write("<td>"+rs.getObject(5)+"</td>");
-							out.write("<td><form action='UpdateAdmin.jsp' method='Post'><input type='hidden' name ='mod' value='"+rs.getObject(1)+"' > <input type='submit' class='' value='modifier'></form></td>");
+							out.write("<td><form action='UpdateAdmin.jsp' method='Post'><input type='hidden' name ='mod' value='"+rs.getObject(1)+"' > <input type='submit' class='' value='changer identification'></form></td>");
 							out.write("<td><form action='Admins' method='Get'><input type='hidden' name ='delete'value='"+rs.getObject(1)+"' > <input type='submit' class='' value='supprimer'></form></td>");
 							out.write("</tr>");
 						}

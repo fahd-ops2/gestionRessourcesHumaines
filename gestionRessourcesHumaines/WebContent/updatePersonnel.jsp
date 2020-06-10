@@ -10,17 +10,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>update</title>
 </head>
-<body>
+<body onload="check()">   
          <form  class="" method="Post" action="Personnels">
          <% String o= request.getParameter("cin");
            PersonnelDao  pes = new PersonnelDao();
            ResultSet res=pes.selectby(o);
            while(res.next()){
          %>
+
 		  <input type="hidden" class=""   name="cin" value="<%=o%>"><br><br>
 		  
 		  <label>Pren_n_arabe: </label><br>
-		  <input type="text" class=""   name="Pren_n_arabe" value="<%=res.getString("Pren_n_arabe")%>"><br><br>
+		  <input type="text" class=""   name="Pren_n_arabe" value="<%=res.getString("Pren_n_arabe")%>" ><br><br>
 		  
 		  <label>Pren_n: </label><br>
 		  <input type="text" class=""   name="Pren_n" value="<%=res.getString("Pren_n")%>"><br><br>
@@ -32,9 +33,9 @@
 		  <input type="text" class=""   name="Tel" value="<%=res.getString("Tel")%>"><br><br>
 		  
 		  <label>Nationalite marocain(e): </label><br>
-		  <input type="radio" id="" name="nationalite" value="oui">
+		  <input type="radio" id="oui" name="nationalite" value="oui">
           <label for="oui">oui</label><br>
-          <input type="radio" id="" name="nationalite" value="non">
+          <input type="radio" id="non" name="nationalite" value="non">
           <label for="non">non</label><br><br><br>
            <label>Echelle</label><br>
 		  <input type="text" class=""   name="Echelle" value="<%=res.getString("Echelle")%>"><br><br>
