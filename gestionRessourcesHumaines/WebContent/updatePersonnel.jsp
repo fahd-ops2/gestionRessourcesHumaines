@@ -69,5 +69,6 @@
           <input type="submit" class="" name="actionID" value="update">
           <%} %>
      </form>  
+     <a href="ShowPersonnel.jsp"> <input type="submit" class="" name="actionID" value="retour"></a>
 </body>
 </html>

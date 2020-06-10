@@ -40,7 +40,7 @@
 		out.write("</ul>");
 	}
 %>
-			<a href="ShowPersonnel.jsp"> return</a>
+			<a href="ShowPersonnel.jsp"> <input type="submit" class="" name="actionID" value="retour"></a>
 
 </body>
 </html>

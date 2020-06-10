@@ -25,5 +25,6 @@
 		  <input type="submit" class="" name="actionID" value="ajouterA">
 		  
 		</form>  
+		<a href="AdminView.jsp"> <input type="submit" class="" name="actionID" value="retour"></a>
 </body>
 </html>
