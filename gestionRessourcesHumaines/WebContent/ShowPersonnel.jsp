@@ -28,7 +28,7 @@
 		
 		out.write("<td><form action='updatePersonnel.jsp' method='POST'><input type='hidden' name ='cin' value='"+rs.getString(3)+"' Style=' visibility: hidden;'> <input type='submit' class='' value='modifier'></form></td>");
 		out.write("<td><form action='Personnels' method='Get'><input type='hidden' name ='delete'value='"+rs.getString(3)+"' Style=' visibility: hidden;'> <input type='submit' class='' value='supprimer'></form></td>");
-		out.write("<td><form action='showmore.jsp' method='POST'><input type='hidden' value='"+rs.getString(3)+"' Style=' visibility: hidden;'> <input type='submit' class='' value='showmore'></form></td>");
+		out.write("<td><form action='showmore.jsp' method='POST'><input type='hidden'name ='cin' value='"+rs.getString(3)+"' Style=' visibility: hidden;'> <input type='submit' class='' value='showmore'></form></td>");
 		out.write("</tr>");
 		
 	}
