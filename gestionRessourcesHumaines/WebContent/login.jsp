@@ -8,12 +8,16 @@
 </head>
 <body>
        <form class="" method="Post" action="Admins"  >
-          
+          <% Object x =request.getAttribute("email");
+          if (x==null)x="";
+          Object y =request.getAttribute("password");
+          if (y==null)y="";
+          %>
           <label>Email: </label><br>
-		  <input type="email" class=""   name="email"><br><br>
+		  <input type="email" class=""   name="email" value="<%=x %>"><br><br>
 		  
 		  <label>mot de passe </label><br>
-		  <input type="password" class=""   name="password"><br><br>
+		  <input type="password" class=""   name="password" value="<%=y %>"><br><br>
 		  
 		  <input type="submit" class="" name="actionID" value="login">
 

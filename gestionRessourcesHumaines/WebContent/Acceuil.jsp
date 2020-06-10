@@ -8,7 +8,7 @@
 </head>
 <body>
      <h1>welcome</h1>
-     <p><%=session.getAttribute("nom") %></p>
+     <p><%=session.getAttribute("nomfr") %></p>
     
 </body>
 </html>

@@ -54,6 +54,8 @@ public class ServletAdmin extends HttpServlet {
 			String password= request.getParameter("password");
 			String nom= request.getParameter("nom");
 			String prenom=request.getParameter("prenom");
+			request.setAttribute("email", email);
+			request.setAttribute("password", password);
 			Admin e =new Admin(email,password,nom,prenom);
 			System.out.println(e.toString());
 	       try { 
@@ -92,8 +94,8 @@ public class ServletAdmin extends HttpServlet {
 	    							while(res.next()){
 	    								if (res.getString(2).equals(email) && res.getString(3).equals(password)){
 	    									HttpSession session =request.getSession();
-	    								    session.setAttribute("nom", res.getString(3));
-	    								    session.setAttribute("nom", res.getString(4));
+	    								    session.setAttribute("nomfr", res.getString(3));
+	    								    session.setAttribute("nomar", res.getString(4));
 	    									this.getServletContext().getRequestDispatcher("/Acceuil.jsp").forward(request, response);}
 	    								    
 	    							}
