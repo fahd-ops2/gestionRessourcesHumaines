@@ -78,6 +78,19 @@ public class AdminDao {
 		}
 		return null;
 	}
+	public ResultSet selectby(int id){
+		try {
+			String req ="SELECT * FROM `admin`where id=?";
+			PreparedStatement pst= cna.prepareStatement(req);
+			pst.setInt(1, id);
+			return pst.executeQuery();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
 	 /*public static void main(String[]args){
 		 try{
 		 Admin ad=new Admin( "faa@gmail.com", "fahda122","fs","sa");
