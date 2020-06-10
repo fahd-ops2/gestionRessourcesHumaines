@@ -11,12 +11,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+    <%@ include file="Index.html" %>
 <table class="">
 <tr class="">
 <th>Nom Francais</th>
 <th>Nom Ar</th>
 <th>CIN</th>
-<%
+<% 
 	PersonnelDao p= new PersonnelDao();
 	ResultSet rs = p.SelectAll();
 
@@ -30,10 +31,9 @@
 		out.write("<td><form action='Personnels' method='Get'><input type='hidden' name ='delete'value='"+rs.getString(3)+"' Style=' visibility: hidden;'> <input type='submit' class='' value='supprimer'></form></td>");
 		out.write("<td><form action='showmore.jsp' method='POST'><input type='hidden'name ='cin' value='"+rs.getString(3)+"' Style=' visibility: hidden;'> <input type='submit' class='' value='showmore'></form></td>");
 		out.write("</tr>");
-		
 	}
-
 %>
 </table>
+   <a href="AjoutPersonnel.jsp"><input type="submit" class="" name="actionID" value="ajouter un nouveau personnel"></></a>
 </body>
 </html>
