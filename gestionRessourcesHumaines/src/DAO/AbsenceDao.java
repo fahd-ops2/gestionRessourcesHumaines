@@ -58,7 +58,7 @@ public int updateAbsence(Absence a){
 }	
 public ResultSet selectbycin(String cin){
 	try {
-		String req ="SELECT Pren_n,Pren_n_arabe , a.ID,`Duree`, `Justification`,DateAbsence FROM absence a inner join Personnel p on p.ID=a.PersonnelID where a.PersonnelID=? ";
+		String req ="SELECT Pren_n,Pren_n_arabe , a.ID,`Duree`, `Justification`,DateAbsence FROM absence a inner join Personnel p on p.ID=a.PersonnelID where p.cin=? ";
 		PreparedStatement pst= cna.prepareStatement(req);
 		pst.setString(1, cin);
 		return pst.executeQuery();
