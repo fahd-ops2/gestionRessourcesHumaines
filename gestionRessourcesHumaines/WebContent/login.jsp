@@ -7,7 +7,7 @@
 <!-- Fontawsome makhdmch liya f telachargement jreb 3ndk -->
     <link rel="stylesheet" href="css/Style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="https://kit.fontawesome.com/577de7cc37.js" ></script>
+      <link rel="stylesheet" href="fontawsome/css/all.min.css">
 <title>Insert title here</title>
 </head>
 <body>
