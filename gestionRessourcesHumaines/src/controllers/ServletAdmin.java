@@ -105,6 +105,23 @@ public class ServletAdmin extends HttpServlet {
 	    					e1.getMessage();
 	    				}
 	       }
+	       if(actionID.equals("ajouterA")){
+				String email= request.getParameter("email");
+				String password= request.getParameter("password");
+				String nom= request.getParameter("nom");
+				String prenom=request.getParameter("prenom");
+				request.setAttribute("email", email);
+				request.setAttribute("password", password);
+				Admin e =new Admin(email,password,nom,prenom);
+				System.out.println(e.toString());
+		       try { 
+		    	AdminDao Admindao= new AdminDao();
+				Admindao.insertAdmin(e);
+				System.out.println("yes");
+			} catch (Exception e1) {
+				System.out.println("not");
+			}
+		       this.getServletContext().getRequestDispatcher("/AdminView.jsp").forward(request, response);}
 	}
 
 }

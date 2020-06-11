@@ -44,6 +44,6 @@
 							
 				  </tbody>
 			    </table>
-			    
+			<a href="ajoutAdmin.jsp"> <input type="submit" class="" name="actionID" value="ajout d'un admin"></a>    
 </body>
 </html>
