@@ -11,6 +11,7 @@
 <title>update</title>
 </head>
 <body>
+      <%@ include file="Index.html" %>
       <form class="" method="post" action="Admins"  >
       <% int o= Integer.parseInt(request.getParameter("mod"));
          AdminDao ad= new AdminDao();
