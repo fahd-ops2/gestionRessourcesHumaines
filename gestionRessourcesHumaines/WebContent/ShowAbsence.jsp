@@ -18,6 +18,7 @@
     if (cin=="")this.getServletContext().getRequestDispatcher("/ShowAbsences.jsp").forward(request, response);
 	AbsenceDao p= new AbsenceDao();
 	ResultSet rs = p.selectbycin(cin);
+	
         out.write("<table class=''>");
         out.write("<tr class=''>");
         out.write("<th>Pren_n</th>");
@@ -27,6 +28,7 @@
         out.write("<th>Justification</th>");
         
 	while(rs.next()){
+		
 		out.write("<tr>");
 		out.write("<td>"+rs.getString("Pren_n")+"</td>");
 		out.write("<td>"+rs.getString("Pren_n_arabe")+"</td>");

@@ -98,19 +98,14 @@ public class PersonnelDao {
 		
 	}
 	public ResultSet SelectAll(){
-		//ArrayList<Personnel> personnels = null;
+		
 		try{
 			
-		String req=" SELECT * FROM personnel ";
-		Personnel pers;
-			//personnels=new ArrayList<Personnel>();
+			String req=" SELECT * FROM personnel ";
+			Personnel pers;
 			PreparedStatement pst= cna.prepareStatement(req);
 			ResultSet res =pst.executeQuery();
 			return res;
-		    /*while (res.next()){
-		    	pers=new Personnel(res.getInt(1),res.getInt(15),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getDate(11),res.getString(7),res.getString(8),res.getString(9),res.getString(10),res.getString(12),res.getString(13),res.getString(14),res.getString(16),res.getString(17),res.getDate(18),res.getDate(6));
-		    	personnels.add(pers);
-		    }*/
 		}catch(Exception e){
 			System.out.println("selectall of personnel");
 			
