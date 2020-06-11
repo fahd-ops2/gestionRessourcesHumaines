@@ -1,0 +1,181 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #444444;
+}
+.wave{
+    position: fixed;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 7rem;
+    padding: 0 2rem;
+}
+.img img{
+    width:100%;
+}
+.img{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.login-container{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+form{
+    width:400px;
+}
+form h2{
+    font-size: 2.9rem;
+    text-transform: uppercase;
+    margin: 15px 0;
+    
+}
+.input-div{
+    position: relative;
+    display: grid;
+    grid-template-columns:7% 93% ;
+    margin: 25px 0;
+    padding: 5px 0;
+    border-bottom: 2px solid #444444;
+}
+.input-div::after,.input-div::before{
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    width:0;
+    height: 2px;
+    transition: .3s;
+}
+.input-div::after{
+    right:50%;
+}
+.input-div::before{
+    left: 50%;
+}
+.input-div.one{
+    margin-top: 0;
+}
+.input-div.tow{
+    margin-bottom:4px;
+}
+.i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.i i{
+    color:#8B9598;
+    transition: .3s;
+}
+.input-div >div{
+    position: relative;
+    height: 45px;
+}
+.input-div >div h5{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform:translateY(-50%);
+    font-size: 15px;
+    transition: .3s;
+    text-transform: uppercase;
+    color: #8B9598;
+}
+.input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0.5rem 0.7rem;
+    font-size: 1rem;
+}
+a{
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    color:#8B9598;
+    font-size: 0.9rem;
+    transition: .3s;
+}
+a:hover{
+    color:#313131;
+}
+.btn-container{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+}
+.btn{
+    margin: 10px;
+}
+.btn-container a{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+.btn-container a:hover{
+    text-decoration: none;
+    color: white;
+}
+.input-div.focus .i i{
+    color:#313131;
+}
+.input-div.focus div h5{
+    top:-5px;
+    font-size: 12px;
+}
+.input-div.focus::before,.input-div.focus::after{
+    width:50%;
+}
+@media screen and (max-width:1050px){
+    .container{
+        grid-gap: 5rem;
+    }
+}
+@media screen and (max-width:1000px){
+    form{
+        width:290px;
+    }
+    form h2{
+        font-size: 2.4rem;
+        margin-top: 8px 0;
+    }
+    .img img{
+        width:400px;
+    }
+}
+@media screen and (max-width:900px){
+    .img{
+        display: none;
+    }
+    .container{
+        grid-template-columns: 1fr;
+    }
+    .wave{
+        display: none;
+    }
+    .login-container{
+        justify-content: center;
+    }
+}
