@@ -18,25 +18,11 @@
 		<th>Nom Francais</th>
 		<th>Nom Ar</th>
 		<th>CIN</th>
-    <%  String cin =request.getParameter("cin");
-    if (cin!=""){
-	PersonnelDao pe= new PersonnelDao();
-	ResultSet res = pe.selectby(cin);
-	while(res.next()){
-		out.write("<tr>");
-		out.write("<td>"+res.getString(5)+"</td>");
-		out.write("<td>"+res.getString(4)+"</td>");
-		out.write("<td>"+res.getString(3)+"</td>");
-		
-		out.write("<td><form action='updatePersonnel.jsp' method='POST'><input type='hidden' name ='cin' value='"+res.getString(3)+"' Style=' visibility: hidden;'> <input type='submit' class='' value='modifier'></form></td>");
-		out.write("<td><form action='Personnels' method='Get'><input type='hidden' name ='delete'value='"+res.getString(3)+"' Style=' visibility: hidden;'> <input type='submit' class='' value='supprimer'></form></td>");
-		out.write("<td><form action='showmore.jsp' method='POST'><input type='hidden'name ='cin' value='"+res.getString(3)+"' Style=' visibility: hidden;'> <input type='submit' class='' value='showmore'></form></td>");
-		out.write("</tr>");
-	}}%>
+    
 
 <% 
 String cinn =request.getParameter("cin");
-if (cinn==""){
+
 	PersonnelDao p= new PersonnelDao();
 	ResultSet rs = p.SelectAll();
 
@@ -50,7 +36,7 @@ if (cinn==""){
 		out.write("<td><form action='Personnels' method='Get'><input type='hidden' name ='delete'value='"+rs.getString(3)+"' Style=' visibility: hidden;'> <input type='submit' class='' value='supprimer'></form></td>");
 		out.write("<td><form action='showmore.jsp' method='POST'><input type='hidden'name ='cin' value='"+rs.getString(3)+"' Style=' visibility: hidden;'> <input type='submit' class='' value='showmore'></form></td>");
 		out.write("</tr>");
-	}}
+	}
 %>
 </table>
    <a href="AjoutPersonnel.jsp"><input type="submit" class="" name="actionID" value="ajouter un nouveau personnel"></></a>
