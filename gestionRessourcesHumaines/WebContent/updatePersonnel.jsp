@@ -10,7 +10,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>update</title>
 </head>
-<body onload="check()">   
+<body >   
+         <%@ include file="Index.html" %>
          <form  class="" method="Post" action="Personnels">
          <% String o= request.getParameter("cin");
            PersonnelDao  pes = new PersonnelDao();

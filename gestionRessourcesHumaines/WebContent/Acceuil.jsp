@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+     <%@ include file="Index.html" %>
      <h1>welcome</h1>
      <p><%=session.getAttribute("nomfr") %></p>
     
