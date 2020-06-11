@@ -26,7 +26,9 @@
 		  <input type="password" class=""   name="password" value="<%=res.getString("password")%>"><br><br>
 		  
 		  <input type="submit" class="" name="actionID" value="update">
+		  
       <%} %>
 		</form>  
+		<a href="AdminView.jsp"> <input type="submit" class="" name="actionID" value="retour"></a>
 </body>
 </html>
