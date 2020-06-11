@@ -30,7 +30,7 @@
 		out.write("<td>"+rs.getString("Pren_n")+"</td>");
 		out.write("<td>"+rs.getString("Pren_n_arabe")+"</td>");
 		out.write("<td>"+rs.getString("Duree")+"</td>");
-		out.write("<td>"+rs.getString("DateAbsence")+"</td>");
+		out.write("<td>"+rs.getDate("DateAbsence")+"</td>");
 		out.write("<td>"+rs.getString("Justification")+"</td>");
 		out.write("</tr>");
 	}

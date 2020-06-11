@@ -70,15 +70,12 @@ public class ServletPersonnel extends HttpServlet {
 			String Pren_n_arabe= new String(request.getParameter("Pren_n_arabe").getBytes(),"UTF-8");
 			String Pren_n=request.getParameter("Pren_n");
 			String Datenaissance= request.getParameter("Datenaissance");
-			Date date=new Date(Datenaissance);
-			SimpleDateFormat fr = new SimpleDateFormat("dd/MM/yyyy");
-			System.out.println(fr.format(date));
 			String Adresse= request.getParameter("adresse");
 			String Tel= request.getParameter("Tel");
 			String nationalite=request.getParameter("nationalite");
 			String sexe=request.getParameter("sexe");
 			
-			Personnel p =new Personnel(num_p,CIN,Pren_n_arabe,Pren_n,fr.format(date),Adresse,Tel,nationalite,sexe);
+			Personnel p =new Personnel(num_p,CIN,Pren_n_arabe,Pren_n,Datenaissance,Adresse,Tel,nationalite,sexe);
 			System.out.println(p.toString());
 	       try { 
 	    	PersonnelDao personneldao= new PersonnelDao();
@@ -101,14 +98,8 @@ public class ServletPersonnel extends HttpServlet {
 					String Marieemploye=request.getParameter("Marieemploye");
 					String Num_tE= request.getParameter("Num_tE");
 					String DateDesignation= request.getParameter("DateDesignation");
-					Date date1,date2;
-					date1=new Date(Dateembauche);
-					SimpleDateFormat fr = new SimpleDateFormat("dd/MM/yyyy");
-					fr.format(date1);
-					date2=new Date(DateDesignation);
-					fr.format(date2);
 					String cin= request.getParameter("cin");
-					Personnel p=new Personnel( NbreEnfant,cin, Echelle, Echelon, Situationfamiliale, Marieemploye, Num_tE, fr.format(date1),fr.format(date2));
+					Personnel p=new Personnel( NbreEnfant,cin, Echelle, Echelon, Situationfamiliale, Marieemploye, Num_tE, Dateembauche,DateDesignation);
 					System.out.println(p.toString());
 					try { 
 				    	PersonnelDao personneldao= new PersonnelDao();
