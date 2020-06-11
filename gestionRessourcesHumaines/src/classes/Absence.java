@@ -2,7 +2,22 @@ package classes;
 
 public class Absence {
 	private int ID,PersonnelID;
-	private String Duree,Justification;
+	private String Duree,Justification,DateAbsence;
+	
+	/**
+	 * @return the dateAbsence
+	 */
+	public String getDateAbsence() {
+		return DateAbsence;
+	}
+
+	/**
+	 * @param dateAbsence the dateAbsence to set
+	 */
+	public void setDateAbsence(String dateAbsence) {
+		DateAbsence = dateAbsence;
+	}
+
 	/**
 	 * @param iD
 	 * @param personnelID
@@ -17,16 +32,38 @@ public class Absence {
 	}
 	
 	/**
-	 * @param personnelID
+	 * @param iD
 	 * @param duree
 	 * @param justification
 	 */
-	public Absence(int personnelID, String duree, String justification) {
+	public Absence(int iD, String duree, String justification) {
+		super();
+		ID = iD;
+		Duree = duree;
+		Justification = justification;
+	}
+
+	/**
+	 * @param personnelID
+	 * @param duree
+	 * @param justification
+	 * @param dateAbsence
+	 */
+	public Absence(int personnelID, String duree, String justification,
+			String dateAbsence) {
 		super();
 		PersonnelID = personnelID;
 		Duree = duree;
 		Justification = justification;
+		DateAbsence = dateAbsence;
 	}
+
+	/**
+	 * @param personnelID
+	 * @param duree
+	 * @param justification
+	 */
+	
 
 	/**
 	 * @return the iD

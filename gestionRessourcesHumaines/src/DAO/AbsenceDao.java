@@ -17,11 +17,13 @@ public int insertAbsence(Absence abs){
 		try {
 			
 			
-             String req ="INSERT INTO `absence`( `PersonnelID`, `Duree`, `Justification`) VALUES(?,?,?) ";
+             String req ="INSERT INTO `absence`( `PersonnelID`, `Duree`, `Justification`,DateAbsence) VALUES(?,?,?,?) ";
              PreparedStatement pst= cna.prepareStatement(req);
              pst.setInt(1,abs.getPersonnelID());
              pst.setString(2,abs.getDuree());
              pst.setString(3,abs.getJustification());
+             pst.setString(4,abs.getDateAbsence());
+             
              return pst.executeUpdate();       
 		} catch (SQLException e) {
 			e.getMessage();
@@ -40,12 +42,13 @@ public int deleteAbsence(int i){
 	}
 	return 0;
 }
-public int updateAbsence(int i ,String jus ){
+public int updateAbsence(Absence a){
 	try {
-		String req ="UPDATE `absence` SET `Justification`=? WHERE ID=? ";
+		String req ="UPDATE `absence` SET duree=? `Justification`=? WHERE ID=? ";
 		PreparedStatement pst= cna.prepareStatement(req);
-		pst.setString(1,jus);
-		pst.setInt(2,i);
+		pst.setString(1,a.getDuree());
+		pst.setString(2, a.getJustification());
+		pst.setInt(3,a.getID());
 		return pst.executeUpdate();
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
@@ -53,9 +56,22 @@ public int updateAbsence(int i ,String jus ){
 	}
 	return 0;
 }	
+public ResultSet selectbycin(String cin){
+	try {
+		String req ="SELECT Pren_n,Pren_n_arabe , a.ID,`Duree`, `Justification`,DateAbsence FROM absence a inner join Personnel p on p.ID=a.PersonnelID where a.PersonnelID=? ";
+		PreparedStatement pst= cna.prepareStatement(req);
+		pst.setString(1, cin);
+		return pst.executeQuery();
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	return null;
+}
+
 public ResultSet selectAll(){
 	try {
-		String req ="SELECT Pren_n,Pren_n_arabe , `Duree`, `Justification` FROM absence a inner join Personnel p on p.ID=a.PersonnelID  ";
+		String req ="SELECT Pren_n,Pren_n_arabe , `Duree`, `Justification`,DateAbsence FROM absence a inner join Personnel p on p.ID=a.PersonnelID  ";
 		PreparedStatement pst= cna.prepareStatement(req);
 		return pst.executeQuery();
 
@@ -66,9 +82,9 @@ public ResultSet selectAll(){
 	return null;
 }
 
-public ResultSet selectby(int id){
+public ResultSet selectbyid(int id){
 	try {
-		String req ="SELECT Pren_n,Pren_n_arabe , `Duree`, `Justification` FROM absence a inner join Personnel p on p.ID=a.PersonnelID where a.PersonnelID=? ";
+		String req ="SELECT Pren_n,Pren_n_arabe , a.ID,`Duree`, `Justification`,DateAbsence FROM absence a inner join Personnel p on p.ID=a.PersonnelID where a.PersonnelID=? ";
 		PreparedStatement pst= cna.prepareStatement(req);
 		pst.setInt(1, id);
 		return pst.executeQuery();
@@ -82,7 +98,7 @@ public ResultSet selectby(int id){
 		
 		try {
 			AbsenceDao abd= new AbsenceDao();
-			ResultSet res= abd.selectby(1);
+			ResultSet res= abd.selectbyid(1);
 			while (res.next()){
 				System.out.println(res.getObject(1)+" "+res.getObject(2)+" "+res.getObject(3)+" "+res.getObject(4));
 			}
