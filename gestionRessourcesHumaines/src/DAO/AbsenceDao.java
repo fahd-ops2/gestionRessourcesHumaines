@@ -44,7 +44,7 @@ public int deleteAbsence(int i){
 }
 public int updateAbsence(Absence a){
 	try {
-		String req ="UPDATE `absence` SET duree=? `Justification`=? WHERE ID=? ";
+		String req ="UPDATE `absence` SET duree= ?, `Justification`=? WHERE ID=? ";
 		PreparedStatement pst= cna.prepareStatement(req);
 		pst.setString(1,a.getDuree());
 		pst.setString(2, a.getJustification());

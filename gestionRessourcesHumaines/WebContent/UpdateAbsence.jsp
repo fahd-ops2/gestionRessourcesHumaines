@@ -23,7 +23,7 @@
          while(res.next()){
       %>
           
-		  <input type="hidden" class=""   name="idperso" value="<%=res.getInt("ID") %>"><br><br>
+		  <input type="hidden" class=""   name="id" value="<%=res.getInt("ID") %>"><br><br>
 		  
           <label>duree par jour : </label><br>
 		  <input type="text" class=""   name="duree" value="<%=res.getInt("duree") %>"><br><br>

@@ -57,6 +57,23 @@ public class ServletAbsence extends HttpServlet {
 		}
 	       this.getServletContext().getRequestDispatcher("/ShowAbsences.jsp").forward(request, response);
 		}
+		if(actionID.equals("updateAb")){
+			String duree= request.getParameter("duree");
+			String justification= request.getParameter("justification");
+			int id=Integer.parseInt(request.getParameter("id"));
+			Absence e =new Absence(id,duree,justification);
+			System.out.println(e.toString());
+	       try { 
+	    	AbsenceDao Absdao= new AbsenceDao();
+	    	Absdao.updateAbsence(e);
+			System.out.println("yes");
+		} catch (Exception e1) {
+			System.out.println("not");
+		}
+	       this.getServletContext().getRequestDispatcher("/ShowAbsences.jsp").forward(request, response);
+		}
 	}
+	}
+	
 
-}
+

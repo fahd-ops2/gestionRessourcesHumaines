@@ -66,6 +66,18 @@ public class Absence {
 	
 
 	/**
+	 * @param duree
+	 * @param justification
+	 * @param personnelID
+	 */
+	public Absence(String duree, String justification, String personnelID) {
+		super();
+		Duree = duree;
+		Justification = justification;
+		PersonnelID = personnelID;
+	}
+
+	/**
 	 * @return the iD
 	 */
 	public int getID() {
