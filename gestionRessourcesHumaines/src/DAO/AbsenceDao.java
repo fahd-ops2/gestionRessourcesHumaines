@@ -19,7 +19,7 @@ public int insertAbsence(Absence abs){
 			
              String req ="INSERT INTO `absence`( `PersonnelID`, `Duree`, `Justification`,DateAbsence) VALUES(?,?,?,?) ";
              PreparedStatement pst= cna.prepareStatement(req);
-             pst.setInt(1,abs.getPersonnelID());
+             pst.setString(1,abs.getPersonnelID());
              pst.setString(2,abs.getDuree());
              pst.setString(3,abs.getJustification());
              pst.setString(4,abs.getDateAbsence());
@@ -84,7 +84,7 @@ public ResultSet selectAll(){
 
 public ResultSet selectbyid(int id){
 	try {
-		String req ="SELECT Pren_n,Pren_n_arabe , a.ID,`Duree`, `Justification`,DateAbsence FROM absence a inner join Personnel p on p.ID=a.PersonnelID where a.PersonnelID=? ";
+		String req ="SELECT Pren_n,Pren_n_arabe , a.ID,`Duree`, `Justification`,DateAbsence FROM absence a inner join Personnel p on p.ID=a.PersonnelID where a.ID=? ";
 		PreparedStatement pst= cna.prepareStatement(req);
 		pst.setInt(1, id);
 		return pst.executeQuery();

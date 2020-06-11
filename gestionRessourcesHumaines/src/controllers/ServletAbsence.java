@@ -8,7 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import classes.Absence;
+import classes.Admin;
 import DAO.AbsenceDao;
+import DAO.AdminDao;
 
 /**
  * Servlet implementation class ServletAbsence
@@ -35,7 +38,25 @@ public class ServletAbsence extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		String actionID = request.getParameter("actionID");
+		//ajout Admin
+		
+		if(actionID.equals("ajouterAb")){
+			String duree= request.getParameter("duree");
+			String DateAbsence= request.getParameter("DateAbsence");
+			String justification= request.getParameter("justification");
+			String idperso=request.getParameter("idperso");
+			Absence e =new Absence(idperso,duree,justification,DateAbsence);
+			System.out.println(e.toString());
+	       try { 
+	    	AbsenceDao Absdao= new AbsenceDao();
+	    	Absdao.insertAbsence(e);
+			System.out.println("yes");
+		} catch (Exception e1) {
+			System.out.println("not");
+		}
+	       this.getServletContext().getRequestDispatcher("/ShowAbsences.jsp").forward(request, response);
+		}
 	}
 
 }

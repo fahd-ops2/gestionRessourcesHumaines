@@ -1,8 +1,8 @@
 package classes;
 
 public class Absence {
-	private int ID,PersonnelID;
-	private String Duree,Justification,DateAbsence;
+	private int ID;
+	private String Duree,Justification,DateAbsence,PersonnelID;
 	
 	/**
 	 * @return the dateAbsence
@@ -24,7 +24,7 @@ public class Absence {
 	 * @param duree
 	 * @param justification
 	 */
-	public Absence(int iD, int personnelID, String duree, String justification) {
+	public Absence(int iD, String personnelID, String duree, String justification) {
 		ID = iD;
 		PersonnelID = personnelID;
 		Duree = duree;
@@ -49,7 +49,7 @@ public class Absence {
 	 * @param justification
 	 * @param dateAbsence
 	 */
-	public Absence(int personnelID, String duree, String justification,
+	public Absence(String personnelID, String duree, String justification,
 			String dateAbsence) {
 		super();
 		PersonnelID = personnelID;
@@ -80,13 +80,13 @@ public class Absence {
 	/**
 	 * @return the personnelID
 	 */
-	public int getPersonnelID() {
+	public String getPersonnelID() {
 		return PersonnelID;
 	}
 	/**
 	 * @param personnelID the personnelID to set
 	 */
-	public void setPersonnelID(int personnelID) {
+	public void setPersonnelID(String personnelID) {
 		PersonnelID = personnelID;
 	}
 	/**

@@ -33,7 +33,7 @@
 		out.write("<td>"+rs.getString("Duree")+"</td>");
 		out.write("<td>"+rs.getString("DateAbsence")+"</td>");
 		out.write("<td>"+rs.getString("Justification")+"</td>");
-		out.write("<td><form action='UpdateAbsence.jsp' method='POST'><input type='text' name ='id' value='"+rs.getString("ID")+"'> <input type='submit' class='' value='modifier'></form></td>");
+		out.write("<td><form action='UpdateAbsence.jsp' method='POST'><input type='hidden' name ='id' value='"+rs.getInt("ID")+"'> <input type='submit' class='' value='modifier'></form></td>");
 		out.write("</tr>");
 	}
 %>
