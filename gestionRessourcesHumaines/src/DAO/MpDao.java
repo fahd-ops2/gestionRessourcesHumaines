@@ -47,7 +47,7 @@ public int deleteMp(int i){
 }
 public ResultSet selectAll(){
 	try{
-	String req=" SELECT Pren_n,Pren_N_arabe,NomMatiere  FROM `mp`  ,personnel p ,matiere ma  WHERE mp.MatiereID=ma.ID  and mp.PersonnelID = p.ID";
+	String req=" SELECT Pren_n,Pren_N_arabe,NomMatiere,MatiereID  FROM `mp`  ,personnel p ,matiere ma  WHERE mp.MatiereID=ma.ID  and mp.PersonnelID = p.ID";
 		PreparedStatement pst= cna.prepareStatement(req);
 		ResultSet res =pst.executeQuery();
 		return res;
