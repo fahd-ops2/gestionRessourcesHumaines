@@ -11,7 +11,7 @@
 <title>affecter</title>
 </head>
 <body> 
-        <form  method="Post" action="Matieres">
+        <form  method="Post" action="Mat">
         <label>matiere: </label><br>
 
            <% 	

@@ -26,14 +26,6 @@
     <url-pattern>/Absences</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>ServletMatiere</servlet-name>
-    <servlet-class>controllers.ServletMatiere</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ServletMatiere</servlet-name>
-    <url-pattern>/Matieres</url-pattern>
-  </servlet-mapping>
-  <servlet>
     <servlet-name>ServletDiplomeSu</servlet-name>
     <servlet-class>controllers.ServletDiplomeSu</servlet-class>
   </servlet>
@@ -48,5 +40,13 @@
   <servlet-mapping>
     <servlet-name>ServletPersonnel</servlet-name>
     <url-pattern>/Personnels</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ServletMat</servlet-name>
+    <servlet-class>controllers.ServletMat</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletMat</servlet-name>
+    <url-pattern>/Mat</url-pattern>
   </servlet-mapping>
 </web-app>
