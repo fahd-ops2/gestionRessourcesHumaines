@@ -32,7 +32,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletMp</servlet-name>
-    <url-pattern>/Mps</url-pattern>
+    <url-pattern>/Mpss</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>ServletDiplomeSu</servlet-name>

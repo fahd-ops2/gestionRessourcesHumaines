@@ -30,7 +30,23 @@ public class ServletMp extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("mp");
+		String actionID = request.getParameter("actionID");
+		//ajout Admin
+		
+		if(actionID.equals("mpsAjout")){
+			int matiere= Integer.parseInt(request.getParameter("matiere"));
+			int idp= Integer.parseInt(request.getParameter("id"));
+			Mp mp =new Mp(matiere,idp);
+			System.out.println(mp.toString());
+	
+	       try { 
+	    	MpDao mpdao= new MpDao();
+			mpdao.insertMp(mp);
+			System.out.println("yes");
+		} catch (Exception e1) {
+			System.out.println("not");
+		}
+		} 
 	}
 
 	/**
@@ -42,11 +58,11 @@ public class ServletMp extends HttpServlet {
 		
 		if(actionID.equals("mpsAjout")){
 			int matiere= Integer.parseInt(request.getParameter("matiere"));
-			int idp= Integer.parseInt(request.getParameter("idp"));
+			int idp= Integer.parseInt(request.getParameter("id"));
 			Mp mp =new Mp(matiere,idp);
-			System.out.println(mp.toString());}}}
+			System.out.println(mp.toString());
 	
-	       /*try { 
+	       try { 
 	    	MpDao mpdao= new MpDao();
 			mpdao.insertMp(mp);
 			System.out.println("yes");
@@ -54,7 +70,7 @@ public class ServletMp extends HttpServlet {
 			System.out.println("not");
 		}
 	       this.getServletContext().getRequestDispatcher("/Afectationmatiere.jsp").forward(request, response);
-		}*/
-	
+		}
+	}}
 
 
