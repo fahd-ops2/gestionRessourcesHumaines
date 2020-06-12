@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import classes.Admin;
+import classes.Mp;
 import DAO.AdminDao;
+import DAO.MpDao;
 
 
 /**
@@ -122,6 +124,8 @@ public class ServletAdmin extends HttpServlet {
 				System.out.println("not");
 			}
 		       this.getServletContext().getRequestDispatcher("/AdminView.jsp").forward(request, response);}
+	       
 	}
+	
 
 }
