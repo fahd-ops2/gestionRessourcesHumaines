@@ -13,7 +13,7 @@
 <body>
       <%@ include file="Index.html" %>
       <form action='Afectationmatiere.jsp' method='Get'><input type='text' name ='cin'  > <input type='submit' class='' value='search'></form>
-            <form action="Post" methode="Mps">
+            <form action="Mps" method="Post">
             <table class="">
 			<tr class="">
 			<th>Nom Francais</th>
@@ -28,6 +28,7 @@
 		out.write("<td>"+res.getString(5)+"</td>");
 		out.write("<td>"+res.getString(4)+"</td>");
 		out.write("<td>"+res.getString(3)+"</td>");
+		out.write("<input type='text' name='idp' value='"+res.getInt(1) +"'");
 		out.write("</tr>");
 	}}%>
 	</table>
@@ -40,14 +41,15 @@
    		  PreparedStatement pst= cna.prepareStatement(req);
    		  ResultSet res =pst.executeQuery();
 					while (res.next()){
-						System.out.println(res.getObject(1));
+						
            %>	
-			      <option value="<%=res.getObject(1)%>"><%=res.getObject(2)%></option>
+			      <option value="<%=res.getInt(1)%>"><%=res.getString(2)%></option>
+			      
               <%} 
 				%>
 			  </select>
 			  <br><br>
-			  <input type="submit" value="mpsAjout">
+			  <input type="submit" name="actionID" value="mpsAjout">
 			</form>
 			
 </body>

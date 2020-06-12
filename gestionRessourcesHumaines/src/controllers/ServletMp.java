@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import DAO.*;
+import classes.*;
+
 /**
  * Servlet implementation class ServletMp
  */
@@ -34,7 +37,24 @@ public class ServletMp extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
+		String actionID = request.getParameter("actionID");
+		//ajout Admin
+		
+		if(actionID.equals("mpsAjout")){
+			int matiere= Integer.parseInt(request.getParameter("matiere"));
+			int idp= Integer.parseInt(request.getParameter("idp"));
+			Mp mp =new Mp(matiere,idp);
+			System.out.println(mp.toString());}}}
+	
+	       /*try { 
+	    	MpDao mpdao= new MpDao();
+			mpdao.insertMp(mp);
+			System.out.println("yes");
+		} catch (Exception e1) {
+			System.out.println("not");
+		}
+	       this.getServletContext().getRequestDispatcher("/Afectationmatiere.jsp").forward(request, response);
+		}*/
+	
 
-}
+
