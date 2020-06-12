@@ -12,11 +12,29 @@
 </head>
 <body>
       <%@ include file="Index.html" %>
-            <form action="" methode="">
-			  <label for="matiere">Matiere:</label>
+      <form action='Afectationmatiere.jsp' method='Get'><input type='text' name ='cin'  > <input type='submit' class='' value='search'></form>
+            <form action="Post" methode="Mps">
+            <table class="">
+			<tr class="">
+			<th>Nom Francais</th>
+			<th>Nom Ar</th>
+			<th>CIN</th>
+      <%  String cin =request.getParameter("cin");
+    if (cin!=""){
+	PersonnelDao pe= new PersonnelDao();
+	ResultSet res = pe.selectby(cin);
+	while(res.next()){
+		out.write("<tr>");
+		out.write("<td>"+res.getString(5)+"</td>");
+		out.write("<td>"+res.getString(4)+"</td>");
+		out.write("<td>"+res.getString(3)+"</td>");
+		out.write("</tr>");
+	}}%>
+	</table>
+           <label for="matiere">Matiere:</label>
 			  <select name="matiere" id="matiere">
-      
-           <% 	Connection cna=null;	
+           <% 	
+           Connection cna=null;	
            String req=" SELECT * FROM `Matiere`";
            cna=Singleton.getConnect().getCn();
    		  PreparedStatement pst= cna.prepareStatement(req);
@@ -24,12 +42,12 @@
 					while (res.next()){
 						System.out.println(res.getObject(1));
            %>	
-			 
-			      <option value="<%=res.getObject(1)%>"><%=res.getObject(2)%></option>;
-              <%} %>
+			      <option value="<%=res.getObject(1)%>"><%=res.getObject(2)%></option>
+              <%} 
+				%>
 			  </select>
 			  <br><br>
-			  <input type="submit" value="Submit">
+			  <input type="submit" value="mpsAjout">
 			</form>
 			
 </body>

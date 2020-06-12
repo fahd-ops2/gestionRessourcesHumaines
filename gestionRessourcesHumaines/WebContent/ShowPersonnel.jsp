@@ -12,7 +12,7 @@
 </head>
 <body>
     <%@ include file="Index.html" %>
-    <form action='ShowPersonnel.jsp' method='Get'><input type='text' name ='cin'  > <input type='submit' class='' value='search'></form></td>
+    <form action='ShowPersonnel.jsp' method='Get'><input type='text' name ='cin'  > <input type='submit' class='' value='search'></form>
     <table class="">
 		<tr class="">
 		<th>Nom Francais</th>
