@@ -11,7 +11,7 @@
 <title>affecter</title>
 </head>
 <body> 
-        <form action="Mpss" method="Get">
+        <form  method="Post" action="Matieres">
         <label>matiere: </label><br>
 
            <% 	
@@ -28,9 +28,9 @@
                   <label for="<%=res.getInt(1)%>"><%=res.getString(2)%></label><br>  
               <%} 
 				%>
-			  <input type='text' name ='id' value=<%=id %>> 
+			  <input type='text' name ='idp' value=<%=id %>> 
 			  <br><br>
-			  <input type="submit" name="actionID" value="mpsAjout">
+			  <input type="submit" name="aff" value="mpsAjout">
 			</form>
 </body>
 </html>

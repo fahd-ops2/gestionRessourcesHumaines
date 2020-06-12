@@ -7,7 +7,7 @@ public class Mp {
  * @param personnelID
  * @param matiereID
  */
-public Mp(int personnelID, int matiereID) {
+public Mp(int matiereID, int personnelID) {
 	super();
 	PersonnelID = personnelID;
 	MatiereID = matiereID;
