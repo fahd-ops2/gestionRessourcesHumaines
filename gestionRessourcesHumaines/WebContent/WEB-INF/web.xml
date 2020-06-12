@@ -17,7 +17,6 @@
     <servlet-name>ServletAdmin</servlet-name>
     <url-pattern>/Admins</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>ServletAbsence</servlet-name>
     <servlet-class>controllers.ServletAbsence</servlet-class>
@@ -27,12 +26,12 @@
     <url-pattern>/Absences</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>ServletMp</servlet-name>
-    <servlet-class>controllers.ServletMp</servlet-class>
+    <servlet-name>ServletMatiere</servlet-name>
+    <servlet-class>controllers.ServletMatiere</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ServletMp</servlet-name>
-    <url-pattern>/Mpss</url-pattern>
+    <servlet-name>ServletMatiere</servlet-name>
+    <url-pattern>/Matieres</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>ServletDiplomeSu</servlet-name>
@@ -42,7 +41,6 @@
     <servlet-name>ServletDiplomeSu</servlet-name>
     <url-pattern>/Diplomes</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>ServletPersonnel</servlet-name>
     <servlet-class>controllers.ServletPersonnel</servlet-class>
