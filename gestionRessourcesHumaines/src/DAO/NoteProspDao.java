@@ -18,7 +18,7 @@ public class NoteProspDao {
 			PreparedStatement st= cna.prepareStatement(req);
 			st.setInt(1,np.getPersonnelID());
 			st.setFloat(2,np.getNoteProspection());
-			st.setDate(3, np.getDateobtentionPro());
+			st.setString(3, np.getDateobtentionPro());
 			return st.executeUpdate();
 			
 		}catch(Exception ex){
@@ -39,9 +39,9 @@ public class NoteProspDao {
 			return 0;
 		}
 	}
-	public ResultSet selectAllby(){
+	public ResultSet selectAll(){
 		try{
-		String req =" SELECT Pren_n,Pren_N_arabe,NoteAdministratif FROM `noteprosp` na,personnel p where p.Id=na.personnelID " ;
+		String req =" SELECT Pren_n,Pren_N_arabe,NoteProspection,DateobtentionPro,cin FROM `noteprosp` na,personnel p where p.Id=na.personnelID " ;
 		PreparedStatement st = cna.prepareStatement(req);
 		ResultSet rst = st.executeQuery();
 		return rst;
@@ -53,7 +53,7 @@ public class NoteProspDao {
 	}
 	public ResultSet selectAllbycin(String cin ){
 		try{
-		String req =" SELECT Pren_n,Pren_N_arabe,NoteAdministratif FROM `noteprosp` na,personnel p where p.Id=na.personnelID and cin =?" ;
+		String req =" SELECT Pren_n,Pren_N_arabe,NoteProspection,DateobtentionPro,cin FROM `noteprosp` na,personnel p where p.Id=na.personnelID and cin =?" ;
 		PreparedStatement st = cna.prepareStatement(req);
 		st.setString(1,cin);
 		ResultSet rst = st.executeQuery();
@@ -69,8 +69,10 @@ public class NoteProspDao {
 		try{
 		
 		NoteProspDao nt = new NoteProspDao();
-		nt.DeleteNoteProsp(1);
-		
+		ResultSet rs=nt.selectAllbycin("qwert");
+		while (rs.next()){
+			System.out.println(rs.getObject(1));
+		}
 		}catch(Exception e){
 			System.out.println("err");
 			

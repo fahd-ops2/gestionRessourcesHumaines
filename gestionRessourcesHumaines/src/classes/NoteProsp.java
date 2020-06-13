@@ -6,16 +6,29 @@ public class NoteProsp {
 private int ID;
 private int PersonnelID;
 private float NoteProspection;
-private Date DateobtentionPro;
+private String DateobtentionPro;
 
 public NoteProsp(int iD, int personnelID, float noteProspection,
-		Date dateobtentionPro) {
+		String dateobtentionPro) {
 	
 	ID = iD;
 	PersonnelID = personnelID;
 	NoteProspection = noteProspection;
 	DateobtentionPro = dateobtentionPro;
 }
+
+/**
+ * @param personnelID
+ * @param noteProspection
+ * @param dateobtentionPro
+ */
+public NoteProsp(int personnelID, float noteProspection, String dateobtentionPro) {
+	super();
+	PersonnelID = personnelID;
+	NoteProspection = noteProspection;
+	DateobtentionPro = dateobtentionPro;
+}
+
 /* (non-Javadoc)
  * @see java.lang.Object#toString()
  */
@@ -43,10 +56,10 @@ public float getNoteProspection() {
 public void setNoteProspection(float noteProspection) {
 	NoteProspection = noteProspection;
 }
-public Date getDateobtentionPro() {
+public String getDateobtentionPro() {
 	return DateobtentionPro;
 }
-public void setDateobtentionPro(Date dateobtentionPro) {
+public void setDateobtentionPro(String dateobtentionPro) {
 	DateobtentionPro = dateobtentionPro;
 }
 

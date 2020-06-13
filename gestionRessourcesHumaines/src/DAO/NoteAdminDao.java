@@ -35,9 +35,9 @@ public int DeleteNoteAdmin(int i){
 		return 0;
 	}
 }
-public ResultSet selectAllby(){
+public ResultSet selectAll(){
 	try{
-	String req =" SELECT Pren_n,Pren_N_arabe,NoteAdministratif FROM `noteadmin` na,personnel p where p.Id=na.personnelID " ;
+	String req =" SELECT Pren_n,Pren_N_arabe,NoteAdministratif,cin FROM `noteadmin` na,personnel p where p.Id=na.personnelID " ;
 	PreparedStatement st = cna.prepareStatement(req);
 	ResultSet rst = st.executeQuery();
 	return rst;
@@ -49,7 +49,7 @@ public ResultSet selectAllby(){
 }
 public ResultSet selectAllbycin(String cin ){
 	try{
-	String req =" SELECT Pren_n,Pren_N_arabe,NoteAdministratif FROM `noteadmin` na,personnel p where p.Id=na.personnelID and cin =?" ;
+	String req =" SELECT Pren_n,Pren_N_arabe,NoteAdministratif,cin FROM `noteadmin` na,personnel p where p.Id=na.personnelID and p.cin =?" ;
 	PreparedStatement st = cna.prepareStatement(req);
 	st.setString(1,cin);
 	ResultSet rst = st.executeQuery();

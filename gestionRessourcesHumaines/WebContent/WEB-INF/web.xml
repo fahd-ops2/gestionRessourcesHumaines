@@ -42,11 +42,11 @@
     <url-pattern>/Personnels</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>ServletMat</servlet-name>
-    <servlet-class>controllers.ServletMat</servlet-class>
+    <servlet-name>ServletNote</servlet-name>
+    <servlet-class>controllers.ServletNote</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ServletMat</servlet-name>
-    <url-pattern>/Mat</url-pattern>
+    <servlet-name>ServletNote</servlet-name>
+    <url-pattern>/Notes</url-pattern>
   </servlet-mapping>
 </web-app>

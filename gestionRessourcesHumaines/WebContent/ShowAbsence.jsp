@@ -16,6 +16,7 @@
     
 <%  String cin =request.getParameter("cin");
     if (cin=="")this.getServletContext().getRequestDispatcher("/ShowAbsences.jsp").forward(request, response);
+    
 	AbsenceDao p= new AbsenceDao();
 	ResultSet rs = p.selectbycin(cin);
 	
@@ -40,8 +41,13 @@
 	}
 %>
 </table>
+<% while(rs.next()){
+	if (request.getParameter("cin")!=rs.getString("cin"))
+		this.getServletContext().getRequestDispatcher("/ShowAbsences.jsp").forward(request, response);
+ %>
    <form action="AjoutAbsence.jsp">
    <input type ="hidden" name="idp" value="<%=request.getParameter("cin")%>">
    <input type="submit" class="" name="actionID" value="ajouter une absence">
+   <%} %>
 </body>
 </html>
