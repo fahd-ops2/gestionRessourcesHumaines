@@ -164,6 +164,9 @@ a:hover{
     .img img{
         width:400px;
     }
+    .img1 img{
+        width:400px;
+    }
 }
 @media screen and (max-width:900px){
     .img{
@@ -178,4 +181,37 @@ a:hover{
     .login-container{
         justify-content: center;
     }
+}
+/*inscription */
+.wave1{
+    position: fixed;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+.img1{
+	
+	 display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width :900px;
+    margin-left:100px;
+}
+@media screen and (max-width:1030px){
+    .wave1{
+        display: none;
+    }
+    .my-container{
+        position: absolute;
+        top: auto;
+        left: auto;
+        display: flex;
+    }
+}
+@media screen and (max-width:1000px){
+    .img1{
+        display: none;
+    }
+    
 }
