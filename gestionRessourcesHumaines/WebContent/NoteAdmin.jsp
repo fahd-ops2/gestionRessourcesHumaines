@@ -35,7 +35,7 @@
 		</form> <br>
 		<h1>note prospection</h1>
 		<form class="" method="post" action="Notes"  >
-		<br>
+		<br> 
 
           
 		  <input type="hidden" class=""   name="PersonnelID" value="<%=res.getInt("ID") %>"><br><br>
