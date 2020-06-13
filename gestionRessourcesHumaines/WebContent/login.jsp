@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/Style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
       <link rel="stylesheet" href="fontawsome/css/all.min.css">
-<title>Insert title here</title>
+<title>Login</title>
 </head>
 <body>
  <img class="wave" src="Images/background.png" >
@@ -23,7 +23,7 @@
                 Object y =request.getAttribute("password");
                 if (y==null)y="";
                 %>
-                <h2>BIENVENEU</h2>
+                <h2>BIENVENUE</h2>
                 <div class="input-div one ">
                     <div class="i">
                         <i class="fas fa-user"></i>
