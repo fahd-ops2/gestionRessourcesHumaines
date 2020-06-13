@@ -3,11 +3,10 @@ package classes;
 import java.sql.*;
 
 public class Etablisment {
-private int idE;
-private String etablissement_ville;
+private int idE,CodeLM;
+private String etablissement_ville,Mission;
 private Date date_debut;
 private Date date_fin ;
-private int ListeMissionID;
 private int PersonnelID;
 
 
@@ -16,22 +15,58 @@ private int PersonnelID;
 
 
 /**
- * @param idE
+ * @return the codeLM
+ */
+public int getCodeLM() {
+	return CodeLM;
+}
+/**
+ * @param codeLM the codeLM to set
+ */
+public void setCodeLM(int codeLM) {
+	CodeLM = codeLM;
+}
+/**
+ * @return the mission
+ */
+public String getMission() {
+	return Mission;
+}
+/**
+ * @param mission the mission to set
+ */
+public void setMission(String mission) {
+	Mission = mission;
+}
+
+/**
+ * @param codeLM
  * @param etablissement_ville
+ * @param mission
  * @param date_debut
  * @param date_fin
- * @param listeMissionID
  * @param personnelID
  */
-public Etablisment(int idE, String etablissement_ville, Date date_debut,
-		Date date_fin, int listeMissionID, int personnelID) {
-	
-	this.idE = idE;
+public Etablisment(int codeLM, String etablissement_ville, String mission,
+		Date date_debut, Date date_fin, int personnelID) {
+	super();
+	CodeLM = codeLM;
 	this.etablissement_ville = etablissement_ville;
+	Mission = mission;
 	this.date_debut = date_debut;
 	this.date_fin = date_fin;
-	ListeMissionID = listeMissionID;
 	PersonnelID = personnelID;
+}
+
+/* (non-Javadoc)
+ * @see java.lang.Object#toString()
+ */
+@Override
+public String toString() {
+	return "Etablisment [idE=" + idE + ", CodeLM=" + CodeLM
+			+ ", etablissement_ville=" + etablissement_ville + ", Mission="
+			+ Mission + ", date_debut=" + date_debut + ", date_fin=" + date_fin
+			+ ", PersonnelID=" + PersonnelID + "]";
 }
 /**
  * @return the idE
@@ -81,18 +116,7 @@ public Date getDate_fin() {
 public void setDate_fin(Date date_fin) {
 	this.date_fin = date_fin;
 }
-/**
- * @return the listeMissionID
- */
-public int getListeMissionID() {
-	return ListeMissionID;
-}
-/**
- * @param listeMissionID the listeMissionID to set
- */
-public void setListeMissionID(int listeMissionID) {
-	ListeMissionID = listeMissionID;
-}
+
 /**
  * @return the personnelID
  */
@@ -108,13 +132,8 @@ public void setPersonnelID(int personnelID) {
 /* (non-Javadoc)
  * @see java.lang.Object#toString()
  */
-@Override
-public String toString() {
-	return "Etablisment [idE=" + idE + ", etablissement_ville="
-			+ etablissement_ville + ", date_debut=" + date_debut
-			+ ", date_fin=" + date_fin + ", ListeMissionID=" + ListeMissionID
-			+ ", PersonnelID=" + PersonnelID + "]";
-}
+
+
 
 
  }

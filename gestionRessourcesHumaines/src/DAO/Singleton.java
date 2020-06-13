@@ -12,7 +12,7 @@ public class Singleton {
        try{
     	   Class.forName("com.mysql.jdbc.Driver"); 
     	   String unicode= "?useUnicode=yes&characterEncoding=UTF-8";
-            this.cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/presonneldb"+unicode,"root","");
+            this.cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/persodb"+unicode,"root","");
        }catch(SQLException e ){JOptionPane.showMessageDialog(null,e.getMessage());} catch (ClassNotFoundException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();

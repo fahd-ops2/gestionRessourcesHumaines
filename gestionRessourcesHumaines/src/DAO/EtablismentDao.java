@@ -13,13 +13,14 @@ public class EtablismentDao {
 	}
 	public int insertEtablisment(Etablisment et){
 		try{
-			String req="INSERT INTO `etablisment` (`ListeMissionID`, `PersonnelID`, `Etablissement_ville`, `Date_debut`, `Date_fin`) VALUES (?, ?, ?, ?, ?)";
+			String req="INSERT INTO `etablisment` (`PersonnelID`, `Etablissement_ville`, `Date_debut`, `Date_fin`, `Mission`, `CodeLM`) VALUES (?, ?, ?, ?, ?,?)";
 			PreparedStatement st= cn.prepareStatement(req);
-			st.setInt(1,et.getListeMissionID());
-			st.setInt(2, et.getPersonnelID());
-			st.setString(3,et.getEtablissement_ville());
-			st.setDate(4, et.getDate_debut());
-			st.setDate(5, et.getDate_fin());
+			st.setInt(1, et.getPersonnelID());
+			st.setString(2,et.getEtablissement_ville());
+			st.setDate(3, et.getDate_debut());
+			st.setDate(4, et.getDate_fin());
+			st.setString(5,et.getMission());
+			st.setInt(6, et.getCodeLM());
 			return st.executeUpdate();
 			
 			
@@ -43,7 +44,7 @@ public class EtablismentDao {
 		}
 	public ResultSet selectAllbycin(String cin ){
 		try{
-		String req =" SELECT Pren_n,Pren_N_arabe,ListeMissionID,Etablissement_ville,Etablissement_ville,Date_debut,Date_fin FROM `etablisment` eta,personnel p where p.Id=eta.personnelID and cin =?" ;
+		String req =" SELECT * FROM `etablisment` eta,personnel p where p.Id=eta.personnelID and cin =?" ;
 		PreparedStatement st = cn.prepareStatement(req);
 		st.setString(1,cin);
 		ResultSet rst = st.executeQuery();
@@ -56,7 +57,7 @@ public class EtablismentDao {
 	}
 	public ResultSet selectAll(){
 		try{
-		String req =" SELECT Pren_n,Pren_N_arabe,ListeMissionID,Etablissement_ville,Etablissement_ville,Date_debut,Date_fin FROM `noteadmin` eta,personnel p where p.Id=eta.personnelID " ;
+		String req =" SELECT * FROM `noteadmin` eta,personnel p where p.Id=eta.personnelID " ;
 		PreparedStatement st = cn.prepareStatement(req);
 		ResultSet rst = st.executeQuery();
 		return rst;

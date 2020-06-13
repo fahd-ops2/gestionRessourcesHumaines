@@ -4,19 +4,28 @@ import java.sql.*;
 
 public class DiplomeP {
 private int ID;
-private int PersonnelID;
-private int SpecialiteID;
+private int PersonnelID,CodeS;
+private String Specialitee;
 private String Diplomep;
 private Date DateobtentionP;
 
 
 
 
-public DiplomeP(int iD, int personnelID, int specialiteID, String diplomep,
-		Date dateobtentionP) {
-	ID = iD;
+
+/**
+ * @param personnelID
+ * @param codeS
+ * @param specialitee
+ * @param diplomep
+ * @param dateobtentionP
+ */
+public DiplomeP(int personnelID, int codeS, String specialitee,
+		String diplomep, Date dateobtentionP) {
+	super();
 	PersonnelID = personnelID;
-	SpecialiteID = specialiteID;
+	CodeS = codeS;
+	Specialitee = specialitee;
 	Diplomep = diplomep;
 	DateobtentionP = dateobtentionP;
 }
@@ -32,11 +41,30 @@ public int getPersonnelID() {
 public void setPersonnelID(int personnelID) {
 	PersonnelID = personnelID;
 }
-public int getSpecialiteID() {
-	return SpecialiteID;
+
+/**
+ * @return the codeS
+ */
+public int getCodeS() {
+	return CodeS;
 }
-public void setSpecialiteID(int specialiteID) {
-	SpecialiteID = specialiteID;
+/**
+ * @param codeS the codeS to set
+ */
+public void setCodeS(int codeS) {
+	CodeS = codeS;
+}
+/**
+ * @return the specialitee
+ */
+public String getSpecialitee() {
+	return Specialitee;
+}
+/**
+ * @param specialitee the specialitee to set
+ */
+public void setSpecialitee(String specialitee) {
+	Specialitee = specialitee;
 }
 public String getDiplomep() {
 	return Diplomep;

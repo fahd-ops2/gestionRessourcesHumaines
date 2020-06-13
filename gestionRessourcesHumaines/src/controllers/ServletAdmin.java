@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import classes.Admin;
-import classes.Mp;
+
 import DAO.AdminDao;
-import DAO.MpDao;
+
 
 
 /**
@@ -96,8 +96,8 @@ public class ServletAdmin extends HttpServlet {
 	    							while(res.next()){
 	    								if (res.getString(2).equals(email) && res.getString(3).equals(password)){
 	    									HttpSession session =request.getSession();
-	    								    session.setAttribute("nomfr", res.getString(3));
-	    								    session.setAttribute("nomar", res.getString(4));
+	    								    session.setAttribute("nomfr", res.getString(4));
+	    								    session.setAttribute("nomar", res.getString(5));
 	    									this.getServletContext().getRequestDispatcher("/Acceuil.jsp").forward(request, response);}
 	    								    
 	    							}

@@ -13,12 +13,13 @@ public DiplomePDao(){
 }
 public int insertDiplomeP(DiplomeP d){
 	try{
-		String req="INSERT INTO `diplomep` ( `PersonnelID`, `SpecialiteID`, `Diplomep`, `DateobtentionP`) VALUES ( ?, ?, ?, ?)";
+		String req="INSERT INTO `diplomep` ( `PersonnelID`, `Diplomep`, `DateobtentionP`, `Specialitee`, `CodeS`) VALUES ( ?, ?, ?, ?,?)";
 		PreparedStatement st = cn.prepareStatement(req);
 		st.setInt(1,d.getPersonnelID());
-		st.setInt(2, d.getSpecialiteID());
-		st.setString(3 , d.getDiplomep());
-		st.setDate(4, d.getDateobtentionP());
+		st.setString(2, d.getDiplomep());
+		st.setDate(3, d.getDateobtentionP());
+		st.setString(4 , d.getSpecialitee());
+		st.setInt(5, d.getCodeS());
 		return st.executeUpdate();
 	}catch(Exception e){
 		System.out.println("insertDiplome");
