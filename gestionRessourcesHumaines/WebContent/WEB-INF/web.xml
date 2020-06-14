@@ -49,4 +49,12 @@
     <servlet-name>ServletNote</servlet-name>
     <url-pattern>/Notes</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>ServletMission</servlet-name>
+    <servlet-class>controllers.ServletMission</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletMission</servlet-name>
+    <url-pattern>/Missions</url-pattern>
+  </servlet-mapping>
 </web-app>

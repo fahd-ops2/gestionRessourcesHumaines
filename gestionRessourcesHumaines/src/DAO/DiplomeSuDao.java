@@ -18,11 +18,11 @@ public int insertDiplomeSu(DiplomeSu dsu){
 		try {
 			
 			
-             String req ="INSERT INTO `diplomesu`( `PersonnelID`, `DiplomeSU`, `DateobtentionSu`, `Faculte`, `Specialitee`, `CodeS`) VALUES ( ?, ?,?,?,?,?) ";
+             String req ="INSERT INTO `diplomesu`( `PersonnelID`, `DiplomeSU`, `DateobtentionSu`, `Faculte`, `Specialitee`, `CodeS`) VALUES  ( ?, ?,?,?,?,?) ";
              PreparedStatement pst= cna.prepareStatement(req);
              pst.setInt(1,dsu.getPersonnelID());
              pst.setString(2,dsu.getDiplomeSU());
-             pst.setDate(3,dsu.getDateobtentionSu());
+             pst.setString(3,dsu.getDateobtentionSu());
              pst.setString(4,dsu.getFaculte());
              pst.setString(5,dsu.getSpecialitee());
              pst.setInt(6,dsu.getCodeS());
@@ -47,20 +47,20 @@ public int deleteDiplomeSu(int i){
 public ResultSet selectAll(){
 	try{
 		
-		String req=" SELECT * FROM `diplomesu` ";
+		String req="   SELECT Pren_n,Pren_N_arabe,`DiplomeSU`,Specialitee,cin FROM `diplomesu`dipsu,personnel p where p.Id=dipsu.personnelID  ";
 			PreparedStatement pst= cna.prepareStatement(req);
 			ResultSet res =pst.executeQuery();
 			return res;
 		}catch(Exception e){
-			System.out.println("selectby of personnel");
+			System.out.println("selectall of personnel");
 			return null;
 		}}
-public ResultSet selectbyId(int id){
+public ResultSet selectbycin(String cin){
 	try{
 		
-		String req=" SELECT * FROM `diplomesu` where PersonnelID = ? ";
+		String req="  SELECT Pren_n,Pren_N_arabe,`DiplomeSU`,Specialitee,cin FROM `diplomesu`dipsu,personnel p where p.Id=dipsu.personnelID and p.cin= ? ";
 			PreparedStatement pst= cna.prepareStatement(req);
-			pst.setInt(1, id);
+			pst.setString(1, cin);
 			ResultSet res =pst.executeQuery();
 			return res;
 		}catch(Exception e){
@@ -73,9 +73,9 @@ public static void main(String[]args){
 		 //Date d= new Date(0);
 	 //DiplomeSu ad=new DiplomeSu( 1, 1, "aaaa", "aaa",d);
 	 DiplomeSuDao ado=new DiplomeSuDao();
-	 ResultSet res =ado.selectbyId(1);
+	 ResultSet res =ado.selectAll();
 	 while (res.next()){
-			System.out.println(res.getObject(1)+" "+res.getObject(2)+" "+res.getObject(3)+" "+res.getObject(4)+" "+res.getObject(5)+" "+res.getObject(6));
+			System.out.println(res.getObject(1));
 		}
      }catch(Exception e ){System.out.println("non");}
 	 }

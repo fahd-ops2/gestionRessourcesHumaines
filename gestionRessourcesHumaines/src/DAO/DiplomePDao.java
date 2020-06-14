@@ -13,11 +13,11 @@ public DiplomePDao(){
 }
 public int insertDiplomeP(DiplomeP d){
 	try{
-		String req="INSERT INTO `diplomep` ( `PersonnelID`, `Diplomep`, `DateobtentionP`, `Specialitee`, `CodeS`) VALUES ( ?, ?, ?, ?,?)";
+		String req="INSERT INTO `diplomep`( `PersonnelID`, `Diplomep`, `DateobtentionP`, `Specialitee`, `CodeS`) VALUES( ?, ?, ?, ?,?)";
 		PreparedStatement st = cn.prepareStatement(req);
 		st.setInt(1,d.getPersonnelID());
 		st.setString(2, d.getDiplomep());
-		st.setDate(3, d.getDateobtentionP());
+		st.setString(3, d.getDateobtentionP());
 		st.setString(4 , d.getSpecialitee());
 		st.setInt(5, d.getCodeS());
 		return st.executeUpdate();
@@ -42,7 +42,7 @@ public int deleteDiplomeP(int i){
 public ResultSet selectAll(){
 	try{
 		
-		String req=" SELECT * FROM `diplomep` ";
+		String req=" SELECT Pren_n,Pren_N_arabe,`Diplomep`,Specialitee,cin FROM `diplomep`dip ,personnel p where p.Id=dip.personnelID  ";
 			PreparedStatement pst= cn.prepareStatement(req);
 			ResultSet res =pst.executeQuery();
 			return res;
@@ -52,12 +52,12 @@ public ResultSet selectAll(){
 		}
 	}
 /** SelectById**/
-public ResultSet selectbyId(int id){
+public ResultSet selectbycin(String cin){
 	try{
 		
-		String req=" SELECT * FROM `diplomep` where PersonnelID = ? ";
+		String req="  SELECT Pren_n,Pren_N_arabe,`Diplomep`,Specialitee,cin FROM `diplomep`dip ,personnel p where p.Id=dip.personnelID and p.cin= ? ";
 			PreparedStatement pst= cn.prepareStatement(req);
-			pst.setInt(1, id);
+			pst.setString(1, cin);
 			ResultSet res =pst.executeQuery();
 			return res;
 		}catch(Exception e){
@@ -68,13 +68,12 @@ public ResultSet selectbyId(int id){
 		}
 
 
+
 public static void main(String[] args){
 	try{
+		DiplomeP dp= new DiplomeP(1, 03, "dsi", "bts", "20/1/2000");
 	 DiplomePDao ado=new DiplomePDao();
-	 ResultSet res =ado.selectAll();
-	 while (res.next()){
-			System.out.println(res.getObject(1)+" "+res.getObject(2)+" "+res.getObject(3)+" "+res.getObject(4)+" "+res.getObject(5));
-		}
+	 ado.insertDiplomeP(dp);
 	 System.out.println("alo");
      }catch(Exception e ){
     	 System.out.println("non");

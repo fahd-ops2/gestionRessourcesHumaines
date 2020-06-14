@@ -5,7 +5,7 @@ import java.sql.*;
 public class DiplomeSu {
   private int ID,PersonnelID,CodeS;
   private String DiplomeSU,Faculte,Specialitee;
-  private Date DateobtentionSu;
+  private String DateobtentionSu;
 /**
  * @param iD
  * @param personnelID
@@ -30,7 +30,7 @@ public int getID() {
  * @param dateobtentionSu
  */
 public DiplomeSu(int personnelID, int codeS, String diplomeSU, String faculte,
-		String specialitee, Date dateobtentionSu) {
+		String specialitee, String dateobtentionSu) {
 	super();
 	PersonnelID = personnelID;
 	CodeS = codeS;
@@ -85,13 +85,13 @@ public void setFaculte(String faculte) {
 /**
  * @return the dateobtentionSu
  */
-public Date getDateobtentionSu() {
+public String getDateobtentionSu() {
 	return DateobtentionSu;
 }
 /**
  * @param dateobtentionSu the dateobtentionSu to set
  */
-public void setDateobtentionSu(Date dateobtentionSu) {
+public void setDateobtentionSu(String dateobtentionSu) {
 	DateobtentionSu = dateobtentionSu;
 }
 /* (non-Javadoc)

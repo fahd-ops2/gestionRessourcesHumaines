@@ -63,6 +63,6 @@ if (cin=="")this.getServletContext().getRequestDispatcher("/ShowNotes.jsp").forw
 
 <form action="NoteAdmin.jsp" >
    <input type ="hidden" name="cin" value="<%=request.getParameter("cin")%>">
-   <input type="submit" class="" name="actionID" value="ajouter note les notes">
+   <input type="submit" class="" name="actionID" value="ajouter note les notes"></form>
 </body>
 </html>

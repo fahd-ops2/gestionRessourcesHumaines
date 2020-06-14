@@ -7,7 +7,7 @@ private int ID;
 private int PersonnelID,CodeS;
 private String Specialitee;
 private String Diplomep;
-private Date DateobtentionP;
+private String DateobtentionP;
 
 
 
@@ -21,7 +21,7 @@ private Date DateobtentionP;
  * @param dateobtentionP
  */
 public DiplomeP(int personnelID, int codeS, String specialitee,
-		String diplomep, Date dateobtentionP) {
+		String diplomep, String dateobtentionP) {
 	super();
 	PersonnelID = personnelID;
 	CodeS = codeS;
@@ -72,11 +72,21 @@ public String getDiplomep() {
 public void setDiplomep(String diplomep) {
 	Diplomep = diplomep;
 }
-public Date getDateobtentionP() {
+public String getDateobtentionP() {
 	return DateobtentionP;
 }
-public void setDateobtentionP(Date dateobtentionP) {
+public void setDateobtentionP(String dateobtentionP) {
 	DateobtentionP = dateobtentionP;
 }
+/* (non-Javadoc)
+ * @see java.lang.Object#toString()
+ */
+@Override
+public String toString() {
+	return "DiplomeP [ID=" + ID + ", PersonnelID=" + PersonnelID + ", CodeS="
+			+ CodeS + ", Specialitee=" + Specialitee + ", Diplomep=" + Diplomep
+			+ ", DateobtentionP=" + DateobtentionP + "]";
+}
+
 
 }
