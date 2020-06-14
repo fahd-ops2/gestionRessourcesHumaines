@@ -57,4 +57,20 @@
     <servlet-name>ServletMission</servlet-name>
     <url-pattern>/Missions</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>ServletMatiere</servlet-name>
+    <servlet-class>controllers.ServletMatiere</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletMatiere</servlet-name>
+    <url-pattern>/Matieres</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ServletCadre</servlet-name>
+    <servlet-class>controllers.ServletCadre</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletCadre</servlet-name>
+    <url-pattern>/Cadres</url-pattern>
+  </servlet-mapping>
 </web-app>
