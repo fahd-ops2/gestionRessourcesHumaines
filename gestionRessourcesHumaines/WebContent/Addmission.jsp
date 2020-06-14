@@ -14,32 +14,36 @@
 <%@ include file="Index.html" %>
 <h1>afectation de mission</h1>
        <%
-         String cin= request.getParameter("idp");
+         String cin= request.getParameter("cin");
          PersonnelDao per=new PersonnelDao();
          ResultSet res =per.selectby(cin);
          while (res.next()){
 
        %>
-    <form class="" method="post" action="Absences"  >
+    <form class="" method="post" action="Missions"  >
           
-		  <input type="hidden" class=""   name="idperso" value="<%=res.getInt("ID") %>"><br><br>
+		  <input type="text" class=""   name="PersonnelID" value="<%=res.getInt("ID") %>"><br><br>
 		  
-          <label>duree par jour : </label><br>
-		  <input type="text" class=""   name="duree"><br><br>
+          
+          <label>la mission: </label><br>
+		  <input type="text" class=""   name="Mission"><br><br>
 		  
-		  <label>Date d'absence </label><br>
-		  <input type="date" class=""   name="DateAbsence"><br><br>
+		  <label>Date debut</label><br>
+		  <input type="date" class=""   name="Date_debut"><br><br>
 		  
-		  <label>justification: </label><br>
-		  <input type="radio" id="justifie" name="justification" value="justifie">
-          <label for="justifie">justifie</label><br>
-          <input type="radio" id="non justifie" name="justification" value="non justifie">
-          <label for="non justifie">non justifiee</label><br>
+		  <label>Date fin </label><br>
+		  <input type="date" class=""   name="Date_fin"><br><br>
+		  
+		  <label>Etablissement et ville </label><br>
+		  <input type="text" class=""   name="Etablissement_ville"><br><br>
+		  
+		  <label>code mission </label><br>
+		  <input type="text" class=""   name="CodeLM"><br><br>
 
-		  <input type="submit" class="" name="actionID" value="ajouterAb">
+		  <input type="submit" class="" name="actionID" value="affecter">
 		  <%} %>
 		</form>  
-<h1>afectation de mission</h1>
+
 
 
 </body>

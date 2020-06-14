@@ -5,8 +5,8 @@ import java.sql.*;
 public class Etablisment {
 private int idE,CodeLM;
 private String etablissement_ville,Mission;
-private Date date_debut;
-private Date date_fin ;
+private String date_debut;
+private String date_fin ;
 private int PersonnelID;
 
 
@@ -48,7 +48,7 @@ public void setMission(String mission) {
  * @param personnelID
  */
 public Etablisment(int codeLM, String etablissement_ville, String mission,
-		Date date_debut, Date date_fin, int personnelID) {
+		String date_debut, String date_fin, int personnelID) {
 	super();
 	CodeLM = codeLM;
 	this.etablissement_ville = etablissement_ville;
@@ -95,25 +95,25 @@ public void setEtablissement_ville(String etablissement_ville) {
 /**
  * @return the date_debut
  */
-public Date getDate_debut() {
+public String getDate_debut() {
 	return date_debut;
 }
 /**
  * @param date_debut the date_debut to set
  */
-public void setDate_debut(Date date_debut) {
+public void setDate_debut(String date_debut) {
 	this.date_debut = date_debut;
 }
 /**
  * @return the date_fin
  */
-public Date getDate_fin() {
+public String getDate_fin() {
 	return date_fin;
 }
 /**
  * @param date_fin the date_fin to set
  */
-public void setDate_fin(Date date_fin) {
+public void setDate_fin(String date_fin) {
 	this.date_fin = date_fin;
 }
 
