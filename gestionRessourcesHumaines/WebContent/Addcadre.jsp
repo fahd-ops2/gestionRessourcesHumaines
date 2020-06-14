@@ -8,9 +8,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>affecter un cadre </title>
 </head>
 <body>
+    <%@ include file="Index.html" %>
+       <%
+         String cin= request.getParameter("cin");
+         PersonnelDao per=new PersonnelDao();
+         ResultSet res =per.selectby(cin);
+         while (res.next()){
+
+       %>
+    <form class="" method="post" action="Cadres"  >
+
+		  <input type="text" class=""   name="PersonnelID" value="<%=res.getInt("ID") %>"><br><br>
+		  
+		  <label>cadre </label><br>
+		  <input type="text" class=""   name="Cadre"><br><br>
+		  
+		  <label>code de cadre </label><br>
+		  <input type="text" class=""   name="CodeC"><br><br>
+		  
+		  <input type="submit" class="" name="actionID" value="ajout">
+	</form>
+	<%} %>
+
 
 </body>
 </html>
