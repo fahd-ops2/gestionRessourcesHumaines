@@ -71,7 +71,7 @@ public ResultSet selectbycin(String cin){
 
 public ResultSet selectAll(){
 	try {
-		String req ="SELECT Pren_n,Pren_n_arabe , `Duree`, `Justification`,DateAbsence FROM absence a inner join Personnel p on p.ID=a.PersonnelID  ";
+		String req ="SELECT Pren_n,Pren_n_arabe , `Duree`, `Justification`,DateAbsence,PersonnelID ,cin FROM absence a inner join Personnel p on p.ID=a.PersonnelID  ";
 		PreparedStatement pst= cna.prepareStatement(req);
 		return pst.executeQuery();
 

@@ -12,7 +12,7 @@
 </head>
 <body>
     <%@ include file="Index.html" %>
-    <form action='ShowAbsence.jsp' method='Get'><input type='text' name ='cin'  > <input type='submit' class='' value='search'></form></td>
+    <form action='ShowAbsences.jsp' method='Get'><input type='text' name ='cin'  > <input type='submit' class='' value='search'></form></td>
     
 <%  
 	AbsenceDao p= new AbsenceDao();
@@ -32,8 +32,12 @@
 		out.write("<td>"+rs.getString("Duree")+"</td>");
 		out.write("<td>"+rs.getDate("DateAbsence")+"</td>");
 		out.write("<td>"+rs.getString("Justification")+"</td>");
+		out.write("<td><form action='UpdateAbsence.jsp' method='POST'><input type='hidden' name ='id' value='"+rs.getInt("PersonnelID")+"'> <input type='submit' class='' value='modifier'></form></td>");
+		out.write("<td><form action='AjoutAbsence.jsp'><input type='hidden' name ='idp' value='"+rs.getString("cin")+"'> <input type='submit' class=''name='actionID' value='ajouter une absence'></form></td>");
 		out.write("</tr>");
+		
 	}
+	out.write("</table>");
 %>
 </table>
 </body>
