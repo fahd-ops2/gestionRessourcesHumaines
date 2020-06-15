@@ -16,6 +16,7 @@ public class Singleton {
        }catch(SQLException e ){JOptionPane.showMessageDialog(null,e.getMessage());} catch (ClassNotFoundException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
+		
 	}
     }
 
