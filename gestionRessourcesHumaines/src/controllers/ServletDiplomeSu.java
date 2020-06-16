@@ -52,10 +52,11 @@ public class ServletDiplomeSu extends HttpServlet {
 				DiplomePDao dipdao= new DiplomePDao();
 				dipdao.insertDiplomeP(dip);
 				System.out.println("yeees");
+				this.getServletContext().getRequestDispatcher("ShowPersonnel.jsp").forward(request, response);
 			} catch (Exception e) {
 				System.out.println("nooo");
 			}
-			this.getServletContext().getRequestDispatcher("/mainProfile.jsp").forward(request, response);
+		
 		}
 		if(actionID.equals("ajoutdiplomesu")){
 			int PersonnelID= Integer.parseInt(request.getParameter("PersonnelID"));
@@ -70,10 +71,11 @@ public class ServletDiplomeSu extends HttpServlet {
 				DiplomeSuDao dipsdao= new DiplomeSuDao();
 				dipsdao.insertDiplomeSu(dips);
 				System.out.println("yeees");
+				this.getServletContext().getRequestDispatcher("ShowPersonnel.jsp").forward(request, response);
 			} catch (Exception e) {
 				System.out.println("nooo");
 			}
-			this.getServletContext().getRequestDispatcher("/mainProfile.jsp").forward(request, response);
+			
 		}
 	}
 
