@@ -73,4 +73,12 @@
     <servlet-name>ServletCadre</servlet-name>
     <url-pattern>/Cadres</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>ServletDiplomate</servlet-name>
+    <servlet-class>controllers.ServletDiplomate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletDiplomate</servlet-name>
+    <url-pattern>/Diplomate</url-pattern>
+  </servlet-mapping>
 </web-app>
