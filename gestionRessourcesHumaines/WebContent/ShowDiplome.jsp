@@ -1,74 +1,184 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
      <%@ page import="java.util.*" %>
     <%@ page import="classes.*"%>
     <%@ page import="DAO.*"%>
     <%@ page import="java.sql.*"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>show diplome</title>
-</head>
-<body>
-    <%@ include file="Index.html" %>
-    <form action='ShowDiplome.jsp' method='Get'><input type='text' name ='cin'  > <input type='submit' class='' value='search'></form>
-    <h1>Diplome professionnel</h1>
-    <%  
-    String cin =request.getParameter("cin");
-    if (cin=="")this.getServletContext().getRequestDispatcher("/ShowDiplomes.jsp").forward(request, response);
-	DiplomePDao p= new DiplomePDao();
-	ResultSet rs = p.selectbycin(cin);
-        out.write("<table class=''>");
-        out.write("<tr class=''>");
-        out.write("<th>Pren_n</th>");
-        out.write("<th>Pren_n_arabe</th>");
-        out.write("<th>Diplome</th>");
-        out.write("<th>Specialitee</th>");
 
-        
-	while(rs.next()){
-		out.write("<tr>");
-		out.write("<td>"+rs.getString("Pren_n")+"</td>");
-		out.write("<td>"+rs.getString("Pren_n_arabe")+"</td>");
-		out.write("<td>"+rs.getString("Diplomep")+"</td>");
-		out.write("<td>"+rs.getString("Specialitee")+"</td>");
-		out.write("</tr><br>");
-	}
-	rs.close();
-%>
-</table>
-<br>
-
-<h1>Diplome scolaire et universitaire</h1><br>
-<%  
-
-if (cin=="")this.getServletContext().getRequestDispatcher("/ShowDiplomes.jsp").forward(request, response);
-    
-	DiplomeSuDao pa= new DiplomeSuDao();
-	ResultSet res = pa.selectbycin(cin);
-        out.write("<table class=''>");
-        out.write("<tr class=''>");
-        out.write("<th>Pren_n</th>");
-        out.write("<th>Pren_n_arabe</th>");
-        out.write("<th>diplome</th>");
-        out.write("<th>Specialitee</th>");
-
-        
-	while(res.next()){
-		out.write("<tr>");
-		out.write("<td>"+res.getString("Pren_n")+"</td>");
-		out.write("<td>"+res.getString("Pren_n_arabe")+"</td>");
-		out.write("<td>"+res.getString("DiplomeSU")+"</td>");
-		out.write("<td>"+res.getString("Specialitee")+"</td>");
-		out.write("</tr>");
-		
-	}
-	res.close();
-%>
-</table>
- <form action="addDiplomes.jsp" >
-   <input type ="hidden" name="cin" value="<%=request.getParameter("cin")%>">
-   <input type="submit" class="" name="actionID" value="affecter un diplome"></form>
-</body>
-</html>
+   
+   
+	</head>
+	<body>
+  <%  
+   String cin =request.getParameter("cin");
+   if (cin=="")this.getServletContext().getRequestDispatcher("/mainProfilef.jsp").forward(request, response);
+   DiplomePDao p1= new DiplomePDao();
+   ResultSet rs = p1.selectbycin(cin);
+   DiplomeSuDao pa= new DiplomeSuDao();
+	   ResultSet res = pa.selectbycin(cin);
+   %>
+  
+	<div class="card text-center">
+               <div class="card text-center">
+                    <div class="card-header">
+                      
+                      <ul class="nav nav-tabs card-header-tabs">
+                        <li class="nav-item">
+                          <a class="nav-link active" href="#deps" data-toggle="tab">Diplome scolaire et universitaire</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#depsa" data-toggle="tab">Diplome professionnel </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#adddep" data-toggle="tab">Ajoute deplome</a>
+                          </li>
+                       
+                      </ul>
+                    </div>
+                    <!--Here -->
+                    <div class="tab-content">
+                        
+                        <!--code de liste Diplome scolaire et universitaire-->
+                    <div class="card-body tab-pane active" role="tabpanel" id="deps">
+                        <div class="row">
+                            <h1 class="title ml-auto mr-auto">Diplome scolaire et universitaire</h1>
+                        </div>
+                        <table class="table myDatatable" id="myTable">
+                                 <thead class="thead-dark">
+                                     <tr>
+                                    <th scope="col">Nom Francais</th>
+                                    <th scope="col">الاسم بالعربية</th>
+                                    <th scope="col">diplome</th>
+                                    <th scope="col">Specialitee</th>
+                                   
+                                    </tr>
+                                </thead>
+                            <tbody>
+                   
+                        		          <% 
+                            
+                             while(res.next()){
+                            	 
+                        out.write("<tr>");
+                            out.write("<td class='align-middle'>"+res.getString(1)+"</th>");
+                            out.write("<td class='align-middle' >"+res.getString(2)+"</td>");
+                            out.write("<td class='align-middle'>"+res.getString(3)+"</td>");
+                            out.write("<td class='align-middle'>"+res.getString(4)+"</td>");
+                          
+                            out.write("</tr>");
+                        }
+                       
+                        %>
+                            </tbody>
+                          
+                          </table>
+                    </div>
+                    <!--code de liste deplome professionnel-->
+                    <div class="card-body tab-pane " role="tabpanel" id="depsa">
+                        <div class="row">
+                            <h1 class="title ml-auto mr-auto">Diplome professionnel</h1>
+                        </div>
+                        <table class="table myDatatable" id="myTable">
+                                 <thead class="thead-dark">
+                                     <tr>
+                                   <th scope="col">Nom Francais</th>
+                                   <th scope="col">الاسم بالعربية</th>
+                                   <th scope="col">diplome</th>
+                                   <th scope="col">Specialitee</th>
+                                   
+                                    </tr>
+                                       
+                                        </tr>
+                                </thead>
+                            <tbody>
+                               <% 
+                         while(rs.next()){
+                           out.write("<tr>");
+                               out.write("<th class='align-middle'>"+rs.getString(0)+"</th>");
+                               out.write("<td class='align-middle' >"+rs.getString(1)+"</td>");
+                               out.write("<td class='align-middle'>"+rs.getString(2)+"</td>");
+                               out.write("<td class='align-middle'>"+rs.getString(3)+"</td>");
+                             
+                               out.write("</tr>"); 
+                         }
+                         rs.close();
+                               %>
+                            </tbody>
+                          
+                          </table>
+                    </div>
+                    <!--code ajouter un deplome-->
+                    <div class="card-body tab-pane " role="tabpanel" id="adddep">
+                        <div class="row justify-content-between">
+                            <div class="col-5 text-center">
+                                <form method="post" action="Diplomes">
+                                    <h3>Diplome scolaire et universitaire </h3>
+                                    <% 
+                                    out.write("<input type='hidden' class=''   name='PersonnelID' value='"+cin+"'>"); 
+                                    %>
+                                    
+                                    <div class="form-group">
+                                      <label for="exampleInputEmail1">Nom de deplome</label>
+                                      <input type="text" class="form-control"  name="DiplomeP" id="" aria-describedby="Nom de deplome">
+                                      <small id="emailHelp" class="form-text text-muted">Inserer le nome de Deplome</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Date d'obtenir</label>
+                                        <input type="date" class="form-control"  name="DateObtentionP" aria-describedby="Nom de deplome" placeholder="dd/mm/yyyy" min="01/01/1900" max="12/31/2050">
+                                        <small id="emailHelp" class="form-text text-muted">Inserer la Date de Deplome</small>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="exampleInputEmail1">Specialtee </label>
+                                        <input type="text" class="form-control"  name="Specialitee" aria-describedby="Nom de deplome">
+                                        <small id="emailHelp" class="form-text text-muted">Inserer le Code de specialtee </small>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="exampleInputEmail1">Code de specialtee </label>
+                                        <input type="text" class="form-control"  name="CodeS" aria-describedby="Nom de deplome">
+                                        <small id="emailHelp" class="form-text text-muted">Inserer le Code de specialtee </small>
+                                      </div>
+                                  
+                                    <input type="submit" name="actionID" class="btn btn-primary" value="enregestrer">
+                                   
+                                  </form>
+                            </div>
+                            <div class="col-5 text-center">
+                                
+                                <form action="Diplomes" method="Post">
+                                    <h3>Diplome professionnel</h3>
+                                      <% 
+                                    out.write("<input type='hidden' class=''   name='PersonnelID' value='"+cin+"'>"); 
+                                    %>
+                                    <div class="form-group">
+                                      <label for="exampleInputEmail1">Nom de deplome</label>
+                                      <input type="text" class="form-control"  name="DiplomeP" id="" aria-describedby="Nom de deplome">
+                                      <small id="emailHelp" class="form-text text-muted">Inserer le nome de Deplome</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Date d'obtenir</label>
+                                        <input type="date" class="form-control"  name="DateObtentionP" aria-describedby="Nom de deplome" placeholder="dd/mm/yyyy" min="01/01/1900" max="12/31/2050">
+                                        <small id="emailHelp" class="form-text text-muted">Inserer la Date de Deplome</small>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="exampleInputEmail1">specialtee </label>
+                                        <input type="text" class="form-control"  name="Specialitee" aria-describedby="Nom de deplome">
+                                        <small id="emailHelp" class="form-text text-muted">Inserer la specialtee </small>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="exampleInputEmail1">Code de specialtee </label>
+                                        <input type="text" class="form-control"  name="CodeS" aria-describedby="Nom de deplome">
+                                        <small id="emailHelp" class="form-text text-muted">Inserer le Code de specialtee </small>
+                                      </div>
+                                  
+                                    <input type="submit" name="actionID" class="btn btn-primary" value="enregestrer">
+                                  </form>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+     </body>
+	 </html>

@@ -50,7 +50,7 @@ String cinn =request.getParameter("cin");
 		out.write("<td class='align-middle'>"+rs.getString(3)+"</td>");
 		out.write("<td class='align-middle text-center' scope='col' style='width: 400px;'>");
 		out.write(" <div class='row ml-auto'>");
-		out.write("<form action='showmore.jsp' method='POST' class='col-4 '>");
+		out.write("<form action='mainProfile.jsp' method='POST' class='col-4 '>");
 		out.write(" <input type='text' value='"+rs.getString(3)+"' name ='cin' id='cinBtn' style='display: none;'>");
 		out.write("<input type='submit' value='show more'  class='btn btn-info badge-pill '>");
 		out.write(" </form>");
