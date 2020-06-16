@@ -8,17 +8,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>show mission</title>
+<title>showMission</title>
 </head>
 <body>
-<%@ include file="Index.html" %>
-    <form action='shoMission.jsp' method='Get'><input type='text' name ='cin'  > <input type='submit' class='' value='search'></form></td>
+
     
-<%  String cin =request.getParameter("cin");
-    if (cin=="")this.getServletContext().getRequestDispatcher("/showMissions.jsp").forward(request, response);
+<%  String cinn =request.getParameter("cin");
+   
     
     EtablismentDao ap= new EtablismentDao();
-	ResultSet rs = ap.selectAllbycin(cin);
+	ResultSet rs = ap.selectAllbycin(cinn);
         out.write("<table class=''>");
         out.write("<tr class=''>");
         out.write("<th>Pren_n</th>");

@@ -55,7 +55,7 @@ public class ServletDiplomeSu extends HttpServlet {
 			} catch (Exception e) {
 				System.out.println("nooo");
 			}
-			this.getServletContext().getRequestDispatcher("/ShowDiplomes.jsp").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/mainProfile.jsp").forward(request, response);
 		}
 		if(actionID.equals("ajoutdiplomesu")){
 			int PersonnelID= Integer.parseInt(request.getParameter("PersonnelID"));
@@ -73,7 +73,7 @@ public class ServletDiplomeSu extends HttpServlet {
 			} catch (Exception e) {
 				System.out.println("nooo");
 			}
-			this.getServletContext().getRequestDispatcher("/ShowDiplomes.jsp").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/mainProfile.jsp").forward(request, response);
 		}
 	}
 

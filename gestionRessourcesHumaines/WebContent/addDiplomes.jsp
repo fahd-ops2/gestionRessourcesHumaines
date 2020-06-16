@@ -12,55 +12,55 @@
 </head>
 <body>
 
-      <%@ include file="Index.html" %>
-       <%
-         String cin= request.getParameter("cin");
-         PersonnelDao per=new PersonnelDao();
-         ResultSet res =per.selectby(cin);
-         while (res.next()){
+<%--       <%@ include file="Index.html" %> --%>
+<%--        <% --%>
+//          String cin= request.getParameter("cin");
+//          PersonnelDao per=new PersonnelDao();
+//          ResultSet res =per.selectby(cin);
+//          while (res.next()){
 
-       %>
-       <form  class ="" action="Diplomes" method="Post">
-      <h1>Diplome professionnel:</h1>
-      <input type="hidden" class=""   name="PersonnelID" value="<%=res.getInt("ID") %>"><br><br>
+<%--        %> --%>
+<!--        <form  class ="" action="Diplomes" method="Post"> -->
+<!--       <h1>Diplome professionnel:</h1> -->
+<%--       <input type="hidden" class=""   name="PersonnelID" value="<%=res.getInt("ID") %>"><br><br> --%>
 		  
-          <label>Diplome : </label><br>
-		  <input type="text" class=""   name="DiplomeP"><br><br>
+<!--           <label>Diplome : </label><br> -->
+<!-- 		  <input type="text" class=""   name="DiplomeP"><br><br> -->
 		  
-		  <label>Date d'obtention </label><br>
-		  <input type="date" class=""   name="DateObtentionP"><br><br>
+<!-- 		  <label>Date d'obtention </label><br> -->
+<!-- 		  <input type="date" class=""   name="DateObtentionP"><br><br> -->
 		  
-		  <label>specialite</label><br>
-		   <input type="text" class=""   name="Specialitee" ><br><br>
+<!-- 		  <label>specialite</label><br> -->
+<!-- 		   <input type="text" class=""   name="Specialitee" ><br><br> -->
 		  
-          <label>Code de specialtee </label><br>
-		  <input type="text" class=""   name="CodeS"><br><br>
-		  <input type="submit" name="actionID" value="ajoutdiplomep">
-		  </form><br>
-		  <label>diplome scolaire ou universitaire</label>
-		  <form class="" method="post" action="Diplomes"  >
-		<br> 
+<!--           <label>Code de specialtee </label><br> -->
+<!-- 		  <input type="text" class=""   name="CodeS"><br><br> -->
+<!-- 		  <input type="submit" name="actionID" value="ajoutdiplomep"> -->
+<!-- 		  </form><br> -->
+<!-- 		  <label>diplome scolaire ou universitaire</label> -->
+<!-- 		  <form class="" method="post" action="Diplomes"  > -->
+<!-- 		<br>  -->
 
-		  <input type="hidden" class=""   name="PersonnelID" value="<%=res.getInt("ID") %>"><br><br>
+<%-- 		  <input type="hidden" class=""   name="PersonnelID" value="<%=res.getInt("ID") %>"><br><br> --%>
 		  
-		  <label>DiplomeSU</label><br>
-		  <input type="text" class=""   name="DiplomeSU"><br><br>
+<!-- 		  <label>DiplomeSU</label><br> -->
+<!-- 		  <input type="text" class=""   name="DiplomeSU"><br><br> -->
 		  
-		  <label>DateobtentionPro </label><br>
-		  <input type="Date" class=""   name="DateobtentionSu"><br><br>
+<!-- 		  <label>DateobtentionPro </label><br> -->
+<!-- 		  <input type="Date" class=""   name="DateobtentionSu"><br><br> -->
 		  
-		  <label>Faculte </label><br>
-		  <input type="text" class=""   name="Faculte"><br><br>
+<!-- 		  <label>Faculte </label><br> -->
+<!-- 		  <input type="text" class=""   name="Faculte"><br><br> -->
 		  
-		  <label>Specialitee </label><br>
-		  <input type="text" class=""   name="Specialitee"><br><br>
+<!-- 		  <label>Specialitee </label><br> -->
+<!-- 		  <input type="text" class=""   name="Specialitee"><br><br> -->
 		  
-		  <label>Code de specialtee </label><br>
-		  <input type="text" class=""   name="CodeS"><br><br>
+<!-- 		  <label>Code de specialtee </label><br> -->
+<!-- 		  <input type="text" class=""   name="CodeS"><br><br> -->
 
-		  <input type="submit" class="" name="actionID" value="ajoutdiplomesu">
+<!-- 		  <input type="submit" class="" name="actionID" value="ajoutdiplomesu"> -->
 		  
-		</form> 
-		  <%} %>
+<!-- 		</form>  -->
+<%-- 		  <%} %> --%>
 </body>
 </html>

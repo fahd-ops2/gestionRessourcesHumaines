@@ -97,10 +97,10 @@
                                <% 
                          while(rs.next()){
                            out.write("<tr>");
-                               out.write("<th class='align-middle'>"+rs.getString(0)+"</th>");
-                               out.write("<td class='align-middle' >"+rs.getString(1)+"</td>");
-                               out.write("<td class='align-middle'>"+rs.getString(2)+"</td>");
-                               out.write("<td class='align-middle'>"+rs.getString(3)+"</td>");
+                               out.write("<th class='align-middle'>"+rs.getString("Pren_n")+"</th>");
+                               out.write("<td class='align-middle' >"+rs.getString("Pren_n_arabe")+"</td>");
+                               out.write("<td class='align-middle'>"+rs.getString("Diplomep")+"</td>");
+                               out.write("<td class='align-middle'>"+rs.getString("Specialitee")+"</td>");
                              
                                out.write("</tr>"); 
                          }
@@ -114,21 +114,33 @@
                     <div class="card-body tab-pane " role="tabpanel" id="adddep">
                         <div class="row justify-content-between">
                             <div class="col-5 text-center">
+					         <%
+					         
+					         PersonnelDao per=new PersonnelDao();
+					         ResultSet resp =per.selectby(cin);
+					         while (resp.next()){
+
+       						%>
                                 <form method="post" action="Diplomes">
                                     <h3>Diplome scolaire et universitaire </h3>
-                                    <% 
-                                    out.write("<input type='hidden' class=''   name='PersonnelID' value='"+cin+"'>"); 
-                                    %>
+                                    
+                                    <input type='hidden' class=''   name='PersonnelID' value="<%=resp.getInt("ID")%>"> 
+                                   
                                     
                                     <div class="form-group">
-                                      <label for="exampleInputEmail1">Nom de deplome</label>
-                                      <input type="text" class="form-control"  name="DiplomeP" id="" aria-describedby="Nom de deplome">
+                                      <label for="exampleInputEmail1">Nom de diplome</label>
+                                      <input type="text" class="form-control"  name="DiplomeSU" id="" aria-describedby="Nom de deplome">
                                       <small id="emailHelp" class="form-text text-muted">Inserer le nome de Deplome</small>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Date d'obtenir</label>
-                                        <input type="date" class="form-control"  name="DateObtentionP" aria-describedby="Nom de deplome" placeholder="dd/mm/yyyy" min="01/01/1900" max="12/31/2050">
+                                        <label for="exampleInputEmail1">Date d'obtention</label>
+                                        <input type="date" class="form-control"  name="DateobtentionSu" aria-describedby="Nom de deplome" placeholder="dd/mm/yyyy" min="01/01/1900" max="12/31/2050">
                                         <small id="emailHelp" class="form-text text-muted">Inserer la Date de Deplome</small>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="exampleInputEmail1">Faculte </label>
+                                        <input type="text" class="form-control"  name="Faculte" aria-describedby="Faculte">
+                                        <small id="emailHelp" class="form-text text-muted">Inserer le Code de specialtee </small>
                                       </div>
                                       <div class="form-group">
                                         <label for="exampleInputEmail1">Specialtee </label>
@@ -141,19 +153,19 @@
                                         <small id="emailHelp" class="form-text text-muted">Inserer le Code de specialtee </small>
                                       </div>
                                   
-                                    <input type="submit" name="actionID" class="btn btn-primary" value="enregestrer">
+                                    <input type="submit" name="actionID" class="btn btn-primary" value="ajoutdiplomesu">
                                    
                                   </form>
+                                  
                             </div>
                             <div class="col-5 text-center">
                                 
                                 <form action="Diplomes" method="Post">
                                     <h3>Diplome professionnel</h3>
-                                      <% 
-                                    out.write("<input type='hidden' class=''   name='PersonnelID' value='"+cin+"'>"); 
-                                    %>
+                                     <input type='hidden' class=''   name='PersonnelID' value="<%=resp.getInt("ID")%>">
+                                   
                                     <div class="form-group">
-                                      <label for="exampleInputEmail1">Nom de deplome</label>
+                                      <label for="exampleInputEmail1">Nom de diplome</label>
                                       <input type="text" class="form-control"  name="DiplomeP" id="" aria-describedby="Nom de deplome">
                                       <small id="emailHelp" class="form-text text-muted">Inserer le nome de Deplome</small>
                                     </div>
@@ -173,8 +185,9 @@
                                         <small id="emailHelp" class="form-text text-muted">Inserer le Code de specialtee </small>
                                       </div>
                                   
-                                    <input type="submit" name="actionID" class="btn btn-primary" value="enregestrer">
+                                    <input type="submit" name="actionID" class="btn btn-primary" value="ajoutdiplomep">
                                   </form>
+                                  <%} %>
                             </div>
                         </div>
                     </div>
