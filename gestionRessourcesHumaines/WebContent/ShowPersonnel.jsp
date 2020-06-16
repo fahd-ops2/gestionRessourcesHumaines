@@ -56,7 +56,7 @@ String cinn =request.getParameter("cin");
 		out.write(" </form>");
 		out.write("<form action='updatePersonnel.jsp' method='POST' class='col-4 '>");
 		out.write(" <input type='text' value='"+rs.getString(3)+"' name ='cin' id='cinBtn' style='display: none;'>");
-		out.write(" <input type='submit' value='Update'  class='btn btn-info badge-pill'>");
+		out.write(" <input type='submit' value='Update' name='Update' class='btn btn-info badge-pill'>");
 		out.write(" </form>");
 		out.write("<form action='Personnels' method='Get' class='col-4 '>");
 		out.write(" <input type='text' value='"+rs.getString(3)+"' name ='delete'  id='cinBtn' style='display: none;'>");
