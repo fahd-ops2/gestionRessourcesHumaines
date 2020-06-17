@@ -33,7 +33,7 @@
                         <a class="nav-link" href="#notes" data-toggle="tab">Notes</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#cadre" data-toggle="tab">Cadre</a>
+                        <a class="nav-link" href="#cadress" data-toggle="tab">Cadre</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="#matiere" data-toggle="tab">Matiere</a>
@@ -43,23 +43,28 @@
                
             </div>
             <div class="tab-content">
-            	<div class="card-body tab-pane active" role="tabpanel" id="info">
-            	  <div class="row justify-content-center">
-               			 <div class="col-8 ml-auto mr-auto" >
-           		 	<%@ include file="showmore.jsp" %>
-           		 	</div>
-           		 	</div>
+            	<div class="card-body tab-pane active" role="tabpanel" id="info" >
+            		<%@ include file="showmore.jsp" %>
             	</div>
-            	<div class="card-body tab-pane" role="tabpanel" id="dep">
-					<%@ include file="ShowDiplome.jsp" %>
-					</div>
+            	<div  class="card-body tab-pane" role="tabpanel" id="dep">
+            		<%@ include file="ShowDiplome.jsp"%>
             	</div>
-             	<div class="card-body tab-pane" role="tabpanel" id="missions">
-					<jsp:include page="showMission.jsp" />
+            	<div class="card-body tab-pane" role="tabpanel" id="missions">
+            		<%@ include file="showMission.jsp"%>
             	</div>
-            		<div class="card-body tab-pane" role="tabpanel" id="notes">
-					<jsp:include page="ShowNote.jsp" />
+            	<div class="card-body tab-pane" role="tabpanel" id="notes">
+            		<%@ include file="ShowNote.jsp"%>
             	</div>
+            	<div class="card-body tab-pane" role="tabpanel" id="cadress">
+            				  <!-- Mochkil fhad class fch knincludiha kt3aks liya kolchi  -->	
+            				  <!-- Test include another page -->
+            				 
+            	</div>
+            	<div class="card-body tab-pane" role="tabpanel" id="matiere">
+            			<h4>Erreur fhad lpage Hta hya showMatiere.jsp</h4>
+            	</div>
+          
+            	
             
             </div>
             

@@ -2,4 +2,6 @@ eclipse.preferences.version=1
 encoding//WebContent/ShowDiplome.jsp=UTF-8
 encoding//WebContent/ShowNote.jsp=UTF-8
 encoding//WebContent/ShowPersonnels.jsp=UTF-8
+encoding//WebContent/showCadre.jsp=UTF-8
+encoding//WebContent/showMatiere.jsp=UTF-8
 encoding//WebContent/showMission.jsp=UTF-8

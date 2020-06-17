@@ -4,22 +4,16 @@
     <%@ page import="classes.*"%>
     <%@ page import="DAO.*"%>
     <%@ page import="java.sql.*"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>show note</title>
-</head>
-<body>
+
    
 <% 
-    String cin =request.getParameter("cin");
-    if (cin=="")this.getServletContext().getRequestDispatcher("/ShowNotes.jsp").forward(request, response);
+    String cins =request.getParameter("cin");
+   
 	NoteAdminDao pea= new NoteAdminDao();
-	ResultSet reas = pea.selectAllbycin(cin);
-	if(cin=="")this.getServletContext().getRequestDispatcher("/ShowNotes.jsp").forward(request, response);
+	ResultSet reas = pea.selectAllbycin(cins);
+	
 	NoteProspDao pee=new NoteProspDao();
-	ResultSet rees = pee.selectAllbycin(cin);
+	ResultSet rees = pee.selectAllbycin(cins);
 	%>
 	
 	
@@ -101,7 +95,7 @@
            
                               <form method="post" action="Notes">
                                   
-                              <%out.write("<input type='text' class=''  style='display: none;' name='PersonnelID' value='"+cin+"'>"); %>
+                              <%out.write("<input type='text' class=''  style='display: none;' name='PersonnelID' value='"+cins+"'>"); %>
   
                                   <div class="form-group">
                                     <label for="exampleInputEmail1">La Note Administratif</label>
@@ -121,7 +115,7 @@
                          <div class="col-6 " >
          
                             <form method="post" action="Notes">
-                                <%out.write("<input type='text' class=''  style='display: none;' name='PersonnelID' value='"+cin+"'>"); %>
+                                <%out.write("<input type='text' class=''  style='display: none;' name='PersonnelID' value='"+cins+"'>"); %>
                               
 
                                 <div class="form-group">
@@ -145,6 +139,4 @@
                     </div>
                 </div>
               </div>  
-            </div>
-</body>
-</html>
+ </div>

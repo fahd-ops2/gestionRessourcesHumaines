@@ -4,13 +4,7 @@
     <%@ page import="classes.*"%>
     <%@ page import="DAO.*"%>
     <%@ page import="java.sql.*"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
 
-
-</head>
-<body>
 <% 
 String cinn =request.getParameter("cin");
    
@@ -107,7 +101,7 @@ String cinn =request.getParameter("cin");
                                     </div>
                                 </div>
                             </div>  
-                          </div>
+   </div>
                           
                           
 
@@ -115,5 +109,3 @@ String cinn =request.getParameter("cin");
 
 
 
-</body>
-</html>

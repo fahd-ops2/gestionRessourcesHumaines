@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
      <%@ page import="java.util.*" %>
     <%@ page import="classes.*"%>
     <%@ page import="DAO.*"%>
@@ -11,37 +11,80 @@
 <title>matiere</title>
 </head>
 <body>
-     <%@ include file="Index.html" %>
-    <form action='showMatiere.jsp' method='Get'><input type='text' name ='cin'  > <input type='submit' class='' value='search'></form></td>
+    
+   
     
 <%  String cin =request.getParameter("cin");
     if (cin=="")this.getServletContext().getRequestDispatcher("/ShowMatieres.jsp").forward(request, response);
     
     MatiereDao p= new MatiereDao();
 	ResultSet rs = p.selectbycin(cin);
-        out.write("<table class=''>");
-        out.write("<tr class=''>");
-        out.write("<th>Pren_n</th>");
-        out.write("<th>Pren_n_arabe</th>");
-        out.write("<th>matiere</th>");
+	%>
+	 <div class="card text-center">
+              <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#Matieress" data-toggle="tab">Les matieres</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="#addMatiere" data-toggle="tab">ajouter une Matiere</a>
+                  </li>
+                
+                  
+                  
+                </ul>
+              </div>    
+              <div class="tab-content">  
+                  <div class="card-body tab-pane active" role="tabpanel" id="Matieress">
+                      <table class="table myDatatable" >
+                      <thead class="thead-dark">
+                        <tr class="text-center" >
+                          <th scope="col" >Nom En Francais</th>
+                          <th scope="col">الاسم بالعربية</th>
+                          <th scope="col">Matiere</th>
+                     
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <%  while(rs.next()){
+                          out.write("<tr>");
+                              out.write("<td class='align-middle'>"+rs.getString(1)+"</th>");
+                              out.write("<td class='align-middle' >"+rs.getString(2)+"</td>");
+                              out.write("<td class='align-middle'>"+rs.getString(3)+"</td>");
+                          
+                            
+                              out.write("</tr>");
+                          }
+                          rs.close();
+                          %>
+                      </tbody>
+                      </table>
+                   </div>
+                  
+                  <div class="card-body tab-pane" role="tabpanel" id="addMatiere">
+                      <div class="row justify-content-center">
+                           <div class="col-6 " >
+           
+                              <form  method="post" action="Matieres">
+                                  
+                               <%out.write("<input type='text' class=''  style='display: none;' name='PersonnelID' value='"+cin+"'>"); %>
+  
+                                  <div class="form-group">
+                                    <label for="exampleInputEmail1">La Matiere </label>
+                                    <input type="text" class="form-control" name="NomMatiere" id="" >
+                                    <small id="emailHelp" class="form-text text-muted">Inserer La Matiere </small>
+                                  </div>
+  
+                                  <input type="submit" name="actionID" class="btn btn-primary"  value="enregestrer">
+                                 
+                                </form>
+                             
+                          </div>
+                      </div>
+                  </div>
+                 
+              </div>  
+            </div>
 
-        
-	while(rs.next()){
-		out.write("<tr>");
-		out.write("<td>"+rs.getString("Pren_n")+"</td>");
-		out.write("<td>"+rs.getString("Pren_n_arabe")+"</td>");
-		out.write("<td>"+rs.getString("NomMatiere")+"</td>");
-		out.write("</tr>");
-	}
-%>
-</table>
-<% while(rs.next()){
-	if (request.getParameter("cin")!=rs.getString("cin"))
-		this.getServletContext().getRequestDispatcher("/ShowMatieres.jsp").forward(request, response);}
- %>
-   <form action="AddMatiere.jsp">
-   <input type ="hidden" name="cin" value="<%=request.getParameter("cin")%>">
-   <input type="submit" class="" name="actionID" value="ajouter une matiere">
-   </form>
 </body>
 </html>
