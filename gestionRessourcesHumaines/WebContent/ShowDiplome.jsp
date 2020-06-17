@@ -70,7 +70,7 @@
                           
                             out.write("</tr>");
                         }
-                       
+                       res.close();
                         %>
                             </tbody>
                           
@@ -97,15 +97,17 @@
                                <% 
                          while(rs.next()){
                            out.write("<tr>");
-                               out.write("<th class='align-middle'>"+rs.getString("Pren_n")+"</th>");
-                               out.write("<td class='align-middle' >"+rs.getString("Pren_n_arabe")+"</td>");
-                               out.write("<td class='align-middle'>"+rs.getString("Diplomep")+"</td>");
-                               out.write("<td class='align-middle'>"+rs.getString("Specialitee")+"</td>");
+                               out.write("<td class='align-middle'>"+rs.getString(1)+"</th>");
+                               out.write("<td class='align-middle' >"+rs.getString(2)+"</td>");
+                               out.write("<td class='align-middle'>"+rs.getString(3)+"</td>");
+                               out.write("<td class='align-middle'>"+rs.getString(4)+"</td>");
                              
                                out.write("</tr>"); 
                          }
                          rs.close();
+                         
                                %>
+                           
                             </tbody>
                           
                           </table>

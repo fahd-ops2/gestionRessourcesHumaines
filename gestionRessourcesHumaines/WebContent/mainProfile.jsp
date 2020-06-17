@@ -43,12 +43,20 @@
                
             </div>
             <div class="tab-content">
-            <div class="card-body tab-pane active" role="tabpanel" id="info">
-           		 <%@ include file="showmore.jsp" %>
-            </div>
-            <div class="card-body tab-pane" role="tabpanel" id="dep">
-				<%@ include file="ShowDiplome.jsp" %>
-            </div>
+            	<div class="card-body tab-pane active" role="tabpanel" id="info">
+            	  <div class="row justify-content-center">
+               			 <div class="col-8 ml-auto mr-auto" >
+           		 	<%@ include file="showmore.jsp" %>
+           		 	</div>
+           		 	</div>
+            	</div>
+            	<div class="card-body tab-pane" role="tabpanel" id="dep">
+					<%@ include file="ShowDiplome.jsp" %>
+					</div>
+            	</div>
+             	<div class="card-body tab-pane" role="tabpanel" id="missions">
+					<jsp:include page="showMission.jsp" />
+            	</div>
             
             </div>
             
