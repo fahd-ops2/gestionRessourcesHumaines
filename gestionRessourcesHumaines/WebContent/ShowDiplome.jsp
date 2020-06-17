@@ -124,7 +124,7 @@
 
        						%>
                                 <form method="post" action="Diplomes">
-                                    <h3>Diplome scolaire et universitaire </h3>
+                                    <h4>Diplome scolaire et universitaire </h4>
                                     
                                     <input type='hidden' class=''   name='PersonnelID' value="<%=resp.getInt("ID")%>"> 
                                    
@@ -163,7 +163,7 @@
                             <div class="col-5 text-center">
                                 
                                 <form action="Diplomes" method="Post">
-                                    <h3>Diplome professionnel</h3>
+                                    <h4>Diplome professionnel</h4>
                                      <input type='hidden' class=''   name='PersonnelID' value="<%=resp.getInt("ID")%>">
                                    
                                     <div class="form-group">

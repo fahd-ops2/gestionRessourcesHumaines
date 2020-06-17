@@ -57,6 +57,9 @@
              	<div class="card-body tab-pane" role="tabpanel" id="missions">
 					<jsp:include page="showMission.jsp" />
             	</div>
+            		<div class="card-body tab-pane" role="tabpanel" id="notes">
+					<jsp:include page="ShowNote.jsp" />
+            	</div>
             
             </div>
             
